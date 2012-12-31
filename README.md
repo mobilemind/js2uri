@@ -1,6 +1,6 @@
-# grunt-js2uri
+# js2uri
 
-Convert a JavaScript file to a `javascript:` URI from grunt.
+grunt plugin to convert a JavaScript file to a `javascript:` URI.
 
 ## Example
 The code
@@ -105,7 +105,7 @@ grunt.registerTask('default', [ "lint", "min", "js2uri"] );
 ```
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style.
+In lieu of a formal style guide, take care to maintain the existing coding style.
 Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
