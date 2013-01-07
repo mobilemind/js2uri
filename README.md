@@ -81,14 +81,17 @@ jshint: {
   globals: {}
 },
 // js2uri default options are shown
-// note src IS dest from 'min' task above
+// note src below IS manually set to dest from 'min' task above
 js2uri:  {
   options: {
-	useNewlineEOL: true,
-	useSingleQuote: true,
-	noLastSemicolon: true,
-	appendVoid: true,
-	appendVersion: false
+    protocol: 'javascript:',
+    useNewlineEOL: true,
+    useSingleQuote: true,
+    appendVoid: true,
+    customVersion: js2uri_pkgVersion,
+    appendVersion: false,
+    noLastSemicolon: true,
+    forceLastSemicolon: false
   },
   dist: {
 	src: 'dist/lintedAndMinifiedFile.js',
@@ -110,10 +113,12 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
-1.0 December 31, 2012
+1.0.0 December 31, 2012
+
+1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and `forceLastSemicolon:`.
 
 ## License
-Copyright (c) 2012 Tom King
+Copyright (c) 2012, 2013 Tom King
 Licensed under the MIT license.
 
 <!--- reference URLs -->
