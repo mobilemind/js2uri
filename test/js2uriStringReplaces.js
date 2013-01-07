@@ -20,17 +20,28 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-// globals for js2uri testing
-var jsURItest_opt = {
+  // globals for js2uri testing
+  var jsURItest_version = '';
+  // use to set default version to  metadata version OR pkg.version if available
+  if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
+  else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
+
+  var jsURItest_opt = {
+    protocol: 'javascript:',
     useNewlineEOL: true,
     useSingleQuote: true,
     appendVoid: true,
+    customVersion: jsURItest_version,
     appendVersion: false,
-    noLastSemicolon: true
+    noLastSemicolon: true,
+    forceLastSemicolon: false
   };
-var jsURItest_version = '0';
-if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
-else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
+
+  // now REset to use metadata OR pkg if available
+  if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
+  else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
+  else jsURItest_version = '';
+
 
 // ** Nodeunit tests **
 exports['js2uri'] = {
@@ -42,43 +53,71 @@ exports['js2uri'] = {
     done();
   },
   'js2uriStringReplaces tests': function(test) {
-	test.expect(6);
+	test.expect(8);
 
 	// ** default options
 	var testVal = '';
+	var expectedVal = ";void'" + ('' === jsURItest_version ? 0 : jsURItest_version) + "'";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-     ";void'0'",
-     'default: "' + testVal + '" should return ";void\'0\'"');
+      expectedVal,
+     'test #1 default: "' + testVal + '" should return "' + expectedVal + '"');
 
     // ** with trailing semicolon
 	jsURItest_opt.noLastSemicolon = false;
+	testVal = '';
+	expectedVal = ";void'" + ('' === jsURItest_version ? 0 : jsURItest_version) + "';";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-      ";void'0';",
-      'noLastSemicolon:' + jsURItest_opt.noLastSemicolon + ' null should return ";void\'0\';"');
+      expectedVal,
+      'test #2 noLastSemicolon:' + jsURItest_opt.noLastSemicolon + ' null should return "' + expectedVal + '"');
 
 	// ** append version
 	jsURItest_opt.appendVersion = true;
+	testVal = '';
+	expectedVal = ";void'" + ('' === jsURItest_version ? 0 : jsURItest_version) + "';";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-      ";void'" + jsURItest_version + "';",
-      'appendVersion:' + jsURItest_opt.appendVersion + ' null should return ";void\'' + jsURItest_version + '\';"');
+      expectedVal,
+      'test #3 appendVersion:' + jsURItest_opt.appendVersion + ' null should return "' + expectedVal + '"');
+
+	jsURItest_opt.appendVersion = true;
+	jsURItest_opt.customVersion = '0.0.0';
+	testVal = '';
+	expectedVal = ";void'" + jsURItest_opt.customVersion + "';";
+	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+      expectedVal,
+      'test #4 appendVersion:' + jsURItest_opt.appendVersion + ',  customVersion:' + jsURItest_opt.customVersion + ' null should return "' + expectedVal + '"');
 
 	// ** don't append void
-	jsURItest_opt.appendVoid = false;
+	jsURItest_opt.appendVoid= false;
+	testVal = '';
+	expectedVal = '';
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-      testVal,
-      'appendVoid:' + jsURItest_opt.appendVoid + ' null should return "' + testVal + '"');
+      expectedVal,
+      'test #5 appendVoid:' + jsURItest_opt.appendVoid + ' null should return "' + expectedVal + '"');
 
 	// ** useSingleQuote true/false
-	testVal = '%22';
 	jsURItest_opt.useSingleQuote = true;
+	jsURItest_opt.appendVoid= false;
+	testVal = '%22';
+	expectedVal = "'";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-      "'",
-      'useSingleQuote:' + jsURItest_opt.useSingleQuote + ' "' + testVal + '" should return "\'"');
+      expectedVal,
+      'test #6 useSingleQuote:' + jsURItest_opt.useSingleQuote + ' "' + testVal + '" should return "' + expectedVal + '"');
 
 	jsURItest_opt.useSingleQuote = false;
+	jsURItest_opt.appendVoid= false;
+	testVal = '%22';
+	expectedVal = testVal;
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
-      testVal,
-      'useSingleQuote:' + jsURItest_opt.useSingleQuote + ' "' + testVal + '" should return "' + testVal + '"');
+      expectedVal,
+      'test #7 useSingleQuote:' + jsURItest_opt.useSingleQuote + ' "' + testVal + '" should return "' + expectedVal + '"');
+
+	jsURItest_opt.forceLastSemicolon = true;
+	jsURItest_opt.appendVoid= false;
+	testVal = '';
+	expectedVal = ';';
+	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+      expectedVal,
+      'test #8 forceLastSemicolon:' + jsURItest_opt.forceLastSemicolon + ' "' + testVal + '" should return "' + expectedVal + '"');
 
     test.done();
   }
