@@ -88,7 +88,7 @@ js2uri:  {
     useNewlineEOL: true,
     useSingleQuote: true,
     appendVoid: true,
-    customVersion: js2uri_pkgVersion,
+    customVersion: '', // use this if set, ELSE use version from package.jason OR meta. if available
     appendVersion: false,
     noLastSemicolon: true,
     forceLastSemicolon: false
