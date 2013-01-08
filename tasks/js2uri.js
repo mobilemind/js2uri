@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         if (undefined !== configOptions.customVersion)		jsURI_opt.customVersion = configOptions.customVersion;
         if (undefined !== configOptions.appendVersion)		jsURI_opt.appendVersion = configOptions.appendVersion;
         if (undefined !== configOptions.noLastSemicolon)	jsURI_opt.noLastSemicolon = configOptions.noLastSemicolon;
-        if (undefined !== configOptions.forceLastSemicolon)	jsURI_opt.noLastSemicolon = configOptions.forceLastSemicolon;
+        if (undefined !== configOptions.forceLastSemicolon)	jsURI_opt.forceLastSemicolon = configOptions.forceLastSemicolon;
       }
 
       // read file
