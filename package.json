@@ -1,7 +1,7 @@
 {
   "name": "js2uri",
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with javascript: for output.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/mobilemind/js2uri",
   "author": {
     "name": "Tom King",

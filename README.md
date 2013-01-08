@@ -117,10 +117,12 @@ Lint and test your code using [grunt][grunt].
 
 1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and `forceLastSemicolon:`.
 
+1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and `forceLastSemicolon:`.
+
 ## License
 Copyright (c) 2012, 2013 Tom King
 Licensed under the MIT license.
 
-<!--- reference URLs -->
+<!-- reference URLs -->
 [grunt]: http://gruntjs.com/
 [getting_started]: https://github.com/gruntjs/grunt/blob/0.3-stable/docs/getting_started.md
