@@ -62,8 +62,8 @@ exports['js2uri'] = {
       expectedVal,
      'test #1 default options with "' + testVal + '" should return "' + expectedVal + '"');
 
-	var testVal = ';';
-	var expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
+	testVal = ';';
+	expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
       expectedVal,
      'test #2 default options with "' + testVal + '" should return "' + expectedVal + '"');

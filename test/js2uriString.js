@@ -44,7 +44,7 @@ exports['js2uri'] = {
       "javascript:var%20a=%5B%220%22,%221%22%5D,b='0%25',c=%7Bp:0%7D;if(a%5B1%5D%3E0)%7Bwriteln(%22true%22+b)%7D",
       "js2uriString {test code} should return- javascript:var%20a=%5B%220%22,%221%22%5D,b='0%25';if(a%5B1%5D%3E0)%7Bwriteln(%22true%22+b)%7D");
 
-	  test.deepEqual(grunt.helper('js2uriString', "var a=[\"0\",\"1\"],b='0%',c={p:0};if(a[1]>0){writeln(\"true\"+b)}", '', true),
+    test.deepEqual(grunt.helper('js2uriString', "var a=[\"0\",\"1\"],b='0%',c={p:0};if(a[1]>0){writeln(\"true\"+b)}", '', true),
       "var%20a=%5B%220%22,%221%22%5D,b='0%25',c=%7Bp:0%7D;if(a%5B1%5D%3E0)%7Bwriteln(%22true%22+b)%7D",
       "js2uriString {test code} should return- var%20a=%5B%220%22,%221%22%5D,b='0%25';if(a%5B1%5D%3E0)%7Bwriteln(%22true%22+b)%7D");
     test.done();
