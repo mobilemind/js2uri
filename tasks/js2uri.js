@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   // TASKS
   // ==========================================================================
 
- // global var
+  // global var
   var js2uri_pkgVersion = '';
   // default version to  metadata version OR pkg.version if available
   if (undefined !== grunt.config('meta.version')) js2uri_pkgVersion = grunt.config('meta.version');
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         jsURISuffix += 'void';
         // use version from options *or* '0'
         var pkgVersion = uriOpts.customVersion;
-        if (undefined === pkgVersion || '' === pkgVersion) pkgVersion = 0;
+        if (!uriOpts.appendVersion || undefined === pkgVersion || '' === pkgVersion) pkgVersion = 0;
         jsURISuffix += "'" + pkgVersion + "';";
       }
       // append suffix which may be null
