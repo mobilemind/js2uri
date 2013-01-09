@@ -1,6 +1,7 @@
 # js2uri
 
-grunt plugin to convert a JavaScript file to a `javascript:` URI.
+grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
+or an iOS app protocol scheme link.
 
 ## Example
 The code
@@ -118,6 +119,8 @@ Lint and test your code using [grunt][grunt].
 1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and `forceLastSemicolon:`.
 
 1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and `forceLastSemicolon:`.
+
+1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion: false` and `customVersion:`.
 
 ## License
 Copyright (c) 2012, 2013 Tom King
