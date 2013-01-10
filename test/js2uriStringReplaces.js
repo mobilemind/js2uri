@@ -34,7 +34,8 @@ var grunt = require('grunt');
     customVersion: jsURItest_version,
     appendVersion: false,
     noLastSemicolon: true,
-    forceLastSemicolon: false
+    forceLastSemicolon: false,
+    entityEncode: false
   };
 
   // now REset to use metadata OR pkg if available
@@ -53,7 +54,7 @@ exports['js2uri'] = {
     done();
   },
   'js2uriStringReplaces tests': function(test) {
-	test.expect(13);
+	test.expect(16);
 
 	// ** default options
 	var testVal = '';
@@ -156,7 +157,7 @@ exports['js2uri'] = {
       expectedVal,
       'test #13 forceLastSemicolon:' + jsURItest_opt.forceLastSemicolon + ', appendVoid:' + jsURItest_opt.appendVoid + '"' + testVal + '" should return "' + expectedVal + '"');
 
-/*  // ** entityEncode true/false
+     // ** entityEncode true/false
     jsURItest_opt.forceLastSemicolon = false;
 	jsURItest_opt.appendVoid = false;
 	jsURItest_opt.entityEncode = true;
@@ -170,8 +171,8 @@ exports['js2uri'] = {
 	jsURItest_opt.appendVoid = false;
 	jsURItest_opt.entityEncode = true;
 	testVal = '0%3C1&&1%3E0';
-	expectedVal = '0%3C1&amp;&amp;%3E0';
-	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+	expectedVal = '0%3C1&amp;&amp;1%3E0';
+    test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
       expectedVal,
       'test #15 jsURItest_opt.entityEncode:' + jsURItest_opt.entityEncode + ' "' + testVal + '" should return "' + expectedVal + '"');
 
@@ -183,7 +184,7 @@ exports['js2uri'] = {
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
       expectedVal,
       'test #16 jsURItest_opt.entityEncode:' + jsURItest_opt.entityEncode + ' "' + testVal + '" should return "' + expectedVal + '"');
- */
+
     test.done();
   }
 };

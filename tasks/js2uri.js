@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     customVersion: js2uri_pkgVersion,
     appendVersion: false,
     noLastSemicolon: true,
-    forceLastSemicolon: false
+    forceLastSemicolon: false,
+    entityEncode: false
   };
 
   // main function
@@ -114,6 +115,8 @@ module.exports = function(grunt) {
         if (';' !== uriStr.charAt(uriStr.length-1)) uriStr += ';';
       }
       else if (uriOpts.noLastSemicolon) uriStr = uriStr.replace(lastColonRegex,'');
+      // encode critical HTML entities
+      if (uriOpts.entityEncode) uriStr = uriStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       // all replacements done
       return String(uriStr);
   });
