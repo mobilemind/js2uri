@@ -92,7 +92,8 @@ js2uri:  {
     customVersion: '', // use this if set, ELSE use version from package.jason OR meta. if available
     appendVersion: false,
     noLastSemicolon: true,
-    forceLastSemicolon: false
+    forceLastSemicolon: false,
+    entityEncode: false
   },
   dist: {
 	src: 'dist/lintedAndMinifiedFile.js',
@@ -120,7 +121,9 @@ Lint and test your code using [grunt][grunt].
 
 1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and `forceLastSemicolon:`.
 
-1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion: false` and `customVersion:`.
+1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion:false` and `customVersion:`.
+
+1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding '<', '>' and '&'.
 
 ## License
 Copyright (c) 2012, 2013 Tom King
