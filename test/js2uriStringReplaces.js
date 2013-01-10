@@ -124,7 +124,7 @@ exports['js2uri'] = {
 
 	// ** useSingleQuote true/false
 	jsURItest_opt.useSingleQuote = true;
-	jsURItest_opt.appendVoid= false;
+	jsURItest_opt.appendVoid = false;
 	testVal = '%22';
 	expectedVal = "'";
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
@@ -132,15 +132,16 @@ exports['js2uri'] = {
       'test #10 useSingleQuote:' + jsURItest_opt.useSingleQuote + ', appendVoid:' + jsURItest_opt.appendVoid + '"' + testVal + '" should return "' + expectedVal + '"');
 
 	jsURItest_opt.useSingleQuote = false;
-	jsURItest_opt.appendVoid= false;
+	jsURItest_opt.appendVoid = false;
 	testVal = '%22';
 	expectedVal = testVal;
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
       expectedVal,
       'test #11 useSingleQuote:' + jsURItest_opt.useSingleQuote + ', appendVoid:' + jsURItest_opt.appendVoid + '"' + testVal + '" should return "' + expectedVal + '"');
 
+	// ** forceLastSemicolon true/false
 	jsURItest_opt.forceLastSemicolon = true;
-	jsURItest_opt.appendVoid= false;
+	jsURItest_opt.appendVoid = false;
 	testVal = '';
 	expectedVal = ';';
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
@@ -148,13 +149,41 @@ exports['js2uri'] = {
       'test #12 forceLastSemicolon:' + jsURItest_opt.forceLastSemicolon + ', appendVoid:' + jsURItest_opt.appendVoid + '"' + testVal + '" should return "' + expectedVal + '"');
 
 	jsURItest_opt.forceLastSemicolon = true;
-	jsURItest_opt.appendVoid= false;
+	jsURItest_opt.appendVoid = false;
 	testVal = ';';
 	expectedVal = ';';
 	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
       expectedVal,
       'test #13 forceLastSemicolon:' + jsURItest_opt.forceLastSemicolon + ', appendVoid:' + jsURItest_opt.appendVoid + '"' + testVal + '" should return "' + expectedVal + '"');
 
+/*  // ** entityEncode true/false
+    jsURItest_opt.forceLastSemicolon = false;
+	jsURItest_opt.appendVoid = false;
+	jsURItest_opt.entityEncode = true;
+	testVal = '0<1&&1>0';
+	expectedVal = '0&lt;1&amp;&amp;1&gt;0';
+	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+      expectedVal,
+      'test #14 jsURItest_opt.entityEncode:' + jsURItest_opt.entityEncode + ' "' + testVal + '" should return "' + expectedVal + '"');
+
+    jsURItest_opt.forceLastSemicolon = false;
+	jsURItest_opt.appendVoid = false;
+	jsURItest_opt.entityEncode = true;
+	testVal = '0%3C1&&1%3E0';
+	expectedVal = '0%3C1&amp;&amp;%3E0';
+	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+      expectedVal,
+      'test #15 jsURItest_opt.entityEncode:' + jsURItest_opt.entityEncode + ' "' + testVal + '" should return "' + expectedVal + '"');
+
+    jsURItest_opt.forceLastSemicolon = false;
+	jsURItest_opt.appendVoid = false;
+	jsURItest_opt.entityEncode = false;
+	testVal = '0<1&&1>0';
+	expectedVal = testVal;
+	test.deepEqual(grunt.helper('js2uriStringReplaces', testVal, jsURItest_opt),
+      expectedVal,
+      'test #16 jsURItest_opt.entityEncode:' + jsURItest_opt.entityEncode + ' "' + testVal + '" should return "' + expectedVal + '"');
+ */
     test.done();
   }
 };
