@@ -3,6 +3,10 @@
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
 
+## Compatibility
+Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier versions
+of grunt. Use version 1.2.0 if you require grunt 0.3.x compatibility.
+
 ## Example
 The code
 

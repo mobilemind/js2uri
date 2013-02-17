@@ -8,6 +8,9 @@
 
 module.exports = function(grunt) {
 
+  // HELPERS
+  var js2uriHelpers = require('./js2uriHelpers.js');
+
   // Please see the grunt documentation for more information regarding task and
   // helper creation: https://github.com/gruntjs/grunt/blob/master/docs/toc.md
 
@@ -35,90 +38,46 @@ module.exports = function(grunt) {
   };
 
   // main function
-  grunt.registerMultiTask('js2uri', 'Convert JavaScript to javascript: URI.', function() {
+  grunt.registerTask('js2uri', 'Convert JavaScript to javascript: URI.', function() {
     // no processing required for options sub-task
     if ('js2uri:options' === this.nameArgs) return;
 
     // process js file to create URI
     try {
       // check required config items
-      this.requiresConfig(this.name+'.dist.src');
-      this.requiresConfig(this.name+'.dist.dest');
+      // grunt.config.requires(this.name + '.dist.src');
 
       // get config options
-      var configOptions = grunt.config(this.name+'.options');
-      if (undefined !== configOptions) {
-        if (undefined !== configOptions.protocol)			jsURI_opt.protocol = configOptions.protocol;
-        if (undefined !== configOptions.useNewlineEOL)		jsURI_opt.useNewlineEOL = configOptions.useNewlineEOL;
-        if (undefined !== configOptions.useSingleQuote)		jsURI_opt.useSingleQuote = configOptions.useSingleQuote;
-        if (undefined !== configOptions.appendVoid)			jsURI_opt.appendVoid = configOptions.appendVoid;
-        if (undefined !== configOptions.customVersion)		jsURI_opt.customVersion = configOptions.customVersion;
-        if (undefined !== configOptions.appendVersion)		jsURI_opt.appendVersion = configOptions.appendVersion;
-        if (undefined !== configOptions.noLastSemicolon)	jsURI_opt.noLastSemicolon = configOptions.noLastSemicolon;
-        if (undefined !== configOptions.forceLastSemicolon)	jsURI_opt.forceLastSemicolon = configOptions.forceLastSemicolon;
+      var opts = grunt.config(this.name + '.options');
+      if (undefined !== this.options) {
+        if (undefined !== opts.protocol)			jsURI_opt.protocol = opts.protocol;
+        if (undefined !== opts.useNewlineEOL)		jsURI_opt.useNewlineEOL = opts.useNewlineEOL;
+        if (undefined !== opts.useSingleQuote)		jsURI_opt.useSingleQuote = opts.useSingleQuote;
+        if (undefined !== opts.appendVoid)			jsURI_opt.appendVoid = opts.appendVoid;
+        if (undefined !== opts.customVersion)		jsURI_opt.customVersion = opts.customVersion;
+        if (undefined !== opts.appendVersion)		jsURI_opt.appendVersion = opts.appendVersion;
+        if (undefined !== opts.noLastSemicolon)		jsURI_opt.noLastSemicolon = opts.noLastSemicolon;
+        if (undefined !== opts.forceLastSemicolon)	jsURI_opt.forceLastSemicolon = opts.forceLastSemicolon;
       }
 
       // read file
-      var jsSourceStr =  grunt.file.read(this.file.src);
+      var jsSourceStr =  grunt.file.read(grunt.config(this.name + '.dist.src'));
 
       // convert javascript string to URI
-      var jsURIStr = grunt.helper('js2uriString', jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
+      var jsURIStr = js2uriHelpers.js2uriString(jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
 
       // apply options to URI string
-      jsURIStr = grunt.helper('js2uriStringReplaces', jsURIStr, jsURI_opt);
+      jsURIStr = js2uriHelpers.js2uriStringReplaces(jsURIStr, jsURI_opt);
 
       // write string to file & log
-      grunt.file.write(this.file.dest, jsURIStr);
-      console.log(this.file.src + ' -> ' + this.file.dest + ' (' + jsURIStr.length + ' bytes)');
+      grunt.file.write(grunt.config(this.name + '.dist.dest'), jsURIStr);
+      console.log(grunt.config(this.name + '.dist.src') + ' -> ' + grunt.config(this.name + '.dist.dest') + ' (' + jsURIStr.length + ' bytes)');
     }
     catch(e) {
-      // log error & warn
-      grunt.verbose.or.write('Error with ' + this.nameArgs + ', code:' + e.message);
-      grunt.warn(this.nameArgs + ' found errors: ' + e.message, 10);
+      grunt.warn(this.nameArgs + ' found errors: ' + e.message  + '\n', 10);
       return false;
     }
     return true;
-  });
-
-  // ==========================================================================
-  // HELPERS
-  // ==========================================================================
-
-  // URI protocol + URI encoding
-  grunt.registerHelper('js2uriString', function(jsString, uriProtocol, newLineFlag) {
-    var myEOL = newLineFlag ? '\n' : '\r\n';
-    return String(uriProtocol) + encodeURI(jsString.split(myEOL)[0]);
-  });
-
-  // string replacements driven by config options
-  grunt.registerHelper('js2uriStringReplaces', function(uriStr, uriOpts) {
-      var tickRegEx = /%22/gm;
-      var lastColonRegex = /;$/;
-      // swapt use apostrophe? (most browsers don't require %22 for ')
-      if (uriOpts.useSingleQuote) uriStr = uriStr.replace(tickRegEx,"'");
-      // build-up suffix
-      var jsURISuffix = '';
-      if (uriOpts.appendVoid) {
-        // append semicolon if needed for syntax
-        if (';' !== uriStr.charAt(uriStr.length-1)) jsURISuffix = ';';
-        // append void
-        jsURISuffix += 'void';
-        // use version from options *or* '0'
-        var pkgVersion = uriOpts.customVersion;
-        if (!uriOpts.appendVersion || undefined === pkgVersion || '' === pkgVersion) pkgVersion = 0;
-        jsURISuffix += "'" + pkgVersion + "';";
-      }
-      // append suffix which may be null
-      uriStr += jsURISuffix;
-      // force OR remove trailing semicolon
-      if (uriOpts.forceLastSemicolon) {
-        if (';' !== uriStr.charAt(uriStr.length-1)) uriStr += ';';
-      }
-      else if (uriOpts.noLastSemicolon) uriStr = uriStr.replace(lastColonRegex,'');
-      // encode critical HTML entities
-      if (uriOpts.entityEncode) uriStr = uriStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      // all replacements done
-      return String(uriStr);
   });
 
 };
