@@ -23,9 +23,12 @@ module.exports = function(grunt) {
     try {
       // get options
       var js2uri_pkgVersion = '';
-      // default version to  metadata version OR pkg.version if available
+
+      // default version to metadata version OR pkg.version if available
       if (undefined !== grunt.config('meta.version')) js2uri_pkgVersion = grunt.config('meta.version');
       else if (undefined !== grunt.config('pkg.version')) js2uri_pkgVersion = grunt.config('pkg.version');
+
+      // set options
       jsURI_opt = this.options({
         // Default options
         protocol: 'javascript:',
@@ -38,19 +41,22 @@ module.exports = function(grunt) {
         forceLastSemicolon: false,
         entityEncode: false
       });
-      // read source file
+
+      // loop through files
       var files = this.files;
       files.forEach(function(filepair) {
         // read source
-        var jsSourceStr =  grunt.file.read(filepair.src);
+        var jsSourceStr = grunt.file.read(filepair.src);
+
         // convert javascript string to URI
         var jsURIStr = js2uriHelpers.js2uriString(jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
-        console.log('jsURIStr: ' + jsURIStr);
+
         // apply options to URI string
         jsURIStr = js2uriHelpers.js2uriStringReplaces(jsURIStr, jsURI_opt);
-        console.log('jsURIStr: ' + jsURIStr);
-        // write string to file & log
+
+        // write string to file & log results
         grunt.file.write(filepair.dest, jsURIStr);
+        console.log(filepair.src + ' -> ' + filepair.dest + ' (' + jsURIStr.length + ' bytes)');
       });
     }
     catch(e) {
@@ -59,5 +65,4 @@ module.exports = function(grunt) {
     }
     return true;
   });
-
 };
