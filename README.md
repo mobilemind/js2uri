@@ -30,8 +30,8 @@ Add the following to the `grunt.initConfig` section of your project's `grunt.js`
 ```javascript
 js2uri:  {
   dist: {
-	src: 'dist/lintedAndMinifiedFile.js',
-	dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
+  src: 'dist/lintedAndMinifiedFile.js',
+  dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
   }
 }
 ```
@@ -65,8 +65,8 @@ lint: {
 // note src & dest options
 min: {
   dist: {
-	src: ['src/*.js'],
-	dest: 'dist/lintedAndMinifiedFile.js'
+  src: ['src/*.js'],
+  dest: 'dist/lintedAndMinifiedFile.js'
   }
 },
 uglify: {
@@ -78,10 +78,10 @@ watch: {
 // note critical jshint options
 jshint: {
   options: {
-	strict: false,
-	...
-	scripturl: true,
-	browser: true
+  strict: false,
+  ...
+  scripturl: true,
+  browser: true
   },
   globals: {}
 },
@@ -100,8 +100,8 @@ js2uri:  {
     entityEncode: false
   },
   dist: {
-	src: 'dist/lintedAndMinifiedFile.js',
-	dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
+  src: 'dist/lintedAndMinifiedFile.js',
+  dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
   }
 }
 });

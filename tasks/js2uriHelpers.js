@@ -1,9 +1,8 @@
 // ==========================================================================
 // HELPERS
 // ==========================================================================
-(function(exports) {
 
-  'use strict';
+(function(exports) {
   // URI protocol + URI encoding
   exports.js2uriString = function(jsString, uriProtocol, newLineFlag) {
     var myEOL = newLineFlag ? '\n' : '\r\n';
@@ -40,5 +39,4 @@
     // all replacements done
     return String(uriStr);
   };
-
 }(typeof exports === 'object' && exports || this));
