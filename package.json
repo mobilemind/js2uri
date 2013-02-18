@@ -23,18 +23,18 @@
   ],
   "main": "grunt.js",
   "engines": {
-    "node": "~0.8.20"
+    "node": "0.8.x"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "grunt": "~0.4.0rc8"
+    "grunt": "0.4.x"
   },
   "devDependencies": {
     "grunt": "~0.4.0rc8",
-    "grunt-contrib-jshint": "0.1.1rc6",
-    "grunt-contrib-nodeunit": "0.1.2rc6"
+    "grunt-contrib-jshint": ">=0.1.1",
+    "grunt-contrib-nodeunit": ">0.1.1"
   },
   "keywords": [
     "gruntplugin"
