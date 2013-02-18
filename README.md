@@ -4,8 +4,8 @@ grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` book
 or an iOS app protocol scheme link.
 
 ## Compatibility
-Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier versions
-of grunt. Use version 1.2.0 if you require grunt 0.3.x compatibility.
+Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
+versions of grunt. Use [js2uri 1.2.0 ]if you require grunt 0.3.x compatibility.
 
 ## Example
 The code
@@ -18,65 +18,53 @@ becomes
 ```javascript
 javascript:alert('Hello.%20The%20current%20URL%20is:%20'%20+%20location.href);void'0'
 ```
+Note that the "0" in `void'0'` can be used to embed a custom version number in a bookmarklet.
 
 ## Getting Started
 ### Install
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started]
-with: `npm install js2uri`
+Install this grunt plugin next to your project's [Gruntfile.js gruntfile][getting_started]
+with: `npm install js2uri --save`. The `--save` options will add `js2uri` to the
+_dependencies_ section of your project's [package.json] file.
 
-### Edit grunt.js
+### Edit Gruntfile.js
 
-Add the following to the `grunt.initConfig` section of your project's `grunt.js` file:
+Add the following to the `grunt.initConfig` section of your project's `Gruntfile.js` file:
 ```javascript
 js2uri:  {
-  dist: {
-  src: 'dist/lintedAndMinifiedFile.js',
-  dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
-  }
+  'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js']
 }
 ```
-Edit the  values for the `src:` (source) and `dest:` (destination) as appropriate.
+Edit the  values for the `dist/uriVersion...` (destination) and `dist/linted...` (source)
+as appropriate.
 
-Below the `grunt.initConfig` section, add this line to your project's `grunt.js`.
+Below the `grunt.initConfig` section, add this line to your project's `Gruntfile.js`.
 
 ```javascript
 // load external task
 grunt.loadNpmTasks('js2uri');
 ```
 
-Finally, ensure that `lint` and `min` tasks are called before `js2uri`, such as here:
+Finally, ensure that `jshint` and `uglify` tasks are called before `js2uri`, such as here:
 
 ```javascript
 // default task
-grunt.registerTask('default', [ "lint", "min", "js2uri"] );
+grunt.registerTask('default', [ "jshint", "uglify", "js2uri"] );
 ```
 
 ## Documentation
-_(More coming soon)_
-
-A more elaborated `grunt.js` follows below to clarify expectations and options relating to
-`js2uri`.
+An elaborated `Gruntfile.js` follows below to clarify expectations and options relating to
+`js2uri`. Note that as of js2uri v1.3.0 the [grunt] 0.4.x target data formats are
+supported for specifying files. See [gruntjs wiki - Inside Multi Tasks: this.file].
 
 ```javascript
 ...
-lint: {
-  files: ['grunt.js', 'src/*.js']
+// if meta object exists js2uri will tempt to use version as options.customVersion value
+meta: {
+  version: '1.6.0'
 },
-// note src & dest options
-min: {
-  dist: {
-  src: ['src/*.js'],
-  dest: 'dist/lintedAndMinifiedFile.js'
-  }
-},
-uglify: {
-},
-watch: {
-  files: ['grunt.js', 'src/*.js', 'package.json'],
-  tasks: 'lint'
-},
-// note critical jshint options
+// note critical jshint options for strict, scripturl, & browser
 jshint: {
+  files: ['grunt.js', 'src/*.js'],
   options: {
   strict: false,
   ...
@@ -85,32 +73,44 @@ jshint: {
   },
   globals: {}
 },
+// note compact file spec-- 'destinationfile': ['sourcefile'],
+uglify: {
+  'dist/lintedAndMinifiedFile.js': ['src/*.js'],
+  options: {
+    mangle: {toplevel: true},
+    squeeze: {sequences: false, conditionals: false, hoist_vars: true},
+    codegen: {quote_keys: false}
+  }
+},
 // js2uri default options are shown
-// note src below IS manually set to dest from 'min' task above
+// note use of compact form of grunt 0.4.x files spec-- 'destinationfile': ['sourcefile'],
 js2uri:  {
+  'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js'],
   options: {
     protocol: 'javascript:',
     useNewlineEOL: true,
     useSingleQuote: true,
     appendVoid: true,
-    customVersion: '', // use this if set, ELSE use version from package.jason OR meta. if available
+    customVersion: '', // use this if set, ELSE use version from meta above (if available)
     appendVersion: false,
     noLastSemicolon: true,
     forceLastSemicolon: false,
     entityEncode: false
-  },
-  dist: {
-  src: 'dist/lintedAndMinifiedFile.js',
-  dest: 'dist/uriVersionOflintedAndMinifiedFile.js'
   }
 }
 });
 
-// load external task
+// Load "jshint" plugin
+grunt.loadNpmTasks('grunt-contrib-jshint');
+
+// Load "uglify" plugin
+grunt.loadNpmTasks('grunt-contrib-uglify');
+
+// Load "js2uri" plugin
 grunt.loadNpmTasks('js2uri');
 
-// default task
-grunt.registerTask('default', [ "lint", "min", "js2uri"] );
+// Default task
+grunt.registerTask('default', [ "jshint", "uglify", "js2uri"] );
 ```
 
 ## Contributing
@@ -129,10 +129,15 @@ Lint and test your code using [grunt][grunt].
 
 1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding '<', '>' and '&'.
 
+1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x, improved package.json, update README
+
 ## License
 Copyright (c) 2012, 2013 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
 [grunt]: http://gruntjs.com/
-[getting_started]: https://github.com/gruntjs/grunt/blob/0.3-stable/docs/getting_started.md
+[gruntjs wiki - Inside Multi Tasks: this.file]: https://github.com/gruntjs/grunt/wiki/Inside-Tasks
+[getting_started]: https://github.com/gruntjs/grunt/wiki/Getting-started
+[package.json]: https://npmjs.org/doc/json.html
+[js2uri 1.2.0 ]: https://github.com/mobilemind/js2uri/tree/1.2.0
