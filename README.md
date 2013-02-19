@@ -60,11 +60,11 @@ supported for specifying files. See [gruntjs wiki - Inside Multi Tasks: this.fil
 ...
 // if meta object exists js2uri will tempt to use version as options.customVersion value
 meta: {
-  version: '1.6.0'
+  version: '1.6.1'
 },
 // note critical jshint options for strict, scripturl, & browser
 jshint: {
-  files: ['grunt.js', 'src/*.js'],
+  files: ['Gruntfile.js', 'src/*.js'],
   options: {
   strict: false,
   ...
@@ -130,6 +130,8 @@ Lint and test your code using [grunt][grunt].
 1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding '<', '>' and '&'.
 
 1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x, improved package.json, update README
+
+1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js, replace directives
 
 ## License
 Copyright (c) 2012, 2013 Tom King
