@@ -1,3 +1,4 @@
+"use strict";
 module.exports = function(grunt) {
 
   // Project configuration
@@ -6,17 +7,21 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', 'tasks/**/*.js', 'test/**/*.js'],
       options: {
-        strict: false,
+        strict: true,
         immed: true,
         latedef: true,
         noarg: true,
         sub: true,
         undef: true,
+        unused: true,
+        trailing: true,
         boss: true,
         eqnull: true,
+        es5: true,
         scripturl: true,
-        node: true,
-        es5: true
+        validthis: true,
+        lastsemic: true,
+        node: true
       }
     },
     nodeunit: {
