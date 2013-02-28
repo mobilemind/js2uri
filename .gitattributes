@@ -1,0 +1,14 @@
+# Set default behavior for line endings, in case core.autocrlf is not set
+# * text=auto
+# Force lf as eol* text eol=lf
+
+# Specify files to always be normalized/converted  to native line endings on checkout
+#*.c text
+
+# Specify files that will always have CRLF line endings on checkout
+# *.sln text eol=crlf
+
+# Specify files that are truly binary and should not be modified
+# *.png binary
+
+
