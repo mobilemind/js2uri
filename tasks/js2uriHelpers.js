@@ -1,7 +1,7 @@
 // ==========================================================================
 // HELPERS
 // ==========================================================================
-
+"use strict";
 (function(exports) {
   // URI protocol + URI encoding
   exports.js2uriString = function(jsString, uriProtocol, newLineFlag) {

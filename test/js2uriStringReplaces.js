@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var grunt = require('grunt');
 var js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
@@ -20,9 +20,8 @@ var js2uriHelpers = require('../tasks/js2uriHelpers.js');
     test.ifError(value)
 */
 
-  // globals for js2uri testing
-  var jsURItest_version = '';
   // use to set default version to  metadata version OR pkg.version if available
+  var jsURItest_version = '';
   if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
   else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
 

@@ -1,5 +1,4 @@
-'use strict';
-var grunt = require('grunt');
+"use strict";
 var js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit

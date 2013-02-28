@@ -5,7 +5,7 @@
  * Copyright (c) 2012 Tom King
  * Licensed under the MIT license.
  */
-'use strict';
+"use strict";
 module.exports = function(grunt) {
   // HELPERS & PRIVATE VARS
   var js2uriHelpers = require('./js2uriHelpers.js');
