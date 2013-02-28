@@ -133,6 +133,8 @@ Lint and test your code using [grunt][grunt].
 
 1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js, replace directives
 
+1.3.2: February 28, 2013 - Better jshint options in Gruntfile.js; package.json updates
+
 ## License
 Copyright (c) 2012, 2013 Tom King
 Licensed under the MIT license.
