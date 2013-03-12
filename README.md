@@ -135,6 +135,8 @@ Lint and test your code using [grunt][grunt].
 
 1.3.2: February 28, 2013 - Better jshint options in Gruntfile.js; package.json updates
 
+1.3.3: March 12, 2013 - Update package.json for node 0.10.0 (ie node>=0.8.0)
+
 ## License
 Copyright (c) 2012, 2013 Tom King
 Licensed under the MIT license.
