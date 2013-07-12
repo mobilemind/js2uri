@@ -17,7 +17,6 @@ module.exports = function(grunt) {
         trailing: true,
         boss: true,
         eqnull: true,
-        es5: true,
         scripturl: true,
         validthis: true,
         lastsemic: true,

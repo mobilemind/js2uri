@@ -5,7 +5,7 @@ or an iOS app protocol scheme link.
 
 ## Compatibility
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
-versions of grunt. Use [js2uri 1.2.0 ]if you require grunt 0.3.x compatibility.
+versions of grunt. Use [js2uri 1.2.0 ] if you require grunt 0.3.x compatibility.
 
 ## Example
 The code
@@ -119,28 +119,31 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
-1.0.0 December 31, 2012
+1.3.6: July 12, 2013 - update to require node 0.10.x, and more current grunt-contrib utils
 
-1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and `forceLastSemicolon:`.
-
-1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and `forceLastSemicolon:`.
-
-1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion:false` and `customVersion:`.
-
-1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding '<', '>' and '&'.
-
-1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x, improved package.json, update README
-
-1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js, replace directives
-
-1.3.2: February 28, 2013 - Better jshint options in Gruntfile.js; package.json updates
-
-1.3.3: March 12, 2013 - Update `package.json` for node 0.10.0 (ie `node>=0.8.0`)
+1.3.5: May 20, 2013 - update license URL in `package.json`
 
 1.3.4: May 19, 2013 - `package.json` repository.url uses `https://` instead of `git://`
 and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 
-1.3.5: May 20, 2013 - update license URL in `package.json`
+1.3.3: March 12, 2013 - Update `package.json` for node 0.10.0 (ie `node>=0.8.0`)
+
+1.3.2: February 28, 2013 - Better jshint options in Gruntfile.js; package.json updates
+
+1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js, replace directives
+
+1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x, improved package.json, update README
+
+1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding '<', '>' and '&'.
+
+1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion:false` and `customVersion:`.
+
+1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and `forceLastSemicolon:`.
+
+1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and `forceLastSemicolon:`.
+
+1.0.0 December 31, 2012 - initial release
+
 
 ## License
 Copyright (c) 2012, 2013 Tom King
