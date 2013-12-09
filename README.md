@@ -1,5 +1,7 @@
 # js2uri
 
+[![Build Status](https://secure.travis-ci.org/mobilemind/js2uri.png?branch=master)](http://travis-ci.org/mobilemind/js2uri)
+
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
 
@@ -119,6 +121,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.8: December 9, 2013 - update to `grunt-contrib-jshint` 0.7.x and integrate Travis CI
+
 1.3.7: July 28, 2013 - update to `grunt-contrib-jshint` 0.6.x and `grunt-contrib-nodeunit` 0.2.x
 
 1.3.6: July 12, 2013 - update to require node 0.10.x, and more current grunt-contrib utils
