@@ -39,13 +39,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
   // test
-  grunt.registerTask('test',  ['jshint', 'nodeunit']);
-
-  // Travis CI task (happens to be same as test and default
-  grunt.registerTask('travis',  ['jshint', 'nodeunit']);
+  grunt.registerTask('test',  ['jshint:files', 'nodeunit:files']);
 
   // Default task
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['test']);
 
   // Load local tasks
   grunt.loadTasks('tasks');

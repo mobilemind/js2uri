@@ -26,7 +26,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "test": "grunt travis --verbose"
+    "test": "grunt test --verbose"
   },
   "dependencies": {
     "grunt": "0.4.x"
