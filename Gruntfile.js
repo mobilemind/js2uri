@@ -23,6 +23,10 @@ module.exports = function(grunt) {
         node: true
       }
     },
+    watch: {
+      files: '<config:jshint.files>',
+      tasks: ['jshint', 'nodeunit']
+    },
     nodeunit: {
       files: ['test/**/*.js']
     }
@@ -34,10 +38,16 @@ module.exports = function(grunt) {
   // Load "nodeunit" plugin
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-  // Load local tasks
-  grunt.loadTasks('tasks');
+  // test
+  grunt.registerTask('test',  ['jshint', 'nodeunit']);
+
+  // Travis CI task (happens to be same as test and default
+  grunt.registerTask('travis',  ['jshint', 'nodeunit']);
 
   // Default task
   grunt.registerTask('default', ['jshint', 'nodeunit']);
+
+  // Load local tasks
+  grunt.loadTasks('tasks');
 
 };
