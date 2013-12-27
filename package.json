@@ -26,14 +26,10 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "test": "grunt test --verbose"
-  },
-  "dependencies": {
-    "grunt": "0.4.x"
+    "test": "grunt test"
   },
   "devDependencies": {
   	"grunt-cli": "0.1.x",
-    "grunt": "0.4.x",
     "grunt-contrib-jshint": "0.7.x",
     "grunt-contrib-nodeunit": "0.2.x"
   },
