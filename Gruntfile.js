@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['Gruntfile.js', 'tasks/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'tasks/js2uri*.js', 'test/js2uri*.js'],
       options: {
         strict: true,
         immed: true,
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       tasks: ['jshint', 'nodeunit']
     },
     nodeunit: {
-      files: ['test/**/*.js']
+      files: ['test/js2uri*.js']
     }
   });
 
