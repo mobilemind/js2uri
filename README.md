@@ -121,6 +121,10 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.10: March 26, 2014 - update to `grunt-contrib-jshint` 0.9.x; `grunt-contrib-nodeunit` to 0.3.x
+
+1.3.9: December 27, 2013 - update to `grunt-contrib-jshint` 0.8.x and streamline dependencies
+
 1.3.8: December 9, 2013 - update to `grunt-contrib-jshint` 0.7.x and integrate Travis CI
 
 1.3.7: July 28, 2013 - update to `grunt-contrib-jshint` 0.6.x and `grunt-contrib-nodeunit` 0.2.x
@@ -152,7 +156,7 @@ and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 
 
 ## License
-Copyright (c) 2012, 2013 Tom King
+Copyright (c) 2012, 2013, 2014 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
