@@ -121,6 +121,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.11: April 21, 2014 - update to `grunt-contrib-jshint` 0.10.x
+
 1.3.10: March 26, 2014 - update to `grunt-contrib-jshint` 0.9.x; `grunt-contrib-nodeunit` to 0.3.x
 
 1.3.9: December 27, 2013 - update to `grunt-contrib-jshint` 0.8.x and streamline dependencies
