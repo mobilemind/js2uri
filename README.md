@@ -9,6 +9,8 @@ or an iOS app protocol scheme link.
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
 versions of grunt. Use [js2uri 1.2.0 ] if you require grunt 0.3.x compatibility.
 
+Version 1.3.14 works with node 0.10.x - 0.12.x as the engine.
+
 ## Example
 The code
 
@@ -121,6 +123,10 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.14: February 13, 2015 - work with node engine 0.10.x - 0.12.x
+
+1.3.13: January 22, 2015 - update to `grunt-contrib-jshint` 0.11.x; add some stricter checks
+
 1.3.12: June 10, 2014 - update to `grunt-contrib-nodeunit` 0.4.x
 
 1.3.11: April 21, 2014 - update to `grunt-contrib-jshint` 0.10.x
