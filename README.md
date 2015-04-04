@@ -123,6 +123,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.15: April 4, 2015 - update devDependencies and copyright info
+
 1.3.14: February 13, 2015 - work with node engine 0.10.x - 0.12.x
 
 1.3.13: January 22, 2015 - update to `grunt-contrib-jshint` 0.11.x; add some stricter checks
