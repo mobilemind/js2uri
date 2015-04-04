@@ -166,7 +166,7 @@ and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 
 
 ## License
-Copyright (c) 2012, 2013, 2014 Tom King
+Copyright (c) 2012-2015 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
