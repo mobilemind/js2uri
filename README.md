@@ -9,7 +9,7 @@ or an iOS app protocol scheme link.
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
 versions of grunt. Use [js2uri 1.2.0 ] if you require grunt 0.3.x compatibility.
 
-Version 1.3.14 works with node 0.10.x - 0.12.x as the engine.
+Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
 
 ## Example
 The code
@@ -58,7 +58,7 @@ grunt.registerTask('default', [ "jshint", "uglify", "js2uri"] );
 ## Documentation
 An elaborated `Gruntfile.js` follows below to clarify expectations and options relating to
 `js2uri`. Note that as of js2uri v1.3.0 the [grunt] 0.4.x target data formats are
-supported for specifying files. See [gruntjs wiki - Inside Multi Tasks: this.file].
+supported for specifying files. See [gruntjs documentation - Configuring Tasks: files].
 
 ```javascript
 ...
@@ -123,6 +123,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.16: May 15, 2015 - update license info in `package.json` to use new property and SPDX
+
 1.3.15: April 4, 2015 - update devDependencies and copyright info
 
 1.3.14: February 13, 2015 - work with node engine 0.10.x - 0.12.x
@@ -173,7 +175,7 @@ Licensed under the MIT license.
 
 <!-- reference URLs -->
 [grunt]: http://gruntjs.com/
-[gruntjs wiki - Inside Multi Tasks: this.file]: https://github.com/gruntjs/grunt/wiki/Inside-Tasks
-[getting_started]: https://github.com/gruntjs/grunt/wiki/Getting-started
-[package.json]: https://npmjs.org/doc/json.html
+[gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
+[getting_started]: http://gruntjs.com/getting-started#the-gruntfile
+[package.json]: https://docs.npmjs.com/files/package.json
 [js2uri 1.2.0 ]: https://github.com/mobilemind/js2uri/tree/1.2.0
