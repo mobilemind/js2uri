@@ -1,6 +1,6 @@
 # js2uri [![NPM version](https://badge.fury.io/js/js2uri.svg)](http://badge.fury.io/js/js2uri)
 
-[![Build Status](https://secure.travis-ci.org/mobilemind/js2uri.png?branch=master)](http://travis-ci.org/mobilemind/js2uri)
+[![Build Status](https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master)](http://travis-ci.org/mobilemind/js2uri)
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
