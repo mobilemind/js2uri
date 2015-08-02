@@ -1,6 +1,11 @@
-# js2uri [![NPM version](https://badge.fury.io/js/js2uri.svg)](http://badge.fury.io/js/js2uri)
+# js2uri
 
-[![Build Status](https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master)](http://travis-ci.org/mobilemind/js2uri)
+[![Build Status][build-image]][build-url]
+
+[![NPM version][npm-image]][npm-url]
+
+[![Dependency Status][dep-image]][dep-url]
+[![devDependency Status][devDep-image]][devDep-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
@@ -174,6 +179,15 @@ Copyright (c) 2012-2015 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
+[build-image]: https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master
+[build-url]: http://travis-ci.org/mobilemind/js2uri
+[npm-image]: https://img.shields.io/npm/v/js2uri.svg
+[npm-url]: https://www.npmjs.com/package/js2uri
+[dep-image]: https://david-dm.org/mobilemind/js2uri.svg
+[dep-url]: https://david-dm.org/mobilemind/js2uri
+[devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
+[devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
+
 [grunt]: http://gruntjs.com/
 [gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
 [getting_started]: http://gruntjs.com/getting-started#the-gruntfile
