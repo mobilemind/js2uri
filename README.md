@@ -174,7 +174,7 @@ and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 Copyright (c) 2012-2015 Tom King
 Licensed under the MIT license.
 
-<!-- reference URLs -->
+<!-- Badge URLs -->
 [build-image]: https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master
 [build-url]: http://travis-ci.org/mobilemind/js2uri
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
@@ -183,7 +183,7 @@ Licensed under the MIT license.
 [dep-url]: https://david-dm.org/mobilemind/js2uri
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
-
+<!-- Reference links -->
 [grunt]: http://gruntjs.com/
 [gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
 [getting_started]: http://gruntjs.com/getting-started#the-gruntfile
