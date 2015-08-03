@@ -1,14 +1,10 @@
-# js2uri
-
-[![Build Status][build-image]][build-url]
-
-[![NPM version][npm-image]][npm-url]
-
-[![Dependency Status][dep-image]][dep-url]
-[![devDependency Status][devDep-image]][devDep-url]
+# js2uri [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
+
+[![Dependency Status][dep-image]][dep-url]
+[![devDependency Status][devDep-image]][devDep-url]
 
 ## Compatibility
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
