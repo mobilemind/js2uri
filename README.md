@@ -1,10 +1,10 @@
-# js2uri [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
+# js2uri
+
+[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
+[![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
-
-[![Dependency Status][dep-image]][dep-url]
-[![devDependency Status][devDep-image]][devDep-url]
 
 ## Compatibility
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
@@ -124,6 +124,10 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.18: August 3, 2015 - no functional changes. just update forced to update npmjs.com docs
+
+1.3.17: August 3, 2015 - no functional changes. forced update to update npmjs.com
+
 1.3.16: May 15, 2015 - update license info in `package.json` to use new property and SPDX
 
 1.3.15: April 4, 2015 - update devDependencies and copyright info
@@ -183,6 +187,7 @@ Licensed under the MIT license.
 [dep-url]: https://david-dm.org/mobilemind/js2uri
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
+
 <!-- Reference links -->
 [grunt]: http://gruntjs.com/
 [gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
