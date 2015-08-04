@@ -1,7 +1,8 @@
 # js2uri
-
-[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
-[![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][dep-image]][dep-url]
+[![devDependency Status][devDep-image]][devDep-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
@@ -124,9 +125,7 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
-1.3.18: August 3, 2015 - no functional changes. just update forced to update npmjs.com docs
-
-1.3.17: August 3, 2015 - no functional changes. forced update to update npmjs.com
+1.3.19 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update npmjs.com docs
 
 1.3.16: May 15, 2015 - update license info in `package.json` to use new property and SPDX
 
@@ -180,7 +179,7 @@ Licensed under the MIT license.
 
 <!-- Badge URLs -->
 [build-image]: https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master
-[build-url]: http://travis-ci.org/mobilemind/js2uri
+[build-url]: https://travis-ci.org/mobilemind/js2uri
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
 [npm-url]: https://www.npmjs.com/package/js2uri
 [dep-image]: https://david-dm.org/mobilemind/js2uri.svg
