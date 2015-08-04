@@ -1,8 +1,6 @@
 # js2uri
-[![NPM version][npm-image]][npm-url]
-[![Build Status][build-image]][build-url]
-[![Dependency Status][dep-image]][dep-url]
-[![devDependency Status][devDep-image]][devDep-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
+[![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
@@ -125,7 +123,7 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
-1.3.19 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update npmjs.com docs
+1.3.20 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update npmjs.com docs
 
 1.3.16: May 15, 2015 - update license info in `package.json` to use new property and SPDX
 
@@ -177,19 +175,30 @@ and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 Copyright (c) 2012-2015 Tom King
 Licensed under the MIT license.
 
-<!-- Badge URLs -->
+<!-- reference URLs -->
+
 [build-image]: https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master
+
 [build-url]: https://travis-ci.org/mobilemind/js2uri
+
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
+
 [npm-url]: https://www.npmjs.com/package/js2uri
+
 [dep-image]: https://david-dm.org/mobilemind/js2uri.svg
+
 [dep-url]: https://david-dm.org/mobilemind/js2uri
+
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
+
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
 
-<!-- Reference links -->
 [grunt]: http://gruntjs.com/
+
 [gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
+
 [getting_started]: http://gruntjs.com/getting-started#the-gruntfile
+
 [package.json]: https://docs.npmjs.com/files/package.json
+
 [js2uri 1.2.0 ]: https://github.com/mobilemind/js2uri/tree/1.2.0
