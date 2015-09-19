@@ -9,7 +9,8 @@ or an iOS app protocol scheme link.
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
 versions of grunt. Use [js2uri 1.2.0 ] if you require grunt 0.3.x compatibility.
 
-Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
+Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine. Version 1.3.21
+extends this to node >= 0.10.0 (e.g., now works w/ node 4.0.x).
 
 ## Example
 The code
@@ -123,6 +124,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+1.3.21: update package.json to support use of `node` >= 0.10.0 (e.g., now works w/ node 4.0.x)
+
 1.3.20 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update npmjs.com docs
 
 1.3.16: May 15, 2015 - update license info in `package.json` to use new property and SPDX
