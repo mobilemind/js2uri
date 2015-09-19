@@ -27,7 +27,6 @@
     "grunt": ">=0.4.0"
   },
   "devDependencies": {
-  	"grunt-cli": ">=0.1.0",
     "grunt-contrib-jshint": "0.11.x",
     "grunt-contrib-nodeunit": "0.4.x"
   },
