@@ -124,6 +124,9 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+
+1.3.22: update .travis.yml to test with `node` 0.10 0.11, 0.12, 4.2 and 5.0
+
 1.3.21: update package.json to support use of `node` >= 0.10.0 (e.g., now works w/ node 4.0.x)
 
 1.3.20 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update npmjs.com docs
