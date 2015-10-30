@@ -9,10 +9,10 @@ module.exports = function(grunt) {
       options: {
         strict: true,
         bitwise: true,
-        immed: true,
         freeze: true,
         latedef: true,
         noarg: true,
+        notypeof: true,
         sub: true,
         undef: true,
         unused: true,
