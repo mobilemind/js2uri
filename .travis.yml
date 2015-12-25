@@ -8,6 +8,6 @@ node_js:
   - "0.11"
   - "0.12"
   - "4.2"
-  - "5.1"
+  - "5.3"
 before_script:
   - npm install -g npm@latest && npm install -g grunt-cli
