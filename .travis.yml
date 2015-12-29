@@ -1,13 +1,16 @@
 branches:
   except:
-    - gh-pages
+  - gh-pages
 sudo: false
 language: node_js
 node_js:
-  - "0.10"
-  - "0.11"
-  - "0.12"
-  - "4.2"
-  - "5.3"
+- '0.10'
+- '0.11'
+- '0.12'
+- '4.2'
+- '5.3'
 before_script:
-  - npm install -g npm@latest && npm install -g grunt-cli
+- npm install -g npm@latest && npm install -g grunt-cli
+notifications:
+  slack:
+    secure: WFZX56KOZCVJn1EQAsY3ITF4nGXiRikd30+ExlFrSiDj75LG++fEL9vrV5mvErjj23283YfNha++kFcelSl7G1edk6/ykB8bP5pXc/S2XbgvYJW3lD6bx8IjsdJeRuCSOyK2i1QfToMGmEx6DBb+Tn0E0lX4Mv/ujIm/YkHlFQk=
