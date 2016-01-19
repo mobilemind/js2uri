@@ -125,6 +125,8 @@ Lint and test your code using [grunt][grunt].
 
 ## Release History
 
+1.3.23: update package.json to work with `grunt-contrib-jshint` 0.11.x - 0.12.x
+
 1.3.22: update .travis.yml to test with `node` 0.10 0.11, 0.12, 4.2 and 5.0
 
 1.3.21: update package.json to support use of `node` >= 0.10.0 (e.g., now works w/ node 4.0.x)
@@ -178,7 +180,7 @@ and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 
 
 ## License
-Copyright (c) 2012-2015 Tom King
+Copyright (c) 2012-2016 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
