@@ -10,7 +10,7 @@ Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earli
 versions of grunt. Use [js2uri 1.2.0 ] if you require grunt 0.3.x compatibility.
 
 Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine. Version 1.3.21
-extends this to node >= 0.10.0 (e.g., now works w/ node 4.0.x).
+extends this to node >= 0.10.0 (e.g., currently works w/ node 4.x and 5.x).
 
 ## Example
 The code
@@ -124,6 +124,8 @@ Add unit tests for any new or changed functionality.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+
+1.3.24: update package.json to work with `grunt-contrib-jshint` >= 0.11.0
 
 1.3.23: update package.json to work with `grunt-contrib-jshint` 0.11.x - 0.12.x
 
