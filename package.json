@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "grunt-contrib-jshint": ">=0.11.0",
-    "grunt-contrib-nodeunit": "0.4.x"
+    "grunt-contrib-nodeunit": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
