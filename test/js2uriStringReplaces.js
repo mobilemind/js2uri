@@ -1,6 +1,6 @@
 "use strict";
-var grunt = require('grunt');
-var js2uriHelpers = require('../tasks/js2uriHelpers.js');
+let grunt = require('grunt');
+let js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -21,11 +21,11 @@ var js2uriHelpers = require('../tasks/js2uriHelpers.js');
 */
 
   // use to set default version to  metadata version OR pkg.version if available
-  var jsURItest_version = '';
+  let jsURItest_version = '';
   if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
   else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
 
-  var jsURItest_opt = {
+  let jsURItest_opt = {
     protocol: 'javascript:',
     useNewlineEOL: true,
     useSingleQuote: true,
@@ -56,8 +56,8 @@ exports['js2uri'] = {
     test.expect(16);
 
     // ** default options
-    var testVal = '';
-    var expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
+    let testVal = '';
+    let expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #1 default options with "' + testVal + '" should return "' + expectedVal + '"');
 

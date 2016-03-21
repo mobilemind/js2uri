@@ -5,27 +5,27 @@
 (function(exports) {
   // URI protocol + URI encoding
   exports.js2uriString = function(jsString, uriProtocol, newLineFlag) {
-    var myEOL = newLineFlag ? '\n' : '\r\n';
+    const myEOL = newLineFlag ? '\n' : '\r\n';
     return String(uriProtocol) + encodeURI(jsString.split(myEOL)[0]);
   };
 
   // string replacements driven by config options
   exports.js2uriStringReplaces = function(uriStr, uriOpts) {
-    var tickRegEx = /%22/gm;
-    var lastColonRegex = /;$/;
+    const tickRegEx = /%22/gm;
+    const lastColonRegex = /;$/;
 
     // swapt use apostrophe? (most browsers don't require %22 for ')
     if (uriOpts.useSingleQuote) uriStr = uriStr.replace(tickRegEx,"'");
 
     // build-up suffix
-    var jsURISuffix = '';
+    let jsURISuffix = '';
     if (uriOpts.appendVoid) {
       // append semicolon if needed for syntax
       if (';' !== uriStr.charAt(uriStr.length-1)) jsURISuffix = ';';
       // append void
       jsURISuffix += 'void';
       // use version from options *or* '0'
-      var pkgVersion = uriOpts.customVersion;
+      let pkgVersion = uriOpts.customVersion;
       if (!uriOpts.appendVersion || undefined === pkgVersion || '' === pkgVersion) pkgVersion = 0;
       jsURISuffix += "'" + pkgVersion + "';";
     }

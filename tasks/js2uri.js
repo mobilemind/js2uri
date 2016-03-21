@@ -8,8 +8,8 @@
 "use strict";
 module.exports = function(grunt) {
   // HELPERS & PRIVATE VARS
-  var js2uriHelpers = require('./js2uriHelpers.js');
-  var jsURI_opt = {};
+  const js2uriHelpers = require('./js2uriHelpers.js');
+  let jsURI_opt = {};
 
   // Please see the grunt documentation for more information regarding task and
   // helper creation: https://github.com/gruntjs/grunt/blob/master/docs/toc.md
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('js2uri', 'Convert JavaScript to javascript: URI.', function() {
     try {
       // get options
-      var js2uri_pkgVersion = '';
+      let js2uri_pkgVersion = '';
 
       // default version to metadata version OR pkg.version if available
       if (undefined !== grunt.config('meta.version')) js2uri_pkgVersion = grunt.config('meta.version');
@@ -43,13 +43,13 @@ module.exports = function(grunt) {
       });
 
       // loop through files
-      var files = this.files;
+      let files = this.files;
       files.forEach(function(filepair) {
         // read source
-        var jsSourceStr = grunt.file.read(filepair.src);
+        let jsSourceStr = grunt.file.read(filepair.src);
 
         // convert javascript string to URI
-        var jsURIStr = js2uriHelpers.js2uriString(jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
+        let jsURIStr = js2uriHelpers.js2uriString(jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
 
         // apply options to URI string
         jsURIStr = js2uriHelpers.js2uriStringReplaces(jsURIStr, jsURI_opt);

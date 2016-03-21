@@ -1,5 +1,5 @@
 "use strict";
-var js2uriHelpers = require('../tasks/js2uriHelpers.js');
+let js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -37,8 +37,8 @@ exports['js2uri'] = {
     // test URI reserved and other special chars
     // reserved chars are: ; / ? : @ & = + $ ,
     // plus other potential issues: space, double quote, bracket, single quote, backslash,percent, less/greater than, vertical bar
-    var testVal = ';/?:@&=+," "[]\'\\%<>|';
-    var expectedVal = ";/?:@&=+,%22%20%22%5B%5D'%5C%25%3C%3E%7C";
+    let testVal = ';/?:@&=+," "[]\'\\%<>|';
+    let expectedVal = ";/?:@&=+,%22%20%22%5B%5D'%5C%25%3C%3E%7C";
     test.deepEqual(js2uriHelpers.js2uriString(testVal, '', true),
       expectedVal, 'js2uriString "' + testVal + '" should return "' + expectedVal + '"');
 
