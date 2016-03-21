@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       files: ['Gruntfile.js', 'tasks/js2uri*.js', 'test/js2uri*.js'],
       options: {
         bitwise: true,
-        // esversion: 5,
+        esversion: 6,
         freeze: true,
         latedef: true,
         noarg: true,
@@ -24,6 +24,7 @@ module.exports = function(grunt) {
         scripturl: true,
         sub: true,
         validthis: true,
+        varstmt: true,
         // environments
         node: true
       }
