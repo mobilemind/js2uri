@@ -7,7 +7,7 @@ node_js:
 - '4.4'
 - '5.9'
 before_script:
-- npm install -g npm@latest && npm install -g grunt-cli
+- npm config set progress=false && npm install -g npm@latest && npm install -g grunt-cli
 notifications:
   slack:
     secure: WFZX56KOZCVJn1EQAsY3ITF4nGXiRikd30+ExlFrSiDj75LG++fEL9vrV5mvErjj23283YfNha++kFcelSl7G1edk6/ykB8bP5pXc/S2XbgvYJW3lD6bx8IjsdJeRuCSOyK2i1QfToMGmEx6DBb+Tn0E0lX4Mv/ujIm/YkHlFQk=
