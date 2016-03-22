@@ -1,0 +1,22 @@
+{
+	"bitwise": true,
+	"esversion": 6,
+	"freeze": true,
+	"latedef": true,
+	"noarg": true,
+	"notypeof": true,
+	"strict": "global",
+	"trailing": true,
+	"undef": true,
+	"unused": true,
+	// relax options
+	"boss": true,
+	"eqnull": true,
+	"lastsemic": true,
+	"scripturl": true,
+	"sub": true,
+	"validthis": true,
+	"varstmt": true,
+	// environments
+	"node": true
+}
