@@ -127,6 +127,8 @@ Lint and test your code using [grunt][grunt].
 
 ## Release History
 
+1.4.2: updated package.json and .travis.tml to use `node` >5.0.0 and `grunt` >1.0.0
+
 1.4.1: internals use es6 let/const syntax; build tested with `grunt` 1.0.0 and updated Travis-CI `.travis.yml` file
 
 1.4.0: update to use LTS releases of `node` (4.x, 5.x) and `grunt-contrib-...` 1.x releases
