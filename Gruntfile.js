@@ -16,6 +16,9 @@ module.exports = function(grunt) {
     },
     nodeunit: {
       files: ['test/js2uri*.js']
+    },
+    yamllint: {
+			files: { src: [ '*.yaml' ] },
     }
   });
 
@@ -25,8 +28,11 @@ module.exports = function(grunt) {
   // Load "nodeunit" plugin
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
+  // Load "yamllint" plugin
+  grunt.loadNpmTasks('grunt-yamllint');
+
   // test
-  grunt.registerTask('test',  ['jshint:files', 'nodeunit:files']);
+  grunt.registerTask('test',  ['jshint:files', 'nodeunit:files', 'yamllint:files' ]);
 
   // Default task
   grunt.registerTask('default', ['test']);
