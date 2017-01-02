@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       });
     }
     catch(e) {
-      grunt.warn(this.nameArgs + ' found errors: ' + e.message  + '\n', 10);
+      grunt.warn(this.nameArgs + ' found errors: ' + e.message + '\n', 10);
       return false;
     }
     return true;
