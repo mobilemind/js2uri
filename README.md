@@ -3,6 +3,7 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
 [![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
+[![Code Climate](https://codeclimate.com/repos/58696a3a292695071300829d/badges/298a35cf4fad3f983dc0/gpa.svg)](https://codeclimate.com/repos/58696a3a292695071300829d/feed)
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
 or an iOS app protocol scheme link.
