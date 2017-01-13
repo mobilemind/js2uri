@@ -1,23 +1,21 @@
-
 # js2uri
 
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
 [![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
-[![Code Climate](https://codeclimate.com/repos/58696a3a292695071300829d/badges/298a35cf4fad3f983dc0/gpa.svg)](https://codeclimate.com/repos/58696a3a292695071300829d/feed)
+[![CodeCLimate Status][codeClimate-image]][codeClimate-url]
 
-grunt plugin to convert a JavaScript file to a URI, such as a `javascript:` bookmarklet
-or an iOS app protocol scheme link.
+grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
+bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
 versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x compatibility.
 
-Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine. Version 1.3.21
-extends this to node >= 0.10.0 (e.g., currently works w/ node 4.x and 5.x).
+Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
+Version 1.3.21 extends this to node >= 0.10.0.
 
-Version 1.4.0 begins a focus on the LTS releases of `node` (i.e., currently 4.x and
-5.x).
+Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
 
 ## Example
 
@@ -33,8 +31,8 @@ becomes
 javascript:alert('Hello.%20The%20current%20URL%20is:%20'%20+%20location.href);void'0'
 ```
 
-Note that the "0" in `void'0'` can be used to embed a custom version number in a
-bookmarklet.
+Note that the "0" in `void'0'` can be used to embed a custom version number in
+a bookmarklet.
 
 ## Getting Started
 
@@ -66,8 +64,8 @@ Below the `grunt.initConfig` section, add this line to your project's `Gruntfile
 grunt.loadNpmTasks('js2uri');
 ```
 
-Finally, ensure that `jshint` and `uglify` tasks are called before `js2uri`, such
-as here:
+Finally, ensure that `jshint` and `uglify` tasks are called before `js2uri`,
+such as here:
 
 ```javascript
 // default task
@@ -249,6 +247,10 @@ Licensed under the MIT license.
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
 
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
+
+[codeClimate-image]: https://codeclimate.com/github/mobilemind/js2uri/badges/gpa.svg
+
+[codeClimate-url]: https://codeclimate.com/github/mobilemind/js2uri
 
 [grunt]: http://gruntjs.com/
 
