@@ -27,7 +27,7 @@ alert("Hello. The current URL is: " + location.href);
 
 becomes
 
-```javascript
+```url
 javascript:alert('Hello.%20The%20current%20URL%20is:%20'%20+%20location.href);void'0'
 ```
 
@@ -80,47 +80,47 @@ formats are supported for specifying files. See [gruntjs documentation - Configu
 Tasks: files].
 
 ```javascript
-...
-// if meta object exists js2uri will use version as options.customVersion value
-meta: {
-  version: '1.6.1'
-},
-// note critical jshint options for strict, scripturl, & browser
-jshint: {
-  files: ['Gruntfile.js', 'src/*.js'],
-  options: {
-  strict: false,
-  ...
-  scripturl: true,
-  browser: true
-  },
-  globals: {}
-},
-// note compact file spec-- 'destinationfile': ['sourcefile'],
-uglify: {
-  'dist/lintedAndMinifiedFile.js': ['src/*.js'],
-  options: {
-    mangle: {toplevel: true},
-    squeeze: {sequences: false, conditionals: false, hoist_vars: true},
-    codegen: {quote_keys: false}
-  }
-},
-// js2uri default options are shown
-// note use of compact form of grunt 0.4.x files spec-- 'destinationfile': ['sourcefile'],
-js2uri:  {
-  'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js'],
-  options: {
-    protocol: 'javascript:',
-    useNewlineEOL: true,
-    useSingleQuote: true,
-    appendVoid: true,
-    customVersion: '', // use this if set, ELSE use version from meta above (if available)
-    appendVersion: false,
-    noLastSemicolon: true,
-    forceLastSemicolon: false,
-    entityEncode: false
-  }
-}
+  grunt.initConfig({
+    // if meta object exists js2uri will use version as options.customVersion value
+    meta: {
+      version: '1.6.1',
+    },
+    // note critical jshint options for strict, scripturl, & browser
+    jshint: {
+      files: ['Gruntfile.js', 'src/*.js'],
+      options: {
+      strict: false,
+      ...
+      scripturl: true,
+      browser: true
+      },
+      globals: {}
+    },
+    // note compact file spec-- 'destinationfile': ['sourcefile'],
+    uglify: {
+      'dist/lintedAndMinifiedFile.js': ['src/*.js'],
+      options: {
+        mangle: {toplevel: true},
+        squeeze: {sequences: false, conditionals: false, hoist_vars: true},
+        codegen: {quote_keys: false}
+      }
+    },
+    // js2uri default options are shown
+    // note use of compact form of grunt 0.4.x files spec-- 'destinationfile': ['sourcefile'],
+    js2uri:  {
+      'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js'],
+      options: {
+        protocol: 'javascript:',
+        useNewlineEOL: true,
+        useSingleQuote: true,
+        appendVoid: true,
+        customVersion: '', // use this if set, ELSE use version from meta above (if available)
+        appendVersion: false,
+        noLastSemicolon: true,
+        forceLastSemicolon: false,
+        entityEncode: false
+      }
+    }
 });
 
 // Load "jshint" plugin
