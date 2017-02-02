@@ -114,7 +114,7 @@ Tasks: files].
         useNewlineEOL: true,
         useSingleQuote: true,
         appendVoid: true,
-        customVersion: '', // use this if set, ELSE use version from meta above (if available)
+        customVersion: '', // use this if set, ELSE use meta above (if available)
         appendVersion: false,
         noLastSemicolon: true,
         forceLastSemicolon: false,
