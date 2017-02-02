@@ -144,6 +144,8 @@ Lint and test your code using [grunt][grunt].
 
 ## Release History
 
+1.4.4: remove jshint and replace with eslint checks; bump version
+
 1.4.3: add CodeClimate yaml and checks; update based on lint feedback
 
 1.4.2: updated package.json and .travis.tml to use `node` >5.0.0 and `grunt` >1.0.0
