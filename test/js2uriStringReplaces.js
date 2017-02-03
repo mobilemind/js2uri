@@ -44,7 +44,7 @@ let js2uriHelpers = require('../tasks/js2uriHelpers.js');
 
 
 // ** Nodeunit tests **
-exports['js2uri'] = {
+exports.js2uri = {
   setUp: function(done) {
     // setup here
     grunt.config('js2uri.options.dist.src', ['test/null-js']);
@@ -57,32 +57,32 @@ exports['js2uri'] = {
 
     // ** default options
     let testVal = '';
-    let expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
+    let expectedVal = ";void'" + (!jsURItest_opt.appendVersion || '' === jsURItest_version ? 0 : jsURItest_version) + "'";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #1 default options with "' + testVal + '" should return "' + expectedVal + '"');
 
     testVal = ';';
-    expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "'";
+    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || '' === jsURItest_version ? 0 : jsURItest_version) + "'";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #2 default options with "' + testVal + '" should return "' + expectedVal + '"');
 
     // ** with trailing semicolon
     jsURItest_opt.noLastSemicolon = false;
     testVal = '';
-    expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "';";
+    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || '' === jsURItest_version ? 0 : jsURItest_version) + "';";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #3 noLastSemicolon:' + jsURItest_opt.noLastSemicolon + ' null should return "' + expectedVal + '"');
 
     jsURItest_opt.noLastSemicolon = false;
     testVal = ';';
-    expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "';";
+    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || '' === jsURItest_version ? 0 : jsURItest_version) + "';";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #4 noLastSemicolon:' + jsURItest_opt.noLastSemicolon + ' ";" should return "' + expectedVal + '"');
 
     // ** append version
     jsURItest_opt.appendVersion = true;
     testVal = '';
-    expectedVal = ";void'" + ((!jsURItest_opt.appendVersion || '' === jsURItest_version) ? 0 : jsURItest_version) + "';";
+    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || '' === jsURItest_version ? 0 : jsURItest_version) + "';";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #5 appendVersion:' + jsURItest_opt.appendVersion + ' null should return "' + expectedVal + '"');
 

@@ -19,7 +19,7 @@ let js2uriHelpers = require('../tasks/js2uriHelpers.js');
     test.ifError(value)
 */
 
-exports['js2uri'] = {
+exports.js2uri = {
   setUp: function(done) {
     // setup here
     done();
