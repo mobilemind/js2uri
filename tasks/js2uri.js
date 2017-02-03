@@ -25,28 +25,31 @@ module.exports = function(grunt) {
       let js2uri_pkgVersion = '';
 
       // default version to metadata version OR pkg.version if available
-      if (undefined !== grunt.config('meta.version')) js2uri_pkgVersion = grunt.config('meta.version');
-      else if (undefined !== grunt.config('pkg.version')) js2uri_pkgVersion = grunt.config('pkg.version');
+      if (undefined !== grunt.config('meta.version')) {
+        js2uri_pkgVersion = grunt.config('meta.version');
+      } else if (undefined !== grunt.config('pkg.version')) {
+        js2uri_pkgVersion = grunt.config('pkg.version');
+			}
 
       // set options
       jsURI_opt = this.options({
         // Default options
-        protocol: 'javascript:',
-        useNewlineEOL: true,
-        useSingleQuote: true,
-        appendVoid: true,
-        customVersion: js2uri_pkgVersion,
-        appendVersion: false,
-        noLastSemicolon: true,
-        forceLastSemicolon: false,
-        entityEncode: false
+       "protocol": 'javascript:',
+        "useNewlineEOL": true,
+        "useSingleQuote": true,
+        "appendVoid": true,
+        "customVersion": js2uri_pkgVersion,
+        "appendVersion": false,
+        "noLastSemicolon": true,
+        "forceLastSemicolon": false,
+        "entityEncode": false
       });
 
       // loop through files
-      let files = this.files;
+      const files = this.files;
       files.forEach(function(filepair) {
         // read source
-        let jsSourceStr = grunt.file.read(filepair.src);
+        const jsSourceStr = grunt.file.read(filepair.src);
 
         // convert javascript string to URI
         let jsURIStr = js2uriHelpers.js2uriString(jsSourceStr, jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
@@ -58,8 +61,7 @@ module.exports = function(grunt) {
         grunt.file.write(filepair.dest, jsURIStr);
         console.log(filepair.src + ' -> ' + filepair.dest + ' (' + jsURIStr.length + ' bytes)');
       });
-    }
-    catch(e) {
+    } catch(e) {
       grunt.warn(this.nameArgs + ' found errors: ' + e.message + '\n', 10);
       return false;
     }
