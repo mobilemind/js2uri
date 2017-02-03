@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       // set options
       jsURI_opt = this.options({
         // Default options
-       "protocol": 'javascript:',
+        "protocol": 'javascript:',
         "useNewlineEOL": true,
         "useSingleQuote": true,
         "appendVoid": true,
