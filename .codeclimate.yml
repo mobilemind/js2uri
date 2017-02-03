@@ -4,7 +4,7 @@ engines:
     config:
       languages:
         javascript:
-          mass_threshold: 36
+          mass_threshold: 68
   eslint:
     enabled: true
   fixme:
@@ -18,5 +18,4 @@ ratings:
   - "**.module"
   - "**.md"
 exclude_paths:
-- test/
 - node_modules/
