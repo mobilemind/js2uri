@@ -1,5 +1,5 @@
 "use strict";
-let js2uriHelpers = require('../tasks/js2uriHelpers.js');
+const js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -20,11 +20,11 @@ let js2uriHelpers = require('../tasks/js2uriHelpers.js');
 */
 
 exports.js2uri = {
-  setUp: function(done) {
+  "setUp": function(done) {
     // setup here
     done();
   },
-  'js2uriString tests': function(test) {
+  "js2uriString tests": function(test) {
     test.expect(4);
 
     // test URI prefix

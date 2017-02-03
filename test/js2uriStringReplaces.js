@@ -1,6 +1,6 @@
 "use strict";
-let grunt = require('grunt');
-let js2uriHelpers = require('../tasks/js2uriHelpers.js');
+const grunt = require('grunt');
+const js2uriHelpers = require('../tasks/js2uriHelpers.js');
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -22,37 +22,43 @@ let js2uriHelpers = require('../tasks/js2uriHelpers.js');
 
   // use to set default version to  metadata version OR pkg.version if available
   let jsURItest_version = '';
-  if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
-  else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
+  if (undefined !== grunt.config('meta.version')) {
+    jsURItest_version = grunt.config('meta.version');
+  } else if (undefined !== grunt.config('pkg.version')) {
+    jsURItest_version = grunt.config('pkg.version');
+  }
 
-  let jsURItest_opt = {
-    protocol: 'javascript:',
-    useNewlineEOL: true,
-    useSingleQuote: true,
-    appendVoid: true,
-    customVersion: jsURItest_version,
-    appendVersion: false,
-    noLastSemicolon: true,
-    forceLastSemicolon: false,
-    entityEncode: false
+  const jsURItest_opt = {
+    "protocol": 'javascript:',
+    "useNewlineEOL": true,
+    "useSingleQuote": true,
+    "appendVoid": true,
+    "customVersion": jsURItest_version,
+    "appendVersion": false,
+    "noLastSemicolon": true,
+    "forceLastSemicolon": false,
+    "entityEncode": false
   };
 
   // now REset to use metadata OR pkg if available
-  if (undefined !== grunt.config('meta.version')) jsURItest_version = grunt.config('meta.version');
-  else if (undefined !== grunt.config('pkg.version')) jsURItest_version = grunt.config('pkg.version');
-  else jsURItest_version = '';
-
+  if (undefined !== grunt.config('meta.version')) {
+    jsURItest_version = grunt.config('meta.version');
+  } else if (undefined !== grunt.config('pkg.version')) {
+    jsURItest_version = grunt.config('pkg.version');
+  } else {
+    jsURItest_version = '';
+	}
 
 // ** Nodeunit tests **
 exports.js2uri = {
-  setUp: function(done) {
+  "setUp": function(done) {
     // setup here
     grunt.config('js2uri.options.dist.src', ['test/null-js']);
     grunt.config('js2uri.options.dist.dest', ['test/null-js.out']);
     grunt.config('js2uri.options.options', jsURItest_opt);
     done();
   },
-  'js2uriStringReplaces tests': function(test) {
+  "js2uriStringReplaces tests": function(test) {
     test.expect(16);
 
     // ** default options
