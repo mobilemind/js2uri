@@ -40,15 +40,6 @@ const js2uriHelpers = require('../tasks/js2uriHelpers.js');
     "entityEncode": false
   };
 
-  // now REset to use metadata OR pkg if available
-  if (undefined !== grunt.config('meta.version')) {
-    jsURItest_version = grunt.config('meta.version');
-  } else if (undefined !== grunt.config('pkg.version')) {
-    jsURItest_version = grunt.config('pkg.version');
-  } else {
-    jsURItest_version = '';
-	}
-
 // ** Nodeunit tests **
 exports.js2uri = {
   "setUp": function(done) {
