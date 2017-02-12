@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     },
     "yamllint": {
       "files": {
-        "src": ['*.yaml']
+        "src": ['.*.yml', '*.yml', '*.yaml']
       }
     }
   });
