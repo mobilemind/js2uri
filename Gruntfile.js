@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     "pkg": grunt.file.readJSON("package.json"),
     "eslint": {
       "options": {
-        "configFile": ".eslint.yml"
+        "configFile": ".eslintrc.yml"
       },
       "target": ["Gruntfile.js", "tasks/*.js", "test/*.js"]
     },
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     },
     "yamllint": {
       "files": {
-        "src": [".*.yml", "*.yml", "*.yaml", ".eslintrc"]
+        "src": [".*.yml", "*.yml", "*.yaml"]
       }
     }
   });
