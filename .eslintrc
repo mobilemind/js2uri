@@ -239,7 +239,7 @@ rules:
   constructor-super: 0
   generator-star-spacing: 0
   no-class-assign: 0
-  no-confudpsing-arrow: 0
+  no-confusing-arrow: 0
   no-const-assign: 0
   no-dupe-class-members: 2
   no-duplicate-imports: 0
