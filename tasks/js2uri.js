@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         grunt.file.write(filepair.dest, jsURIStr);
         console.log(filepair.src + " -> " + filepair.dest + " (" + jsURIStr.length + " bytes)");
       });
-    } catch(e) {
+    } catch (e) {
       grunt.warn(this.nameArgs + " found errors: " + e.message + "\n", 10);
       return false;
     }
