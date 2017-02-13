@@ -19,7 +19,7 @@ module.exports = function(grunt) {
   // ==========================================================================
 
   // main function
-  grunt.registerMultiTask('js2uri', 'Convert JavaScript to javascript: URI.', function() {
+  grunt.registerMultiTask("js2uri", "Convert JavaScript to javascript: URI.", function() {
     try {
       // get options
       let js2uri_pkgVersion = "";
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       // set options
       jsURI_opt = this.options({
         // Default options
-        "protocol": 'javascript:',
+        "protocol": "javascript:",
         "useNewlineEOL": true,
         "useSingleQuote": true,
         "appendVoid": true,

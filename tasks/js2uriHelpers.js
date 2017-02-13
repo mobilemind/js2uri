@@ -5,7 +5,7 @@
 (function(exports) {
   // URI protocol + URI encoding
   exports.js2uriString = function(jsString, uriProtocol, newLineFlag) {
-    const myEOL = newLineFlag ? '\n' : '\r\n';
+    const myEOL = newLineFlag ? "\n" : "\r\n";
     return String(uriProtocol) + encodeURI(jsString.split(myEOL)[0]);
   };
 
@@ -21,14 +21,14 @@
     }
 
     // build-up suffix
-    let jsURISuffix = '';
+    let jsURISuffix = "";
     if (uriOpts.appendVoid) {
       // append semicolon if needed for syntax
-      if (';' !== replacedUriStr.charAt(replacedUriStr.length-1)) {
+      if (";" !== replacedUriStr.charAt(replacedUriStr.length-1)) {
         jsURISuffix = ";";
       }
       // append void
-      jsURISuffix += 'void';
+      jsURISuffix += "void";
       // use version from options *or* '0'
       let pkgVersion = uriOpts.customVersion;
       if (!uriOpts.appendVersion || undefined === pkgVersion || "" === pkgVersion) {
@@ -56,4 +56,4 @@
     // all replacements done
     return String(replacedUriStr);
   };
-}(typeof exports === 'object' && exports || this));
+}(typeof exports === "object" && exports || this));
