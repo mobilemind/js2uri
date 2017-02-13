@@ -1,6 +1,6 @@
 "use strict";
-const grunt = require('grunt');
-const js2uriHelpers = require('../tasks/js2uriHelpers.js');
+const grunt = require("grunt");
+const js2uriHelpers = require("../tasks/js2uriHelpers.js");
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -21,15 +21,15 @@ const js2uriHelpers = require('../tasks/js2uriHelpers.js');
 */
 
   // use to set default version to  metadata version OR pkg.version if available
-  let jsURItest_version = '';
-  if (undefined !== grunt.config('meta.version')) {
-    jsURItest_version = grunt.config('meta.version');
-  } else if (undefined !== grunt.config('pkg.version')) {
-    jsURItest_version = grunt.config('pkg.version');
+  let jsURItest_version = "";
+  if (grunt.config("meta.version")) {
+    jsURItest_version = grunt.config("meta.version");
+  } else if (undefined !== grunt.config("pkg.version")) {
+    jsURItest_version = grunt.config("pkg.version");
   }
 
   const jsURItest_opt = {
-    "protocol": 'javascript:',
+    "protocol": "javascript:",
     "useNewlineEOL": true,
     "useSingleQuote": true,
     "appendVoid": true,
@@ -83,14 +83,14 @@ exports.js2uri = {
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #5 appendVersion:' + jsURItest_opt.appendVersion + ' null should return "' + expectedVal + '"');
 
-    jsURItest_opt.customVersion = '0.0.0';
+    jsURItest_opt.customVersion = "0.0.0";
     testVal = '';
     expectedVal = ";void'" + jsURItest_opt.customVersion + "';";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       'test #6 appendVersion:' + jsURItest_opt.appendVersion + ', customVersion:' + jsURItest_opt.customVersion + ' null should return "' + expectedVal + '"');
 
     jsURItest_opt.appendVersion = false;
-    jsURItest_opt.customVersion = '0.0.0';
+    jsURItest_opt.customVersion = "0.0.0";
     testVal = '';
     expectedVal = ";void'0';";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,

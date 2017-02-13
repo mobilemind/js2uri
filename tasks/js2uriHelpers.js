@@ -13,46 +13,47 @@
   exports.js2uriStringReplaces = function(uriStr, uriOpts) {
     const tickRegEx = /%22/gm;
     const lastColonRegex = /;$/;
+    let replacedUriStr = uriStr;
 
     // swapt use apostrophe? (most browsers don't require %22 for ')
     if (uriOpts.useSingleQuote) {
-      uriStr = uriStr.replace(tickRegEx, "'");
+      replacedUriStr = replacedUriStr.replace(tickRegEx, "'");
     }
 
     // build-up suffix
     let jsURISuffix = '';
     if (uriOpts.appendVoid) {
       // append semicolon if needed for syntax
-      if (';' !== uriStr.charAt(uriStr.length-1)) {
-        jsURISuffix = ';';
+      if (';' !== replacedUriStr.charAt(replacedUriStr.length-1)) {
+        jsURISuffix = ";";
       }
       // append void
       jsURISuffix += 'void';
       // use version from options *or* '0'
       let pkgVersion = uriOpts.customVersion;
-      if (!uriOpts.appendVersion || undefined === pkgVersion || '' === pkgVersion) {
+      if (!uriOpts.appendVersion || undefined === pkgVersion || "" === pkgVersion) {
         pkgVersion = 0;
       }
       jsURISuffix += "'" + pkgVersion + "';";
     }
 
     // append suffix which may be null
-    uriStr += jsURISuffix;
+    replacedUriStr += jsURISuffix;
 
     // force OR remove trailing semicolon
     if (uriOpts.forceLastSemicolon) {
-      if (';' !== uriStr.charAt(uriStr.length-1)) {
-        uriStr += ';';
+      if (";" !== replacedUriStr.charAt(replacedUriStr.length-1)) {
+        replacedUriStr += ";";
       }
     } else if (uriOpts.noLastSemicolon) {
-      uriStr = uriStr.replace(lastColonRegex, '');
+      replacedUriStr = replacedUriStr.replace(lastColonRegex, "");
 		}
 
     // encode critical HTML entities
     if (uriOpts.entityEncode) {
-      uriStr = uriStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      replacedUriStr = replacedUriStr.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 		}
     // all replacements done
-    return String(uriStr);
+    return String(replacedUriStr);
   };
 }(typeof exports === 'object' && exports || this));

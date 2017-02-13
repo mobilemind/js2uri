@@ -6,16 +6,16 @@ module.exports = function(grunt) {
     "pkg": grunt.file.readJSON('package.json'),
     "eslint": {
       "options": {
-        "configFile": '.eslint.yml'
+        "configFile": ".eslint.yml"
       },
-      "target": ['Gruntfile.js', 'tasks/text2datauri*.js', 'test/text2datauri*.js']
+      "target": ['Gruntfile.js', 'tasks/*.js', 'test/*.js']
     },
     "nodeunit": {
       "files": ['test/js2uri*.js']
     },
     "yamllint": {
       "files": {
-        "src": ['.*.yml', '*.yml', '*.yaml']
+        "src": ['.*.yml', '*.yml', '*.yaml', '.eslintrc']
       }
     }
   });
@@ -26,12 +26,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-yamllint');
 
   // Load local tasks
-  grunt.loadTasks('tasks');
+  grunt.loadTasks("tasks");
 
   // test
-  grunt.registerTask('test', ['eslint', 'nodeunit:files', 'yamllint:files']);
+  grunt.registerTask('test', ['yamllint', 'eslint', 'nodeunit:files']);
 
   // Default task
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask("default", ['test']);
 
 };

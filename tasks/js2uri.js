@@ -8,7 +8,7 @@
 "use strict";
 module.exports = function(grunt) {
   // HELPERS & PRIVATE VARS
-  const js2uriHelpers = require('./js2uriHelpers.js');
+  const js2uriHelpers = require("./js2uriHelpers.js");
   let jsURI_opt = {};
 
   // Please see the grunt documentation for more information regarding task and
@@ -22,13 +22,13 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('js2uri', 'Convert JavaScript to javascript: URI.', function() {
     try {
       // get options
-      let js2uri_pkgVersion = '';
+      let js2uri_pkgVersion = "";
 
       // default version to metadata version OR pkg.version if available
-      if (undefined !== grunt.config('meta.version')) {
-        js2uri_pkgVersion = grunt.config('meta.version');
-      } else if (undefined !== grunt.config('pkg.version')) {
-        js2uri_pkgVersion = grunt.config('pkg.version');
+      if (grunt.config("meta.version")) {
+        js2uri_pkgVersion = grunt.config("meta.version");
+      } else if (grunt.config("pkg.version")) {
+        js2uri_pkgVersion = grunt.config("pkg.version");
 			}
 
       // set options
@@ -59,10 +59,10 @@ module.exports = function(grunt) {
 
         // write string to file & log results
         grunt.file.write(filepair.dest, jsURIStr);
-        console.log(filepair.src + ' -> ' + filepair.dest + ' (' + jsURIStr.length + ' bytes)');
+        console.log(filepair.src + " -> " + filepair.dest + " (" + jsURIStr.length + " bytes)");
       });
     } catch(e) {
-      grunt.warn(this.nameArgs + ' found errors: ' + e.message + '\n', 10);
+      grunt.warn(this.nameArgs + " found errors: " + e.message + "\n", 10);
       return false;
     }
     return true;

@@ -1,5 +1,5 @@
 "use strict";
-const js2uriHelpers = require('../tasks/js2uriHelpers.js');
+const js2uriHelpers = require("../tasks/js2uriHelpers.js");
 /* ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
 
@@ -28,8 +28,8 @@ exports.js2uri = {
     test.expect(4);
 
     // test URI prefix
-    test.deepEqual(js2uriHelpers.js2uriString('', '', true),
-      '', 'js2uriString null, protocol null should return null');
+    test.deepEqual(js2uriHelpers.js2uriString("", "", true),
+      "", "js2uriString null, protocol null should return null");
 
     test.deepEqual(js2uriHelpers.js2uriString('', 'javascript:', true),
       'javascript:', 'js2uriString null, protocol "javascript:" should return "javascript:"');
