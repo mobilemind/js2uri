@@ -12,7 +12,9 @@ env:
   node: true
 
 plugins:
+- no-storage
 - security
+- xss
 
 # http://eslint.org/docs/rules/
 rules:
@@ -268,6 +270,9 @@ rules:
   template-curly-spacing: 0
   yoeld-star-spacing: 0
 
+  # no-storage
+  no-storage/no-browser-storage: 2
+
   # security
   security/detect-unsafe-regex: 2
   security/detect-buffer-noassert: 2
@@ -281,3 +286,8 @@ rules:
   security/detect-object-injection: 2
   security/detect-possible-timing-attacks: 2
   security/detect-pseudoRandomBytes: 2
+
+  # xss
+  xss/no-location-href-assign: 2
+  xss/no-mixed-html: 0
+
