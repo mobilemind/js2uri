@@ -25,7 +25,6 @@ rules:
   no-console: 0
   no-extra-parens: 2
   no-inner-declarations: [2, functions]
-  no-negated-in-lhs: 2
   no-prototype-builtins: 2
   no-template-curly-in-string: 2
   no-unsafe-negation: 2
@@ -128,45 +127,46 @@ rules:
   computed-property-spacing: 2
   consistent-this: 2
   eol-last: 2
-  func-call-spacing: 0
-  func-name-matching: 0
+  func-call-spacing: 2
+  func-name-matching: 2
   func-names: 0
   func-style: 2
-  id-blacklist: 0
+  id-blacklist: 2
   id-length: 0
   id-match: 0
   indent: 0
-  jsx-quotes: 0
+  jsx-quotes: 2
   key-spacing: 2
   keyword-spacing: 2
   line-comment-position: 0
   linebreak-style: 2
   lines-around-comment: 0
   lines-around-directive: 0
-  max-depth: 0
+  max-depth: 2
   max-len: 0
-  max-lines: 0
+  max-lines: 2
   max-nested-callbacks: 2
   max-params: 2
+  max-statements-per-line: 2
   max-statements: [2, 76]
   multiline-ternary: 0
-  new-cap: 0
+  new-cap: 2
   new-parens: 2
   newline-after-var: 0
   newline-before-return: 0
   newline-per-chained-call: 0
   no-array-constructor: 2
   no-bitwise: 2
-  no-continue: 0
+  no-continue: 2
   no-inline-comments: 0
   no-lonely-if: 2
   no-mixed-operators: 0
   no-multiple-empty-lines: 2
   no-negated-condition: 0
-  no-nested-ternary: 0
-  no-new-object: 0
-  no-plusplus: 0
-  no-restricted-syntax: 0
+  no-nested-ternary: 2
+  no-new-object: 2
+  no-plusplus: 2
+  no-restricted-syntax: 2
   no-tabs: 0
   no-ternary: 0
   no-trailing-spaces: 2
@@ -184,34 +184,32 @@ rules:
   padded-blocks: 0
   quote-props: 2
   quotes: 2
-  require-jsdoc: 0
+  require-jsdoc: 2
   semi-spacing: 2
   semi: 2
   sort-keys: 0
-  sort-vars: 0
-  space-after-keywords: 0
+  sort-vars: 2
   space-before-blocks: 0
   space-before-function-paren: 0
-  space-before-keywords: 0
-  space-in-parens: 0
-  space-infix-ops: 0
+  space-in-parens: 2
+  space-infix-ops: 2
   space-return-throw-case: 0
-  space-unary-ops: 0
-  spaced-comment: 0
-  template-tag-spacing: 0
-  unicode-bom: 0
-  wrap-regex: 0
+  space-unary-ops: 2
+  spaced-comment: 2
+  template-tag-spacing: 2
+  unicode-bom: 2
+  wrap-regex: 2
 
   # ECMAScript 6
-  arrow-body-style: 0
-  arrow-parens: 0
-  arrow-spacing: 0
-  generator-star-spacing: 0
-  no-confusing-arrow: 0
-  no-duplicate-imports: 0
-  no-restricted-imports: 0
-  no-useless-computed-key: 0
-  no-useless-constructor: 0
+  arrow-body-style: 2
+  arrow-parens: 2
+  arrow-spacing: 2
+  generator-star-spacing: 2
+  no-confusing-arrow: 2
+  no-duplicate-imports: 2
+  no-restricted-imports: 2
+  no-useless-computed-key: 2
+  no-useless-constructor: 2
   no-useless-rename: 2
   no-var: 2
   object-shorthand: 0
@@ -219,13 +217,13 @@ rules:
   prefer-const: 2
   prefer-destructuring: 0
   prefer-numeric-literals: 2
-  prefer-rest-params: 0
-  prefer-spread: 0
+  prefer-rest-params: 2
+  prefer-spread: 2
   prefer-template: 0
-  rest-spread-spacing: 0
-  sort-imports: 0
-  symbol-description: 0
-  template-curly-spacing: 0
+  rest-spread-spacing: 2
+  sort-imports: 2
+  symbol-description: 2
+  template-curly-spacing: 2
   yoeld-star-spacing: 0
 
   # no-storage
