@@ -97,14 +97,14 @@ exports.js2uri = {
       "test #7 appendVersion:" + jsURItest_opt.appendVersion + ", customVersion:" + jsURItest_opt.customVersion + " null should return '" + expectedVal + "'");
 
     // ** don't append void
-    jsURItest_opt.appendVoid= false;
+    jsURItest_opt.appendVoid = false;
     testVal = "";
     expectedVal = "";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       "test #8 appendVoid:" + jsURItest_opt.appendVoid + " null should return '" + expectedVal + "'");
 
     // ** don't append void
-    jsURItest_opt.appendVoid= false;
+    jsURItest_opt.appendVoid = false;
     testVal = ";";
     expectedVal = ";";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
