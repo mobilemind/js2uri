@@ -24,7 +24,7 @@
     let jsURISuffix = "";
     if (uriOpts.appendVoid) {
       // append semicolon if needed for syntax
-      if (";" !== replacedUriStr.charAt(replacedUriStr.length-1)) {
+      if (";" !== replacedUriStr.charAt(replacedUriStr.length - 1)) {
         jsURISuffix = ";";
       }
       // append void
@@ -42,7 +42,7 @@
 
     // force OR remove trailing semicolon
     if (uriOpts.forceLastSemicolon) {
-      if (";" !== replacedUriStr.charAt(replacedUriStr.length-1)) {
+      if (";" !== replacedUriStr.charAt(replacedUriStr.length - 1)) {
         replacedUriStr += ";";
       }
     } else if (uriOpts.noLastSemicolon) {
