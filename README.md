@@ -2,7 +2,6 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
 [![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
-[![CodeCLimate Status][codeClimate-image]][codeClimate-url]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
 bookmarklet or an iOS app protocol scheme link.
@@ -249,10 +248,6 @@ Licensed under the MIT license.
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
 
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
-
-[codeClimate-image]: https://codeclimate.com/github/mobilemind/js2uri/badges/gpa.svg
-
-[codeClimate-url]: https://codeclimate.com/github/mobilemind/js2uri
 
 [grunt]: http://gruntjs.com/
 
