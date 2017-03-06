@@ -20,7 +20,7 @@ extends: eslint:recommended
 # http://eslint.org/docs/rules/
 rules:
   # Possible Errors
-  ## no-await-in-loop: 2 // not supported by Code Climate, Feb 2017
+  no-await-in-loop: 2
   no-compare-neg-zero: 2
   no-console: 0
   no-extra-parens: 2
