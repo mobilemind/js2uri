@@ -1,14 +1,15 @@
 root: true
 
+ecmaVersion: 6
+sourceType: script
+
 ecmaFeatures:
-  modules: true
+  globalReturn: false
   jsx: false
+  modules: true
 
 env:
-  amd: false
-  browser: false
   es6: true
-  jquery: false
   node: true
 
 plugins:
@@ -83,7 +84,7 @@ rules:
   no-void: 2
   no-warning-comments: 2
   no-with: 2
-  ## prefer-promise-reject-errors: 2 // not supported by Code Climate, Feb 2017
+  prefer-promise-reject-errors: 2
   radix: 2
   require-await: 2
   vars-on-top: 2
@@ -193,7 +194,6 @@ rules:
   space-before-function-paren: 0
   space-in-parens: 2
   space-infix-ops: 2
-  space-return-throw-case: 0
   space-unary-ops: 2
   spaced-comment: 2
   template-tag-spacing: 2
@@ -224,7 +224,6 @@ rules:
   sort-imports: 2
   symbol-description: 2
   template-curly-spacing: 2
-  yoeld-star-spacing: 0
 
   # no-storage
   no-storage/no-browser-storage: 2
