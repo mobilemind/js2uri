@@ -59,10 +59,10 @@ module.exports = function(grunt) {
 
         // write string to file & log results
         grunt.file.write(filepair.dest, jsURIStr);
-        console.log(filepair.src + " -> " + filepair.dest + " (" + jsURIStr.length + " bytes)");
+        console.log(`${filepair.src} -> ${filepair.dest} (${jsURIStr.length} bytes)`);
       });
     } catch (e) {
-      grunt.warn(this.nameArgs + " found errors: " + e.message + "\n", 10);
+      grunt.warn(`${this.nameArgs} found errors: ${e.message} \n`, 10);
       return false;
     }
     return true;
