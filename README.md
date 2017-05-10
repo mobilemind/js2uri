@@ -8,8 +8,9 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
-Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with earlier
-versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x compatibility.
+Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with
+earlier versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x
+compatibility.
 
 Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
 Version 1.3.21 extends this to node >= 0.10.0.
@@ -21,13 +22,13 @@ Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
 The code
 
 ```javascript
-alert("Hello. The current URL is: " + location.href);
+alert("Hi. The active URL is: " + location.href);
 ```
 
 becomes
 
 ```url
-javascript:alert('Hello.%20The%20current%20URL%20is:%20'%20+%20location.href);void'0'
+javascript:alert('Hi.%20The%20active%20URL%20is:%20'%20+%20location.href);void'0'
 ```
 
 Note that the "0" in `void'0'` can be used to embed a custom version number in
@@ -37,109 +38,110 @@ a bookmarklet.
 
 ### Install
 
-Install this grunt plugin next to your project's [Gruntfile.js gruntfile][getting_started]
-with: `npm install js2uri --save`. The `--save` options will add `js2uri` to the
-_dependencies_ section of your project's [package.json] file.
+Install this grunt plugin next to your project's
+[Gruntfile.js gruntfile][getting_started] with: `npm install js2uri --save`.
+The `--save` options will add `js2uri` to the _dependencies_ section of the
+project [package.json] file.
 
 ### Edit Gruntfile.js
 
-Add the following to the `grunt.initConfig` section of your project's `Gruntfile.js`
-file:
+Add the following to the `grunt.initConfig` section of the project
+`Gruntfile.js` file:
 
 ```javascript
 js2uri:  {
-  'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js']
+  "dist/uriVersionOflintedAndMinifiedFile.js": ["dist/lintedAndMinifiedFile.js"]
 }
 ```
 
-Edit the  values for the `dist/uriVersion...` (destination) and `dist/linted...`
-(source)
-as appropriate.
+Edit the values for the `dist/uriVersion...` (destination) and
+`dist/linted...` (source) as appropriate.
 
-Below the `grunt.initConfig` section, add this line to your project's `Gruntfile.js`.
+Below `grunt.initConfig` section, add this line to the project `Gruntfile.js`.
 
 ```javascript
 // load external task
-grunt.loadNpmTasks('js2uri');
+grunt.loadNpmTasks("js2uri");
 ```
 
-Finally, ensure that `jshint` and `uglify` tasks are called before `js2uri`,
-such as here:
+Finally, ensure that `jshint` (or `eslint`) and `uglify` tasks are called
+before `js2uri`, such as here:
 
 ```javascript
 // default task
-grunt.registerTask('default', [ "jshint", "uglify", "js2uri"] );
+grunt.registerTask("default", ["jshint", "uglify", "js2uri"]);
 ```
 
 ## Documentation
 
-An elaborated `Gruntfile.js` follows below to clarify expectations and options
-relating to `js2uri`. Note that as of js2uri v1.3.0 the [grunt] 0.4.x target data
-formats are supported for specifying files. See [gruntjs documentation - Configuring
-Tasks: files].
+The elaborated `Gruntfile.js` below may clarify expectations and options
+relating to `js2uri`. As of js2uri v1.3.0 the [grunt] 0.4.x "target data"
+formats are supported for specifying files. See
+[gruntjs documentation - Configuring Tasks: files].
 
 ```javascript
   grunt.initConfig({
+    // eslint - Critical eslint rules to disable: no-void, no-script-url
+    // Example .eslintrc.yml config file--
+    // env:
+    //   browser: true
+    //   es6: true
+    //   node: true
+    // extends: eslint:recommended
+    // rules:
+    //   no-void: 0
+    //   no-script-url: 0
+    //
+    // jshint - Critical jshint option: browser & scripturl (allow)
+    // "jshint": {
+    //   "options": {
+    //     "browser": true,
+    //     "scripturl": true
+    //   }
+    // },
+    //
+    // uglify-js - Note: you may need to 'tune' options for your source
+    // "uglify": {
+    //   "options": {
+    //     "codegen": {"quote_keys": false}
+    //     "mangle": {"toplevel": true},
+    //     "squeeze": {"conditionals": false, "hoist_vars": true, "sequences": false},
+    //   }
+    // },
+    //
+    // ** js2uri ** default options are shown
+    "js2uri": {
+      "options": {
+        "appendVersion": false,
+        "appendVoid": true,
+        "customVersion": "", // use this if set, ELSE use meta shown below (if available)
+        "entityEncode": false,
+        "forceLastSemicolon": false,
+        "noLastSemicolon": true,
+        "protocol": "javascript:",
+        "useNewlineEOL": true,
+        "useSingleQuote": false
+      }
+    },
     // if meta object exists js2uri will use version as options.customVersion value
-    meta: {
-      version: '1.6.1',
-    },
-    // note critical jshint options for strict, scripturl, & browser
-    jshint: {
-      files: ['Gruntfile.js', 'src/*.js'],
-      options: {
-      strict: false,
-      ...
-      scripturl: true,
-      browser: true
-      },
-      globals: {}
-    },
-    // note compact file spec-- 'destinationfile': ['sourcefile'],
-    uglify: {
-      'dist/lintedAndMinifiedFile.js': ['src/*.js'],
-      options: {
-        mangle: {toplevel: true},
-        squeeze: {sequences: false, conditionals: false, hoist_vars: true},
-        codegen: {quote_keys: false}
-      }
-    },
-    // js2uri default options are shown
-    // note use of compact form of grunt 0.4.x files spec-- 'destinationfile': ['sourcefile'],
-    js2uri:  {
-      'dist/uriVersionOflintedAndMinifiedFile.js': ['dist/lintedAndMinifiedFile.js'],
-      options: {
-        protocol: 'javascript:',
-        useNewlineEOL: true,
-        useSingleQuote: true,
-        appendVoid: true,
-        customVersion: '', // use this if set, ELSE use meta above (if available)
-        appendVersion: false,
-        noLastSemicolon: true,
-        forceLastSemicolon: false,
-        entityEncode: false
-      }
+    "meta": {
+      "version": "1.6.1",
     }
-});
+  });
+  // ...
 
-// Load "jshint" plugin
-grunt.loadNpmTasks('grunt-contrib-jshint');
+  // Load "js2uri" plugin
+  grunt.loadNpmTasks("js2uri");
 
-// Load "uglify" plugin
-grunt.loadNpmTasks('grunt-contrib-uglify');
-
-// Load "js2uri" plugin
-grunt.loadNpmTasks('js2uri');
-
-// Default task
-grunt.registerTask('default', [ "jshint", "uglify", "js2uri"] );
+  // Default task could start w/eslint or jshint
+  grunt.registerTask("default", ["eslint", "uglify", "js2uri"]);
 ```
 
 ## Contributing
 
-In lieu of a formal style guide, take care to maintain the existing coding style.
-Add unit tests for any new or changed functionality.
-Lint and test your code using [grunt][grunt].
+In lieu of a formal style guide, take care to maintain the existing coding
+style. Add unit tests for any new or changed functionality. Lint and test the
+code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
@@ -147,7 +149,8 @@ Lint and test your code using [grunt][grunt].
 
 1.4.3: add CodeClimate yaml and checks; update based on lint feedback
 
-1.4.2: updated package.json and .travis.tml to use `node` >5.0.0 and `grunt` >1.0.0
+1.4.2: updated package.json and .travis.tml to use `node` >5.0.0 and `grunt`
+>1.0.0
 
 1.4.1: internals use es6 let/const syntax; build tested with `grunt` 1.0.0 and
 updated Travis-CI `.travis.yml` file
@@ -157,18 +160,19 @@ updated Travis-CI `.travis.yml` file
 
 1.3.24: update package.json to work with `grunt-contrib-jshint` >= 0.11.0
 
-1.3.23: update package.json to work with `grunt-contrib-jshint` 0.11.x - 0.12.x
+1.3.23: update package.json to work with `grunt-contrib-jshint` 0.11.x -
+0.12.x
 
 1.3.22: update .travis.yml to test with `node` 0.10 0.11, 0.12, 4.2 and 5.0
 
-1.3.21: update package.json to support use of `node` >= 0.10.0 (e.g., now works
-w/ node 4.0.x)
+1.3.21: update package.json to support use of `node` >= 0.10.0 (e.g., now
+works w/ node 4.0.x)
 
-1.3.20 - 1.3.17: August 3, 2015 - no functional changes. just bumped to force-update
-npmjs.com docs
+1.3.20 - 1.3.17: August 3, 2015 - no functional changes. just bumped to
+force-update npmjs.com docs
 
-1.3.16: May 15, 2015 - update license info in `package.json` to use new property
-and SPDX
+1.3.16: May 15, 2015 - update license info in `package.json` to use new
+property and SPDX
 
 1.3.15: April 4, 2015 - update devDependencies and copyright info
 
@@ -181,48 +185,49 @@ stricter checks
 
 1.3.11: April 21, 2014 - update to `grunt-contrib-jshint` 0.10.x
 
-1.3.10: March 26, 2014 - update to `grunt-contrib-jshint` 0.9.x; `grunt-contrib-nodeunit`
-to 0.3.x
+1.3.10: March 26, 2014 - update to `grunt-contrib-jshint` 0.9.x;
+`grunt-contrib-nodeunit` to 0.3.x
 
-1.3.9: December 27, 2013 - update to `grunt-contrib-jshint` 0.8.x and streamline
-dependencies
+1.3.9: December 27, 2013 - update to `grunt-contrib-jshint` 0.8.x and
+streamline dependencies
 
 1.3.8: December 9, 2013 - update to `grunt-contrib-jshint` 0.7.x and integrate
 Travis CI
 
-1.3.7: July 28, 2013 - update to `grunt-contrib-jshint` 0.6.x and `grunt-contrib-nodeunit`
-0.2.x
+1.3.7: July 28, 2013 - update to `grunt-contrib-jshint` 0.6.x and
+`grunt-contrib-nodeunit` 0.2.x
 
-1.3.6: July 12, 2013 - update to require node 0.10.x, and more current grunt-contrib
-utils
+1.3.6: July 12, 2013 - update to require node 0.10.x, and more current
+grunt-contrib utils
 
 1.3.5: May 20, 2013 - update license URL in `package.json`
 
 1.3.4: May 19, 2013 - `package.json` repository.url uses `https://` instead of
 `git://` and devDependencies updated for jshint (`>=0.1.2 <0.5.0`)
 
-1.3.3: March 12, 2013 - Update `package.json` for node 0.10.0 (ie `node>=0.8.0`)
+1.3.3: March 12, 2013 - Update `package.json` for node 0.10.0
+(ie `node>=0.8.0`)
 
 1.3.2: February 28, 2013 - Better jshint options in Gruntfile.js; package.json
 updates
 
-1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js, replace
-directives
+1.3.1: February 19, 2013 - Change references to grunt.js to Gruntfile.js,
+replace directives
 
-1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x, improved
-package.json, update README
+1.3.0: February 18, 2013 - Update for compatibility to [grunt] v0.4.x,
+improved package.json, update README
 
-1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for encoding
-'<', '>' and '&'.
+1.2.0 January 9, 2013 - add more tests, add `entityEncode:` option for
+encoding '<', '>' and '&'.
 
-1.1.2 January 8, 2013 - add more tests, resolve issues with `appendVersion:false`
-and `customVersion:`.
+1.1.2 January 8, 2013 - add more tests, resolve issues with
+`appendVersion:false` and `customVersion:`.
 
 1.1.1 January 7, 2013 - fix issue reading/setting `noLastSemicolon:` and
 `forceLastSemicolon:`.
 
-1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`, and
-`forceLastSemicolon:`.
+1.1.0 January 6, 2013 - adds new options for `protocol:`, `customVersion:`,
+and `forceLastSemicolon:`.
 
 1.0.0 December 31, 2012 - initial release
 
