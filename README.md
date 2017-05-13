@@ -38,10 +38,9 @@ a bookmarklet.
 
 ### Install
 
-Install this grunt plugin next to your project's
-[Gruntfile.js gruntfile][getting_started] with: `npm install js2uri --save`.
-The `--save` options will add `js2uri` to the _dependencies_ section of the
-project [package.json] file.
+Install this grunt plugin into the project with:
+`npm install js2uri --save-dev`. The `--save-dev` option adds `js2uri` to the
+_devDependencies_ section of the project [package.json] file.
 
 ### Edit Gruntfile.js
 
@@ -80,61 +79,59 @@ formats are supported for specifying files. See
 [gruntjs documentation - Configuring Tasks: files].
 
 ```javascript
-  grunt.initConfig({
-    // eslint - Critical eslint rules to disable: no-void, no-script-url
-    // Example .eslintrc.yml config file--
-    // env:
-    //   browser: true
-    //   es6: true
-    //   node: true
-    // extends: eslint:recommended
-    // rules:
-    //   no-void: 0
-    //   no-script-url: 0
-    //
-    // jshint - Critical jshint option: browser & scripturl (allow)
-    // "jshint": {
-    //   "options": {
-    //     "browser": true,
-    //     "scripturl": true
-    //   }
-    // },
-    //
-    // uglify-js - Note: you may need to 'tune' options for your source
-    // "uglify": {
-    //   "options": {
-    //     "codegen": {"quote_keys": false}
-    //     "mangle": {"toplevel": true},
-    //     "squeeze": {"conditionals": false, "hoist_vars": true, "sequences": false},
-    //   }
-    // },
-    //
-    // ** js2uri ** default options are shown
-    "js2uri": {
-      "options": {
-        "appendVersion": false,
-        "appendVoid": true,
-        "customVersion": "", // use this if set, ELSE use meta shown below (if available)
-        "entityEncode": false,
-        "forceLastSemicolon": false,
-        "noLastSemicolon": true,
-        "protocol": "javascript:",
-        "useNewlineEOL": true,
-        "useSingleQuote": false
-      }
-    },
-    // if meta object exists js2uri will use version as options.customVersion value
-    "meta": {
-      "version": "1.6.1",
+grunt.initConfig({
+  // eslint - Critical eslint rules to disable: no-void, no-script-url
+  // Example .eslintrc.yml config file--
+  // env:
+  //   browser: true
+  //   es6: true
+  //   node: true
+  // extends: eslint:recommended
+  // rules:
+  //   no-void: 0
+  //   no-script-url: 0
+  //
+  // jshint - Critical jshint option: browser & scripturl (allow)
+  // "jshint": {
+  //   "options": {
+  //     "browser": true,
+  //     "scripturl": true
+  //   }
+  // },
+  //
+  // uglify-js - Note: you may need to 'tune' options for your source
+  // "uglify": {
+  //   "options": {
+  //     "codegen": {"quote_keys": false}
+  //     "mangle": {"toplevel": true},
+  //     "squeeze": {"conditionals": false, "hoist_vars": true, "sequences": false},
+  //   }
+  // },
+  //
+  // ** js2uri ** default options are shown
+  "js2uri": {
+    "options": {
+      "appendVersion": false,
+      "appendVoid": true,
+      "customVersion": "", // use this if set, ELSE use meta shown below (if available)
+      "entityEncode": false,
+      "forceLastSemicolon": false,
+      "noLastSemicolon": true,
+      "protocol": "javascript:",
+      "useNewlineEOL": true,
+      "useSingleQuote": false
     }
-  });
-  // ...
-
-  // Load "js2uri" plugin
-  grunt.loadNpmTasks("js2uri");
-
-  // Default task could start w/eslint or jshint
-  grunt.registerTask("default", ["eslint", "uglify", "js2uri"]);
+  },
+  // if meta object exists js2uri will use version as options.customVersion value
+  "meta": {
+    "version": "1.6.1",
+  }
+});
+// ...
+// Load "js2uri" plugin
+grunt.loadNpmTasks("js2uri");
+// Default task could start w/eslint or jshint
+grunt.registerTask("default", ["eslint", "uglify", "js2uri"]);
 ```
 
 ## Contributing
@@ -150,7 +147,7 @@ code using `eslint` (preferred) or `jshint`.
 1.4.3: add CodeClimate yaml and checks; update based on lint feedback
 
 1.4.2: updated package.json and .travis.tml to use `node` >5.0.0 and `grunt`
->1.0.0
+">1.0.0"
 
 1.4.1: internals use es6 let/const syntax; build tested with `grunt` 1.0.0 and
 updated Travis-CI `.travis.yml` file
