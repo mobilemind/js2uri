@@ -129,14 +129,14 @@ rules:
   func-style: 2
   id-blacklist: 2
   id-match: 2
-  indent: 2
+  indent: ["error", 2]
   jsx-quotes: 2
   key-spacing: 2
   keyword-spacing: 2
   linebreak-style: 2
   max-depth: 2
-  max-len: ["warn", {"code": 99, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true}]
-  max-lines: ["error", {"max": 111, "skipBlankLines": true, "skipComments": true}]
+  max-len: ["warn", {"code": 99, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true}]
+  max-lines: ["error", {"max": 150, "skipBlankLines": true, "skipComments": true}]
   max-nested-callbacks: 2
   max-params: 2
   max-statements-per-line: 2
