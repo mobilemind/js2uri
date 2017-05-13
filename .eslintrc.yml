@@ -135,8 +135,8 @@ rules:
   keyword-spacing: 2
   linebreak-style: 2
   max-depth: 2
-  max-len: ["error", 166, 4]
-  max-lines: 2
+  max-len: ["warn", {"code": 99, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true}]
+  max-lines: ["error", {"max": 111, "skipBlankLines": true, "skipComments": true}]
   max-nested-callbacks: 2
   max-params: 2
   max-statements-per-line: 2
