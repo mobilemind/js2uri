@@ -21,15 +21,15 @@ const js2uriHelpers = require("../tasks/js2uriHelpers.js");
 
 exports.js2uri = {
   "js2uriString tests": function(test) {
-  test.expect(4);
+    test.expect(4);
 
-  // test URI prefix
-  test.deepEqual(js2uriHelpers.js2uriString("", "", true),
-    "", "js2uriString null, protocol null should return null");
+    // test URI prefix
+    test.deepEqual(js2uriHelpers.js2uriString("", "", true),
+      "", "js2uriString null, protocol null should return null");
 
-  test.deepEqual(js2uriHelpers.js2uriString("", "javascript:", true),
-    "javascript:",
-    "js2uriString null, protocol 'javascript:' should return 'javascript:'");
+    test.deepEqual(js2uriHelpers.js2uriString("", "javascript:", true),
+      "javascript:",
+      "js2uriString null, protocol 'javascript:' should return 'javascript:'");
 
     // test URI reserved and other special chars
     // reserved chars are: ; / ? : @ & = + $ ,
@@ -50,9 +50,9 @@ exports.js2uri = {
       `js2uriString '${testVal}' should return '${expectedVal}'`);
 
     test.done();
-    },
-    "setUp": function(done) {
+  },
+  "setUp": function(done) {
     // setup here
     done();
-    }
+  }
 };
