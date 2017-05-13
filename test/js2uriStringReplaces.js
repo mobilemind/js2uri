@@ -29,63 +29,56 @@ const js2uriHelpers = require("../tasks/js2uriHelpers.js");
   }
 
   const jsURItest_opt = {
-    "protocol": "javascript:",
-    "useNewlineEOL": true,
-    "useSingleQuote": true,
+    "appendVersion": false,
     "appendVoid": true,
     "customVersion": jsURItest_version,
-    "appendVersion": false,
-    "noLastSemicolon": true,
+    "entityEncode": false,
     "forceLastSemicolon": false,
-    "entityEncode": false
+    "noLastSemicolon": true,
+    "protocol": "javascript:",
+    "useNewlineEOL": true,
+    "useSingleQuote": true
   };
 
 // ** Nodeunit tests **
 exports.js2uri = {
-  "setUp": function(done) {
-    // setup here
-    grunt.config("js2uri.options.dist.src", ["test/null-js"]);
-    grunt.config("js2uri.options.dist.dest", ["test/null-js.out"]);
-    grunt.config("js2uri.options.options", jsURItest_opt);
-    done();
-  },
   "js2uriStringReplaces tests": function(test) {
     test.expect(16);
 
     // ** default options
     let testVal = "";
-    let expectedVal = ";void'" + (!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version) + "'";
+    let expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}'`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       `test #1 defaults with '${testVal}' should return '${expectedVal}'`);
 
     testVal = ";";
-    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version) + "'";
+    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}'`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
      `test #2 defaults with '${testVal}' should return '${expectedVal}'`);
 
     // ** with trailing semicolon
     jsURItest_opt.noLastSemicolon = false;
     testVal = "";
-    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version) + "';";
+    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       `test #3 noLastSemicolon:${jsURItest_opt.noLastSemicolon} null should return '${expectedVal}'`);
 
     jsURItest_opt.noLastSemicolon = false;
     testVal = ";";
-    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version) + "';";
+    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       `test #4 noLastSemicolon:${jsURItest_opt.noLastSemicolon} null should return '${expectedVal}'`);
 
     // ** append version
     jsURItest_opt.appendVersion = true;
     testVal = "";
-    expectedVal = ";void'" + (!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version) + "';";
+    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       `test #5 appendVersion:${jsURItest_opt.appendVersion} null should return '${expectedVal}'`);
 
     jsURItest_opt.customVersion = "0.0.0";
     testVal = "";
-    expectedVal = ";void'" + jsURItest_opt.customVersion + "';";
+    expectedVal = `;void'${jsURItest_opt.customVersion}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt), expectedVal,
       `test #6 appendVersion:${jsURItest_opt.appendVersion}, customVersion:${jsURItest_opt.customVersion} null should return '${expectedVal}'`);
 
@@ -166,5 +159,12 @@ exports.js2uri = {
       `test #16 jsURItest_opt.entityEncode:${jsURItest_opt.entityEncode} '${testVal}' should return '${expectedVal}'`);
 
     test.done();
-  }
+  },
+  "setUp": function(done) {
+    // setup here
+    grunt.config("js2uri.options.dist.src", ["test/null-js"]);
+    grunt.config("js2uri.options.dist.dest", ["test/null-js.out"]);
+    grunt.config("js2uri.options.options", jsURItest_opt);
+    done();
+  },
 };
