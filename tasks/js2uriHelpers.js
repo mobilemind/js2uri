@@ -34,7 +34,7 @@
       if (!uriOpts.appendVersion || undefined === pkgVersion || "" === pkgVersion) {
         pkgVersion = 0;
       }
-      jsURISuffix += "'" + pkgVersion + "';";
+      jsURISuffix += `'${pkgVersion}';`;
     }
 
     // append suffix which may be null
