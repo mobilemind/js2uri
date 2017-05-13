@@ -34,15 +34,15 @@ module.exports = function(grunt) {
       // set options
       jsURI_opt = this.options({
         // Default options
-        "protocol": "javascript:",
-        "useNewlineEOL": true,
-        "useSingleQuote": true,
+        "appendVersion": false,
         "appendVoid": true,
         "customVersion": js2uri_pkgVersion,
-        "appendVersion": false,
-        "noLastSemicolon": true,
+        "entityEncode": false,
         "forceLastSemicolon": false,
-        "entityEncode": false
+        "noLastSemicolon": true,
+        "protocol": "javascript:",
+        "useNewlineEOL": true,
+        "useSingleQuote": true
       });
 
       // loop through files
