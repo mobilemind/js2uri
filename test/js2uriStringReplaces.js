@@ -56,7 +56,7 @@ exports.js2uri = {
     expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}'`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
-     `test #2 defaults with '${testVal}' should return '${expectedVal}'`);
+      `test #2 defaults with '${testVal}' should return '${expectedVal}'`);
 
     // ** with trailing semicolon
     jsURItest_opt.noLastSemicolon = false;
@@ -127,7 +127,7 @@ exports.js2uri = {
     expectedVal = testVal;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
-      `test #11 useSingleQuote:" + jsURItest_opt.useSingleQuote + ", appendVoid:" + jsURItest_opt.appendVoid + '${testVal}' should return '${expectedVal}'`);
+      `test #11 useSingleQuote:${jsURItest_opt.useSingleQuote}, appendVoid:${jsURItest_opt.appendVoid} '${testVal}' should return '${expectedVal}'`);
 
     // ** forceLastSemicolon true/false
     jsURItest_opt.forceLastSemicolon = true;
@@ -144,7 +144,7 @@ exports.js2uri = {
     expectedVal = ";";
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
-      `test #13 forceLastSemicolon:${jsURItest_opt.forceLastSemicolon}, appendVoid:$(jsURItest_opt.appendVoid + '${testVal}' should return '${expectedVal}'`);
+      `test #13 forceLastSemicolon:${jsURItest_opt.forceLastSemicolon}, appendVoid:${jsURItest_opt.appendVoid} '${testVal}' should return '${expectedVal}'`);
 
     // ** entityEncode true/false
     jsURItest_opt.forceLastSemicolon = false;
