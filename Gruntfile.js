@@ -3,21 +3,13 @@ module.exports = function(grunt) {
 
   // Project configuration
   grunt.initConfig({
-    "pkg": grunt.file.readJSON("package.json"),
     "eslint": {
-      "options": {
-        "configFile": ".eslintrc.yml"
-      },
+      "options": {"configFile": ".eslintrc.yml"},
       "target": ["Gruntfile.js", "tasks/*.js", "test/*.js"]
     },
-    "nodeunit": {
-      "files": ["test/js2uri*.js"]
-    },
-    "yamllint": {
-      "files": {
-        "src": [".*.yml", "*.yml", "*.yaml"]
-      }
-    }
+    "nodeunit": {"files": ["test/js2uri*.js"]},
+    "pkg": grunt.file.readJSON("package.json"),
+    "yamllint": {"files": {"src": [".*.yml", "*.yml", "*.yaml"]}}
   });
 
   // Load plugins: "eslint", "nodeunit", "yamllint"
