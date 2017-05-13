@@ -20,10 +20,6 @@ const js2uriHelpers = require("../tasks/js2uriHelpers.js");
 */
 
 exports.js2uri = {
-  "setUp": function(done) {
-    // setup here
-    done();
-  },
   "js2uriString tests": function(test) {
     test.expect(4);
 
@@ -49,5 +45,9 @@ exports.js2uri = {
       expectedVal, `js2uriString '${testVal}' should return '${expectedVal}'`);
 
    test.done();
+  },
+  "setUp": function(done) {
+    // setup here
+    done();
   }
 };
