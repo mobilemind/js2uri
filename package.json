@@ -29,6 +29,7 @@
   "license": "MIT",
   "main": "Gruntfile.js",
   "name": "js2uri",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/mobilemind/js2uri.git"
