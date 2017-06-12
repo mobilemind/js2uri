@@ -92,6 +92,7 @@ rules:
   wrap-iife: 2
 
   # Strict
+  strict: [2, "global"]
 
   # Variables
   init-declarations: 2
