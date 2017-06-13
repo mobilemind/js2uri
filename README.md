@@ -142,6 +142,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.5.0: drop node 5 support; revise for eslint 4.0.0 reviews, bump version
+
 1.4.6: bump version due to build & publishing tweaks (.eslintrc, package.json)
 
 1.4.5: bump version to republish with improvements for node 8 + npm 5
