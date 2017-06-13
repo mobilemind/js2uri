@@ -8,7 +8,10 @@ module.exports = function(grunt) {
     },
     "nodeunit": {"files": ["test/js2uri*.js"]},
     "pkg": grunt.file.readJSON("package.json"),
-    "yamllint": {"files": {"src": [".*.yml", "*.yml", "*.yaml"]}}
+    "yamllint": {
+      "files": {"src": [".*.yml", "*.yml", "*.yaml"]},
+      "options": {"schema": "FAILSAFE_SCHEMA"}
+    }
   });
 
   // Load plugins: "eslint", "nodeunit", "yamllint"
