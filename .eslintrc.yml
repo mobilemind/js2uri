@@ -21,8 +21,8 @@ extends: eslint:recommended
 # http://eslint.org/docs/rules/
 rules:
   # Possible Errors
+  for-direction: 2
   no-await-in-loop: 2
-  no-compare-neg-zero: 2
   no-console: 0
   no-extra-parens: 2
   no-inner-declarations: [2, functions]
@@ -80,7 +80,6 @@ rules:
   no-unused-expressions: 2
   no-useless-call: 2
   no-useless-concat: 2
-  no-useless-escape: 2
   no-useless-return: 2
   no-void: 2
   no-warning-comments: 2
@@ -108,6 +107,7 @@ rules:
   callback-return: 2
   global-require: 0
   handle-callback-err: 2
+  no-buffer-constructor: 2
   no-mixed-requires: 2
   no-new-require: 2
   no-path-concat: 2
