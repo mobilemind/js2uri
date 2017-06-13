@@ -53,9 +53,9 @@
     // encode critical HTML entities
     if (uriOpts.entityEncode) {
       replacedUriStr = replacedUriStr.
-      replace(/&/g, "&amp;").
-      replace(/</g, "&lt;").
-      replace(/>/g, "&gt;");
+        replace(/&/g, "&amp;").
+        replace(/</g, "&lt;").
+        replace(/>/g, "&gt;");
     }
     // all replacements done
     return String(replacedUriStr);

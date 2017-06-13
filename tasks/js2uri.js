@@ -56,11 +56,11 @@ module.exports = function(grunt) {
 
           // convert javascript string to URI
           let jsURIStr = js2uriHelpers.js2uriString(jsSourceStr,
-      jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
+            jsURI_opt.protocol, jsURI_opt.useNewlineEOL);
 
           // apply options to URI string
           jsURIStr = js2uriHelpers.js2uriStringReplaces(jsURIStr,
-      jsURI_opt);
+            jsURI_opt);
 
           // write string to file & log results
           grunt.file.write(filepair.dest, jsURIStr);
