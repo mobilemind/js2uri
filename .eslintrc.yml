@@ -13,11 +13,13 @@ parserOptions:
   sourceType: script
 
 plugins:
+- node
 - no-storage
 - security
 - xss
 
-extends: eslint:recommended
+extends: [eslint:recommended, plugin:node/recommended, plugin:security/recommended]
+
 # http://eslint.org/docs/rules/
 rules:
   # Possible Errors
@@ -206,22 +208,14 @@ rules:
   template-curly-spacing: 2
   yield-star-spacing: 2
 
+  # node
+  # using recommended; https://github.com/mysticatea/eslint-plugin-node
+
   # no-storage
   no-storage/no-browser-storage: 2
 
   # security
-  security/detect-unsafe-regex: 2
-  security/detect-buffer-noassert: 2
-  security/detect-child-process: 2
-  security/detect-disable-mustache-escape: 2
-  security/detect-eval-with-expression: 2
-  security/detect-no-csrf-before-method-override: 2
-  security/detect-non-literal-fs-filename: 2
-  security/detect-non-literal-regexp: 2
-  security/detect-non-literal-require: 2
-  security/detect-object-injection: 2
-  security/detect-possible-timing-attacks: 2
-  security/detect-pseudoRandomBytes: 2
+  # using recommended; https://github.com/nodesecurity/eslint-plugin-security
 
   # xss
   xss/no-location-href-assign: 2
