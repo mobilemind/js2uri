@@ -42,7 +42,7 @@ const jsURItest_opt = {
 
 // ** Nodeunit tests **
 exports.js2uri = {
-  "js2uriStringReplaces tests": function(test) {
+  js2uriStringReplaces (test) {
     test.expect(16);
 
     // ** default options
@@ -176,7 +176,7 @@ exports.js2uri = {
 
     test.done();
   },
-  "setUp": function(done) {
+  setUp (done) {
     // setup here
     grunt.config("js2uri.options.dist.src", ["test/null-js"]);
     grunt.config("js2uri.options.dist.dest", ["test/null-js.out"]);

@@ -20,7 +20,7 @@ const js2uriHelpers = require("../tasks/js2uriHelpers.js");
 */
 
 exports.js2uri = {
-  "js2uriString tests": function(test) {
+  js2uriString (test) {
     test.expect(4);
 
     // test URI prefix
@@ -51,7 +51,7 @@ exports.js2uri = {
 
     test.done();
   },
-  "setUp": function(done) {
+  setUp (done) {
     // setup here
     done();
   }
