@@ -17,7 +17,7 @@
     "eslint-plugin-security": ">=1.4.0",
     "eslint-plugin-xss": ">=0.1.9",
     "grunt-contrib-nodeunit": ">=2.0.0",
-    "grunt-eslint": ">=20.1.0",
+    "grunt-eslint": ">=21.0.0",
     "grunt-yamllint": ">=0.3.0"
   },
   "engines": {
