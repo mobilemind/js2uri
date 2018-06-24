@@ -142,6 +142,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.5.2: update dependencies (clears `npm audit` warnings), bump version
+
 1.5.1: update devDependencies for grunt-contrib-nodeunit >= 2.0.0, bump version
 
 1.5.0: drop node 5 support; revise for eslint 4.0.0 reviews, bump version
