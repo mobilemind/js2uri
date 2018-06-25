@@ -240,7 +240,7 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2017 Tom King
+Copyright (c) 2012-2018 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
