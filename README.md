@@ -8,6 +8,8 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.6.0 requires node > 7.0.0.
+
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with
 earlier versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x
 compatibility.
@@ -141,6 +143,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.6.0: drop support for node <= 7.0; bump version
 
 1.5.2: update dependencies (clears `npm audit` warnings), bump version
 
