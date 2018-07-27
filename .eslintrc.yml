@@ -214,6 +214,12 @@ rules:
   node/no-missing-import: 2
   node/no-missing-require: 0
   node/no-unpublished-import: 2
+  # style
+  node/exports-style: 0
+  node/prefer-global/buffer: 2
+  node/prefer-global/process: 2
+  node/prefer-global/url-search-params: 2
+  node/prefer-global/url: 2
 
 
   # no-storage
