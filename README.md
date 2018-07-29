@@ -50,7 +50,7 @@ Add the following to the `grunt.initConfig` section of the project
 `Gruntfile.js` file:
 
 ```javascript
-js2uri:  {
+"js2uri": {
   "dist/uriVersionOflintedAndMinifiedFile.js": ["dist/lintedAndMinifiedFile.js"]
 }
 ```
@@ -84,14 +84,14 @@ formats are supported for specifying files. See
 grunt.initConfig({
   // eslint - Critical eslint rules to disable: no-void, no-script-url
   // Example .eslintrc.yml config file--
-  // env:
-  //   browser: true
-  //   es6: true
-  //   node: true
-  // extends: eslint:recommended
-  // rules:
-  //   no-void: 0
-  //   no-script-url: 0
+  // "env":
+  //   "browser": true
+  //   "es6": true
+  //   "node": true
+  // "extends": "eslint:recommended"
+  // "rules":
+  //   "no-void": 0
+  //   "no-script-url": 0
   //
   // jshint - Critical jshint option: browser & scripturl (allow)
   // "jshint": {
