@@ -11,6 +11,8 @@ node_js:
 - '8'
 - '9'
 - '10'
+matrix:
+  fast_finish: true
 before_install:
 - npm set progress=false ; npm install -g grunt-cli
 notifications:
