@@ -19,6 +19,8 @@ Version 1.3.21 extends this to node >= 0.10.0.
 
 Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
 
+Version 1.6.1 drops support & testing for node < 9.0.0
+
 ## Example
 
 The code
@@ -143,6 +145,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.6.1: drop support for node < 9.0; bump version
 
 1.6.0: drop support for node <= 7.0; bump version
 

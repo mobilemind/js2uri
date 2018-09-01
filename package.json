@@ -21,7 +21,7 @@
     "grunt-yamllint": ">=0.3.0"
   },
   "engines": {
-    "node": ">7.0.0"
+    "node": ">9.0.0"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
@@ -38,5 +38,5 @@
   "scripts": {
     "test": "grunt test"
   },
-  "version": "1.6.0"
+  "version": "1.6.1"
 }
