@@ -221,12 +221,12 @@ rules:
   node/prefer-global/url-search-params: 2
   node/prefer-global/url: 2
 
-  # no-storage - https://github.com/Implisit/eslint-plugin-no-storage
+  # no-storage https://github.com/Implisit/eslint-plugin-no-storage
   no-storage/no-browser-storage: 2
 
   # security
   # using recommended; https://github.com/nodesecurity/eslint-plugin-security
 
-  # xss - https://github.com/Rantanen/eslint-plugin-xss
+  # xss https://github.com/Rantanen/eslint-plugin-xss
   xss/no-location-href-assign: 2
   xss/no-mixed-html: 0
