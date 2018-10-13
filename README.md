@@ -8,7 +8,7 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
-Version 1.6.0 requires node > 7.0.0.
+Version 1.6.1 and above require node > 9.0.0.
 
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with
 earlier versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x
@@ -128,7 +128,7 @@ grunt.initConfig({
   },
   // if meta object exists js2uri will use version as options.customVersion value
   "meta": {
-    "version": "1.6.1",
+    "version": "1.0.0",
   }
 });
 // ...
@@ -145,6 +145,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.6.2: at long last properly make `grunt` a _peerDependency_ ; bump version
 
 1.6.1: drop support for node < 9.0; bump version
 
