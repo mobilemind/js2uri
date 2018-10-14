@@ -2,12 +2,13 @@ branches:
   except:
   - gh-pages
 sudo: false
+dist: trusty
 language: node_js
 cache:
   directories:
   - node_modules
 node_js:
-- '9'
+- '8'
 - '10'
 matrix:
   fast_finish: true
