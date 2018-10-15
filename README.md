@@ -146,6 +146,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.6.5: fix Travis-CI issue with dependencies ; bump version
+
 1.6.4: pin dependencies; integrate renovatebot ; bump version
 
 1.6.3: add `.npmignore` to repo to facilitate `npm publish` ; bump version
