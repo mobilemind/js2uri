@@ -1,6 +1,9 @@
+.eslintignore
+.eslintrc.yml
 .gitattributes
 .gitignore
 .travis.yml
 node_modules
 npm-debug.log
+renovate.json
 tmp
