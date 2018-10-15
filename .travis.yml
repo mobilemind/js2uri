@@ -16,4 +16,4 @@ before_install:
 - npm set progress=false ; npm install -g grunt-cli
 notifications:
   slack:
-    secure: VHmFYjUHeMY9dslDhki0w7bFMkcfJxKw50zmOkMmaw4setuahgFERweS8gOuw/X3R+NuNpbW4Rzg4q/fDOrr0/ZHZJbEnFNxbS/l6ulqhte6/L7HTswEJMZaPTSssrJ7Gwhp3VvWQhVGvBq2PlS4yytd61DLnxBU3jWBoQbw4mk=
+    secure: T5RR5COAvJ28iDWGii5kz13Pat+ob3d/qbySGoBKYw5xOx+IM1GZJ/diJrP9Ych3PS74LA3P/KSaI17PNW2xY60ky1B3kJ6PRi6TFXg4NcRJnT/YkMMsZ4OICi+v5RTytBn9lN2A/AMw6l2T9TtIFRtF8btVrgGIECkEwXAF3ko=
