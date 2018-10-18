@@ -146,6 +146,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.6.6: streamline dependencies- move lint outside of package/grunt; bump version
+
 1.6.5: fix Travis-CI issue with dependencies ; bump version
 
 1.6.4: pin dependencies; integrate renovatebot ; bump version
