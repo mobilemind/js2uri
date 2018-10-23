@@ -3,7 +3,4 @@
     "config:base"
   ],
   "travis": { "enabled": true },
-  "node": {
-    "supportPolicy": ["lts_active"]
-  }
 }
