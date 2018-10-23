@@ -2,5 +2,10 @@
   "extends": [
     "config:base"
   ],
-  "travis": { "enabled": true }
+  "node": {
+    "supportPolicy": ["lts_active"]
+  },
+  "travis": {
+    "enabled": true
+  }
 }
