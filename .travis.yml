@@ -5,7 +5,6 @@ sudo: false
 dist: trusty
 git:
   depth: 12
-  quiet: true
   submodules: false
 language: node_js
 cache:
