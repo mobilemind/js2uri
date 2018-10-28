@@ -1,8 +1,9 @@
 branches:
   except:
   - gh-pages
-sudo: false
+os: linux
 dist: trusty
+sudo: false
 git:
   depth: 12
   submodules: false
