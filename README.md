@@ -2,6 +2,7 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url]
 [![Dependency Status][dep-image]][dep-url] [![devDependency Status][devDep-image]][devDep-url]
+[![Codacy Badge][Codacy-image]][Codacy-dash]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
 bookmarklet or an iOS app protocol scheme link.
@@ -278,6 +279,10 @@ Licensed under the MIT license.
 [devDep-image]: https://img.shields.io/david/dev/mobilemind/js2uri.svg
 
 [devDep-url]: https://david-dm.org/mobilemind/js2uri#info=devDependencies
+
+[Codacy-image]: https://api.codacy.com/project/badge/Grade/e2c182cf61e942a8bffdc038a7301be9
+
+[Codacy-dash]: https://www.codacy.com/app/mobilemind/js2uri
 
 [grunt]: http://gruntjs.com/
 
