@@ -283,8 +283,6 @@ Licensed under the MIT license.
 
 [gruntjs documentation - Configuring Tasks: files]: http://gruntjs.com/configuring-tasks#files
 
-[getting_started]: http://gruntjs.com/getting-started#the-gruntfile
-
 [package.json]: https://docs.npmjs.com/files/package.json
 
-[js2uri 1.2.0 ]: https://github.com/mobilemind/js2uri/tree/1.2.0
+[js2uri 1.2.0]: https://github.com/mobilemind/js2uri/tree/1.2.0
