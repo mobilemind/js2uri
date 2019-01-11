@@ -5,6 +5,9 @@
   "node": {
     "supportPolicy": ["lts_active"]
   },
+  "schedule": [
+    "after 7pm and before 7:00am"
+  ],
   "travis": {
     "enabled": true
   }
