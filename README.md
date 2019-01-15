@@ -269,9 +269,9 @@ Licensed under the MIT license.
 
 <!-- reference URLs -->
 
-[build-image]: https://secure.travis-ci.org/mobilemind/js2uri.svg?branch=master
+[build-image]: https://travis-ci.com/mobilemind/js2uri.svg?branch=master
 
-[build-url]: https://travis-ci.org/mobilemind/js2uri
+[build-url]: https://travis-ci.com/mobilemind/js2uri
 
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
 
