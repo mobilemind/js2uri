@@ -1,6 +1,7 @@
 # js2uri
 
 [![Latest version on npmjs.com][npm-image]][npm-url]
+ [![Downloads from npmjs.com][npm-downloads]][npm-url]
  [![Build Status][build-image]][build-url]
  [![Dependency Status][dep-image]][dep-url]
  [![devDependency Status][devDep-image]][devDep-url]
@@ -274,6 +275,8 @@ Licensed under the MIT license.
 [build-url]: https://travis-ci.com/mobilemind/js2uri
 
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
+
+[npm-downloads]: https://img.shields.io/npm/dm/js2uri.svg
 
 [npm-url]: https://www.npmjs.com/package/js2uri
 
