@@ -1,12 +1,14 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":maintainLockFilesWeekly"
   ],
   "node": {
     "supportPolicy": ["lts_active"]
   },
   "schedule": [
-    "before 5:00am on every weekday"
+    "after 11pm every weekday",
+    "before 5am every weekday"
   ],
   "travis": {
     "enabled": true
