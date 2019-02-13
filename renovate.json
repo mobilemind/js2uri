@@ -6,7 +6,7 @@
     "supportPolicy": ["lts_active"]
   },
   "schedule": [
-    "after 7pm and before 7:00am"
+    "before 5:00am on every weekday"
   ],
   "travis": {
     "enabled": true
