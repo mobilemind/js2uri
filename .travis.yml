@@ -12,6 +12,8 @@ cache:
 node_js:
 - '8'
 - '10'
+- '11'
+- '12'
 matrix:
   fast_finish: true
 before_install:
