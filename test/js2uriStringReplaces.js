@@ -47,13 +47,13 @@ exports.js2uri = {
 
     // ** default options
     let testVal = "";
-    let expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}'`;
+    let expectedVal = `;void'${!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version}'`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
       `test #1 defaults with '${testVal}' should return '${expectedVal}'`);
 
     testVal = ";";
-    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}'`;
+    expectedVal = `;void'${!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version}'`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
       `test #2 defaults with '${testVal}' should return '${expectedVal}'`);
@@ -61,14 +61,14 @@ exports.js2uri = {
     // ** with trailing semicolon
     jsURItest_opt.noLastSemicolon = false;
     testVal = "";
-    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
+    expectedVal = `;void'${!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
       `test #3 noLastSemicolon:${jsURItest_opt.noLastSemicolon} null should return '${expectedVal}'`);
 
     jsURItest_opt.noLastSemicolon = false;
     testVal = ";";
-    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
+    expectedVal = `;void'${!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
       `test #4 noLastSemicolon:${jsURItest_opt.noLastSemicolon} null should return '${expectedVal}'`);
@@ -76,7 +76,7 @@ exports.js2uri = {
     // ** append version
     jsURItest_opt.appendVersion = true;
     testVal = "";
-    expectedVal = `;void'${(!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version)}';`;
+    expectedVal = `;void'${!jsURItest_opt.appendVersion || "" === jsURItest_version ? 0 : jsURItest_version}';`;
     test.deepEqual(js2uriHelpers.js2uriStringReplaces(testVal, jsURItest_opt),
       expectedVal,
       `test #5 appendVersion:${jsURItest_opt.appendVersion} null should return '${expectedVal}'`);

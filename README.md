@@ -151,6 +151,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.6.8: remove optional parens in `test/js2uriStringReplaces.js`; bump version
+
 1.6.7: streamline dependencies- move lint outside of package/grunt; bump version
 
 1.6.6: streamline dependencies- move lint outside of package/grunt; bump version
