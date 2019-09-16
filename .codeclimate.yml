@@ -54,10 +54,11 @@ plugins:
         enabled: false
       node/prefer-global/url:
         enabled: false
-      no-storage/no-browser-storage:
+      no-buffer-constructor:
+        enabled: false      no-storage/no-browser-storage:
         enabled: false
   csslint:
     enabled: false
 exclude_patterns:
 - "**/node_modules/"
-- "**/tests/"
+- "**/test/"
