@@ -26,6 +26,8 @@ Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
 
 Version 1.6.1 drops support & testing for node < 9.0.0
 
+Version 1.7.0 drops support & testing for node < 10.0.0
+
 ## Example
 
 The code
@@ -150,6 +152,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.7.0: drop node 8 support; require node 10+
 
 1.6.8: remove optional parens in `test/js2uriStringReplaces.js`; bump version
 
