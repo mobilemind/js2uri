@@ -7,7 +7,9 @@
   "bugs": {
     "url": "https://github.com/mobilemind/js2uri/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "snyk": "^1.319.0"
+  },
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
   "devDependencies": {
     "grunt-contrib-nodeunit": "2.1.0",
@@ -32,7 +34,10 @@
     "url": "https://github.com/mobilemind/js2uri.git"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "version": "1.7.0"
+  "version": "1.7.0",
+  "snyk": true
 }
