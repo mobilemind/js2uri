@@ -6,7 +6,6 @@
  [![Dependency Status][dep-image]][dep-url]
  [![devDependency Status][devDep-image]][devDep-url]
  [![Codacy Code Quality Rating][Codacy-image]][Codacy-dash]
- [![Snyk Security Review Status][Snyk-image]][Snyk-dash]
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
 bookmarklet or an iOS app protocol scheme link.
@@ -27,6 +26,8 @@ Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
 Version 1.6.1 drops support & testing for node < 9.0.0
 
 Version 1.7.0 drops support & testing for node < 10.0.0
+
+Version 1.8.0 drops snyk in build process as it doubled the dependencies
 
 ## Example
 
@@ -153,6 +154,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.8.0: drop snyk as it doubled dependencies & increased build time; rely on renovatebot
+
 1.7.0: drop node 8 support; require node 10+
 
 1.6.8: remove optional parens in `test/js2uriStringReplaces.js`; bump version
@@ -271,7 +274,7 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2018 Tom King
+Copyright (c) 2012-2020 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
@@ -297,10 +300,6 @@ Licensed under the MIT license.
 [Codacy-image]: https://api.codacy.com/project/badge/Grade/e2c182cf61e942a8bffdc038a7301be9
 
 [Codacy-dash]: https://www.codacy.com/app/mobilemind/js2uri
-
-[Snyk-image]: https://snyk.io/test/github/mobilemind/js2uri/badge.svg?targetFile=package.json
-
-[Snyk-dash]: https://snyk.io/test/github/mobilemind/js2uri?targetFile=package.json
 
 [grunt]: http://gruntjs.com/
 
