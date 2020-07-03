@@ -154,6 +154,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.8.1: update `grunt` dependencies
+
 1.8.0: drop snyk as it doubled dependencies & increased build time; rely on renovatebot
 
 1.7.0: drop node 8 support; require node 10+

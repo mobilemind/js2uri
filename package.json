@@ -11,7 +11,7 @@
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
   "devDependencies": {
     "grunt-contrib-nodeunit": "2.1.0",
-    "grunt": "1.1.0"
+    "grunt": "1.2.0"
   },
   "engines": {
     "node": ">10.0.0"
@@ -24,7 +24,7 @@
   "main": "Gruntfile.js",
   "name": "js2uri",
   "peerDependencies": {
-    "grunt": "1.1.0"
+    "grunt": "1.2.0"
   },
   "readmeFilename": "README.md",
   "repository": {
@@ -34,5 +34,5 @@
   "scripts": {
     "test": "grunt test"
   },
-  "version": "1.8.0"
+  "version": "1.8.1"
 }
