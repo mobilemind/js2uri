@@ -12,22 +12,25 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.9.0 drops support & testing for node < 12.0.0
+
+Version 1.8.0 drops snyk in build process as it doubled the dependencies
+
+Version 1.7.0 drops support & testing for node < 10.0.0
+
 Version 1.6.6 and above require node > 8.0.0.
+
+Version 1.6.1 drops support & testing for node < 9.0.0
+
+Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
+
+Version 1.3.21 extends this to node >= 0.10.0.
+
+Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
 
 Version 1.3.0 begins grunt 0.4.0 compatibility and ends compatibility with
 earlier versions of grunt. Use [js2uri 1.2.0] if you require grunt 0.3.x
 compatibility.
-
-Version 1.3.14 and above works with node 0.10.x - 0.12.x as the engine.
-Version 1.3.21 extends this to node >= 0.10.0.
-
-Version 1.4.0 begins a focus on the contemporary LTS releases of `node`.
-
-Version 1.6.1 drops support & testing for node < 9.0.0
-
-Version 1.7.0 drops support & testing for node < 10.0.0
-
-Version 1.8.0 drops snyk in build process as it doubled the dependencies
 
 ## Example
 
@@ -154,6 +157,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.9.0: drop support for node 10, as 12 becomes node LTS
+
 1.8.3: update to grunt-contrib-nodeunit 3.0.0, update lockfile
 
 1.8.1: update `grunt` dependencies
@@ -278,7 +283,7 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2020 Tom King
+Copyright (c) 2012-2021 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
