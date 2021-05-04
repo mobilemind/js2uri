@@ -12,7 +12,7 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
-Version 1.9.0 drops support & testing for node < 12.0.0
+Version 1.9.0 drops support & testing for node < 12.0.1
 
 Version 1.8.0 drops snyk in build process as it doubled the dependencies
 
