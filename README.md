@@ -288,7 +288,7 @@ Licensed under the MIT license.
 
 <!-- reference URLs -->
 
-[build-image]: https://travis-ci.com/mobilemind/js2uri.svg?branch=master
+[build-image]: https://travis-ci.com/mobilemind/js2uri.svg?branch=main
 
 [build-url]: https://travis-ci.com/mobilemind/js2uri
 
