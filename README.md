@@ -1,6 +1,7 @@
 # js2uri
 
-[![Latest version on npmjs.com][npm-image]][npm-url]
+![repo version](https://img.shields.io/github/package-json/v/mobilemind/js2uri.svg)
+ [![Latest version on npmjs.com][npm-image]][npm-url]
  [![Downloads from npmjs.com][npm-downloads]][npm-url]
  [![Build Status][build-image]][build-url]
  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e2c182cf61e942a8bffdc038a7301be9)](https://www.codacy.com/gh/mobilemind/js2uri/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mobilemind/js2uri&amp;utm_campaign=Badge_Grade)
