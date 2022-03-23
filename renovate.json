@@ -3,18 +3,15 @@
     "config:base",
     ":maintainLockFilesWeekly"
   ],
-  "automerge": true,
+  "automerge": false,
   "node": {
     "supportPolicy": ["lts_active"]
-  },
-  "major": {
-    "automerge": false
   },
   "schedule": [
     "after 11pm every weekday",
     "before 5am every weekday"
   ],
   "travis": {
-    "enabled": true
+    "enabled": false
   }
 }
