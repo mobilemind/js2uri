@@ -9,8 +9,8 @@
   },
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
   "devDependencies": {
-    "grunt": "1.5.1",
-    "grunt-contrib-nodeunit": "4.0.0"
+    "grunt": "~1.5.2",
+    "grunt-contrib-nodeunit": "^4.0.0"
   },
   "engines": {
     "node": ">12.22.4"
