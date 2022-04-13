@@ -4,9 +4,10 @@
     ":maintainLockFilesWeekly"
   ],
   "automerge": false,
-  "node": {
-    "supportPolicy": ["lts_active"]
+  "npm": {
+    "stabilityDays": 3
   },
+  "rangeStrategy": "replace",
   "schedule": [
     "after 11pm every weekday",
     "before 5am every weekday"
