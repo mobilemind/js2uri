@@ -9,7 +9,7 @@
   },
   "rangeStrategy": "replace",
   "schedule": [
-    "before 5am every weekemd"
+    "before 5am every weekend"
   ],
   "travis": {
     "enabled": false
