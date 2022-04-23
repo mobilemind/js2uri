@@ -198,14 +198,10 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2021 Tom King
+Copyright (c) 2012-2022 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
-
-[build-image]: https://travis-ci.com/mobilemind/js2uri.svg?branch=main
-
-[build-url]: https://travis-ci.com/mobilemind/js2uri
 
 [npm-image]: https://img.shields.io/npm/v/js2uri.svg
 
