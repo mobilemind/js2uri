@@ -1,3 +1,6 @@
+# eslint max-lines: [2, {"max": 250, "skipBlankLines": true, "skipComments": true}]
+# eslint max-len: ["warn", {"code": 109, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true}]
+---
 root: true
 
 env:
@@ -17,8 +20,9 @@ plugins:
 - no-storage
 - security
 - xss
+- yml
 
-extends: [eslint:recommended, plugin:node/recommended, plugin:security/recommended]
+extends: [eslint:recommended, plugin:node/recommended, plugin:security/recommended, plugin:yml/recommended]
 
 # http://eslint.org/docs/rules/
 rules:
@@ -230,3 +234,7 @@ rules:
   # xss https://github.com/Rantanen/eslint-plugin-xss
   xss/no-location-href-assign: 2
   xss/no-mixed-html: 0
+
+  # yml
+  # using recommended https://github.com/ota-meshi/eslint-plugin-yml
+  yml/key-spacing: 2
