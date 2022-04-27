@@ -152,6 +152,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.10.1: drop Travis-CI and rennovate
+
 1.10.0: drop support for node 12, as 14 becomes node LTS
 
 1.9.0: drop support for node 10, as 12 becomes node LTS
