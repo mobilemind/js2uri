@@ -16,13 +16,14 @@ parserOptions:
   sourceType: script
 
 plugins:
+- json
 - node
 - no-storage
 - security
 - xss
 - yml
 
-extends: [eslint:recommended, plugin:node/recommended, plugin:security/recommended, plugin:yml/recommended]
+extends: [eslint:recommended, plugin:json/recommended, plugin:node/recommended, plugin:security/recommended, plugin:yml/recommended]
 
 # http://eslint.org/docs/rules/
 rules:
