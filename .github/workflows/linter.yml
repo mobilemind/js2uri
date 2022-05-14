@@ -30,9 +30,9 @@ jobs:
         uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
-          FILTER_REGEX_EXCLUDE: .*web/.*.js
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: NOTICE
+          SUPPRESS_POSSUM: true
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_JAVASCRIPT_ES: true
