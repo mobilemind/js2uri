@@ -1,8 +1,8 @@
 ---
-name: NodeJS with Grunt
+name: "NodeJS with Grunt"
 
 on:
-  push:6
+  push:
     branches: [main, hotfix]
   pull_request:
     branches: [main]
