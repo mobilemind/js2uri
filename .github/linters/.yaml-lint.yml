@@ -2,11 +2,14 @@
 ignore: |
   codeql-analysis.yml
   linter.yml
+  npm-grunt.yml
 
 yaml-files:
   - '.*.yml'
   - '*.yaml'
   - '*.yml'
+
+extends: default
 
 rules:
   brackets:

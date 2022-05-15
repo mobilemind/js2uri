@@ -18,10 +18,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          # Full git history needed to get list of changed files w/in `super-linter`
+          # Full git history needed for list of changed files w/in `super-linter`
           fetch-depth: 0
 
-      # install plugins globally to avoid changing package-lock.json
+      # install plugins globally to avoid changing package*.json
       - name: Install ESLint Plugins
         run: npm install -g eslint-plugin-json
 
