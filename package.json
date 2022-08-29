@@ -13,7 +13,7 @@
     "grunt-contrib-nodeunit": "^4.0.0"
   },
   "engines": {
-    "node": ">14.19.0"
+    "node": ">14.19.2"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
