@@ -23,7 +23,7 @@ jobs:
 
       # install plugins globally to avoid changing package*.json
       - name: Install ESLint Plugins
-        run: npm install -g eslint-plugin-json eslint-plugin-node
+        run: npm install -g --save-dev eslint-plugin-json eslint-plugin-node
 
       # Run Linter against code base
       - name: Lint Code Base
