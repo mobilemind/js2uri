@@ -13,7 +13,7 @@
     "grunt-contrib-nodeunit": "^4.0.0"
   },
   "engines": {
-    "node": ">14.20"
+    "node": ">14.21.0"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
@@ -23,7 +23,7 @@
   "main": "Gruntfile.js",
   "name": "js2uri",
   "peerDependencies": {
-    "grunt": ">1.4.0"
+    "grunt": ">1.5.0"
   },
   "readmeFilename": "README.md",
   "repository": {
@@ -33,5 +33,5 @@
   "scripts": {
     "test": "npx grunt test"
   },
-  "version": "1.10.3"
+  "version": "1.10.5"
 }

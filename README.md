@@ -153,6 +153,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.10.5: bump version requirements for grunt peerDependency & node; copyright update
+
 1.10.2: update CI & docs, republish w/new npm credentials
 
 1.10.1: drop Travis-CI and rennovate
