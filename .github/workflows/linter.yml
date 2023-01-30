@@ -21,9 +21,9 @@ jobs:
           # Full git history needed for list of changed files w/in `super-linter`
           fetch-depth: 0
 
-      # install plugins globally to avoid changing package*.json
+      # install plugins here to avoid changing package-lock.json
       - name: Install ESLint Plugins
-        run: npm install --save-dev eslint-plugin-json eslint-plugin-node
+        run: npm install --save-dev eslint eslint-plugin-json eslint-plugin-node
 
       # Run Linter against code base
       - name: Lint Code Base
