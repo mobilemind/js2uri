@@ -12,6 +12,8 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.11.0 drops support & testing for node < 16.8.0
+
 Version 1.10.0 drops support & testing for node < 14.18.4
 
 Version 1.9.0 drops support & testing for node < 12.0.1
@@ -152,6 +154,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.10.5: update grunt & node dependencies; now requires node >16.8
 
 1.10.5: bump version requirements for grunt peerDependency & node; copyright update
 
