@@ -9,11 +9,11 @@
   },
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
   "devDependencies": {
-    "grunt": "~1.5.3",
+    "grunt": "^1.6.0",
     "grunt-contrib-nodeunit": "^4.0.0"
   },
   "engines": {
-    "node": ">14.21.0"
+    "node": ">16.8.0"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
@@ -33,5 +33,5 @@
   "scripts": {
     "test": "npx grunt test"
   },
-  "version": "1.10.5"
+  "version": "1.11.0"
 }
