@@ -155,7 +155,7 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
-1.10.5: update grunt & node dependencies; now requires node >16.8
+1.11.0: update grunt & node dependencies; now requires node >16.8
 
 1.10.5: bump version requirements for grunt peerDependency & node; copyright update
 
