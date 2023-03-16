@@ -159,7 +159,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
-1.12.0: requires node >16.14; updated devDependencies with grunt-contrib-nodeunit 5.0.0
+1.12.0: requires node >16.14; updated devDependencies with
+grunt-contrib-nodeunit 5.0.0
 
 1.11.2: requires node >16.13
 
