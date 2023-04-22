@@ -159,6 +159,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.12.1: requires node >16.19 test w/node 20.x; update README & lockfile
+
 1.12.0: requires node >16.14; updated devDependencies with
 grunt-contrib-nodeunit 5.0.0
 
