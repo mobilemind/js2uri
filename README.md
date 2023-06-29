@@ -12,6 +12,8 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.13.0 drops support & testing for node < 18.13.0
+
 Version 1.12.0 drops support & testing for node < 16.14.0
 
 Version 1.11.2 drops support & testing for node < 16.13.0
@@ -158,6 +160,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.13.0: requires node >18.12.1 & drops node 16 tests; update README & lockfile
 
 1.12.1: requires node >16.19 test w/node 20.x; update README & lockfile
 
