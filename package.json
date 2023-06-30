@@ -10,7 +10,7 @@
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
   "devDependencies": {
     "grunt": "^1.6.1",
-    "grunt-contrib-nodeunit": "^1.0.0"
+    "grunt-contrib-nodeunit": "^5.0.0"
   },
   "engines": {
     "node": ">18.12.1"
@@ -33,5 +33,5 @@
   "scripts": {
     "test": "npx grunt test"
   },
-  "version": "1.13.0"
+  "version": "1.13.1"
 }
