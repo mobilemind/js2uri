@@ -161,6 +161,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.13.3: adds `npm-shrinkwrap.json`, updates semver dependencies syntax
+
 1.13.0: requires node >18.12.1 & drops node 16 tests; update README & lockfile
 
 1.12.1: requires node >16.19 test w/node 20.x; update README & lockfile
