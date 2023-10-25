@@ -163,6 +163,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.13.6: require node > 18.18.1 (node 18 in maintenance mode)
+
 1.13.5: require node > 18.15.0
 
 1.13.3: adds `npm-shrinkwrap.json`, updates semver dependencies syntax
