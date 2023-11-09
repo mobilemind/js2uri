@@ -3,10 +3,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, hotfix]
   pull_request:
     # branches below must be a subset of the above
-    branches: [ main ]
+    branches: [main]
   schedule:
     - cron: '15 4 * * 5,6,0'
   # eslint "yml/no-empty-mapping-value": 0
@@ -29,7 +29,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2

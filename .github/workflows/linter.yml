@@ -26,8 +26,8 @@ jobs:
         run: npm install --save-dev eslint eslint-plugin-json eslint-plugin-node
 
       # Run Linter against code base
-      - name: Lint Code Base
-        uses: github/super-linter/slim@v4
+      - name: Lint Code Base with env
+        uses: github/super-linter/slim@v5
         env:
           ACTIONS_RUNNER_DEBUG: false
           DEFAULT_BRANCH: main
