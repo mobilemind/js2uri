@@ -1,16 +1,16 @@
 {
   "name": "js2uri",
-  "version": "1.13.6",
+  "version": "1.13.7",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "js2uri",
-      "version": "1.13.6",
+      "version": "1.13.7",
       "license": "MIT",
       "devDependencies": {
         "grunt": "~1.6.1",
-        "grunt-contrib-nodeunit": "~5.0.0"
+        "grunt-contrib-nodeunit": "mobilemind/grunt-contrib-nodeunit"
       },
       "engines": {
         "node": ">18.8.1"
@@ -1000,9 +1000,9 @@
       }
     },
     "node_modules/electron-to-chromium": {
-      "version": "1.4.579",
-      "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.579.tgz",
-      "integrity": "sha512-bJKvA+awBIzYR0xRced7PrQuRIwGQPpo6ZLP62GAShahU9fWpsNN2IP6BSP1BLDDSbxvBVRGAMWlvVVq3npmLA==",
+      "version": "1.4.581",
+      "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.581.tgz",
+      "integrity": "sha512-6uhqWBIapTJUxgPTCHH9sqdbxIMPt7oXl0VcAL1kOtlU6aECdcMncCrX5Z7sHQ/invtrC9jUQUef7+HhO8vVFw==",
       "dev": true
     },
     "node_modules/emoji-regex": {
@@ -1486,9 +1486,9 @@
     },
     "node_modules/grunt-contrib-nodeunit": {
       "version": "5.0.0",
-      "resolved": "https://registry.npmjs.org/grunt-contrib-nodeunit/-/grunt-contrib-nodeunit-5.0.0.tgz",
-      "integrity": "sha512-6PeUhAAOAgao+s5fqRirb8uArqT9Xdamr3+dVSp9HHgAWmnT0w9oNILlyh8bQ/j36/B3oYRBL0O3CuW+PdH+vA==",
+      "resolved": "git+ssh://git@github.com/mobilemind/grunt-contrib-nodeunit.git#f8d36059470469a2a3fb299a726be0b0ca9bb66b",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
         "nodeunit-x": "^0.16.0"
       },
