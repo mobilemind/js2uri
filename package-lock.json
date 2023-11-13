@@ -315,7 +315,7 @@
       "dev": true,
       "dependencies": {
         "@babel/template": "^7.22.15",
-        "@babel/traverse": "^7.23.2",
+        "@babel/traverse": "^7.23.3",
         "@babel/types": "^7.23.0"
       },
       "engines": {
@@ -3065,7 +3065,7 @@
         "@babel/helpers": "^7.22.6",
         "@babel/parser": "^7.22.7",
         "@babel/template": "^7.22.5",
-        "@babel/traverse": "^7.22.8",
+        "@babel/traverse": "^7.23.3",
         "@babel/types": "^7.22.5",
         "convert-source-map": "^1.7.0",
         "debug": "^4.1.0",
@@ -3259,7 +3259,7 @@
       "license": "MIT",
       "dependencies": {
         "@babel/template": "^7.22.5",
-        "@babel/traverse": "^7.22.6",
+        "@babel/traverse": "^7.23.3",
         "@babel/types": "^7.22.5"
       },
       "engines": {
@@ -4039,7 +4039,7 @@
         "is-ci": "^2.0.0",
         "lodash": "^4.17.20",
         "patch-console": "^1.0.0",
-        "react-devtools-core": "^4.19.1",
+        "react-devtools-core": "^4.28.4",
         "react-reconciler": "^0.26.2",
         "scheduler": "^0.20.2",
         "signal-exit": "^3.0.2",
