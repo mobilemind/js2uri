@@ -315,7 +315,7 @@
       "dev": true,
       "dependencies": {
         "@babel/template": "^7.22.15",
-        "@babel/traverse": "^7.23.2",
+        "@babel/traverse": "^7.23.3",
         "@babel/types": "^7.23.0"
       },
       "engines": {
