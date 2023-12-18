@@ -114,7 +114,6 @@ rules:
   no-lonely-if: "error"
   no-negated-condition: "error"
   no-nested-ternary: "error"
-  no-object-constructor: "error"
   no-plusplus: "error"
   no-restricted-syntax: "error"
   no-underscore-dangle: "error"
