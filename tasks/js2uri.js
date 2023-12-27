@@ -49,8 +49,8 @@ module.exports = function(grunt) {
         });
 
         // loop through files
-        const files = this.files;
-        files.forEach(function(filepair) {
+        const { files } = this;
+        files.forEach((filepair) => {
           // read source
           const jsSourceStr = grunt.file.read(filepair.src);
 
