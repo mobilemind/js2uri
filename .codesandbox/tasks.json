@@ -2,14 +2,19 @@
   "setupTasks": [
     {
       "name": "Install Dependencies",
-      "command": "npm install && npm audit fix"
+      "command": "npm install"
     }
   ],
   "tasks": {
     "test": {
       "name": "test",
       "command": "npx grunt test",
-      "runAtStart": true
+      "runAtStart": false
+    },
+    "update lockfile": {
+      "name": "test",
+      "command": "rm -rf package-lock.json ; npm install && npm audit fix && npx grunt test",
+      "runAtStart": false
     }
   }
 }
