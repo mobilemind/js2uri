@@ -1,0 +1,15 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "npm install && npm audit fix"
+    }
+  ],
+  "tasks": {
+    "test": {
+      "name": "test",
+      "command": "npx grunt test",
+      "runAtStart": true
+    }
+  }
+}

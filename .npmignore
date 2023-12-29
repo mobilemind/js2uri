@@ -1,8 +1,7 @@
+.codesandbox/
 .git/
 .github/
 .gitignore
-.remarkrc
-.snyk
 node_modules/
 npm-debug.log
 tmp/
