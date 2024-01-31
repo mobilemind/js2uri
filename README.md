@@ -163,6 +163,8 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.13.8: require node ≥ 18.19.0 (node 18 in maintenance mode), restore repo for grunt-contrib-nodeunit
+
 1.13.6: require node > 18.18.1 (node 18 in maintenance mode)
 
 1.13.5: require node > 18.15.0
