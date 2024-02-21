@@ -234,7 +234,7 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2023 Tom King
+Copyright (c) 2012-2024 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
