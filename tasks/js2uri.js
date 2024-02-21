@@ -2,7 +2,7 @@
  * grunt-js2uri
  * https://github.com/mobilemind/grunt-js2uri
  *
- * Copyright (c) 2012-2023 Tom King
+ * Copyright (c) 2012-2024 Tom King
  * Licensed under the MIT license.
  */
 "use strict";
