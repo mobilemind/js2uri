@@ -2,11 +2,11 @@
 const globals = require("globals");
 const js = require("@eslint/js");
 const n = require("eslint-plugin-n");
-// console.error(n.configs);
+
 module.exports = [
     {
         files: [".github/linters/eslint.config.js", "Gruntfile.js", "tasks/*.js", "tests/*.js"],
-        ignores: ["*.json", "**/*{.,-}min.js", "node_modules/*", "web/*.js"],
+        ignores: ["*.json", "node_modules/*", "web/*.js"],
         languageOptions: {
             ecmaVersion: "latest",
             globals: {
