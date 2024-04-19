@@ -1,4 +1,3 @@
-/* eslint-disable n/no-extraneous-require */
 const globals = require("globals");
 const js = require("@eslint/js");
 const n = require("eslint-plugin-n");
@@ -121,6 +120,7 @@ module.exports = [
             "unicode-bom": "error",
             // n (node) -  https://github.com/eslint-community/eslint-plugin-n
             ...n.configs['flat/recommended-module'].rules,
+            "n/no-extraneous-require": "off",
             "n/prefer-global/buffer": "error",
             "n/prefer-global/process": "error",
             "n/prefer-global/url-search-params": "error",
