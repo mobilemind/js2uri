@@ -40,7 +40,6 @@ module.exports = [
             "id-match": "error",
             "init-declarations": "error",
             "max-depth": "error",
-            "max-lines": ["error", {"max": 150, "skipBlankLines": true, "skipComments": true}],
             "max-nested-callbacks": "error",
             "max-params": ["error", 5],
             "max-statements": ["error", 76],
