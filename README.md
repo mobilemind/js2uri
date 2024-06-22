@@ -12,6 +12,8 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.14.0 drops support & testing for node < 18.20.0
+
 Version 1.13.5 drops support & testing for node < 18.15.0
 
 Version 1.13.0 drops support & testing for node < 18.13.0
@@ -162,6 +164,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.14.0: require node ≥ 18.20.0 (node 18 in maintenance mode), bump version, update lockfile
 
 1.13.9: require node ≥ 18.19.0 (node 18 in maintenance mode), restore repo for grunt-contrib-nodeunit
 
