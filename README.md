@@ -165,11 +165,17 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
-1.15.0: require node ≥ 20.18.0 (node 20 in maintenance mode), drop support for node 18, bump version, update lockfile
+1.15.1: no functional change; integrate cspell for use with git pre-push hook,
+fix typos, update lockfile
 
-1.14.0: require node ≥ 18.20.0 (node 18 in maintenance mode), bump version, update lockfile
+1.15.0: require node ≥ 20.18.0 (node 20 in maintenance mode), drop support for
+node 18, bump version, update lockfile
 
-1.13.9: require node ≥ 18.19.0 (node 18 in maintenance mode), restore repo for grunt-contrib-nodeunit
+1.14.0: require node ≥ 18.20.0 (node 18 in maintenance mode), bump version,
+update lockfile
+
+1.13.9: require node ≥ 18.19.0 (node 18 in maintenance mode), restore repo
+for grunt-contrib-nodeunit
 
 1.13.6: require node > 18.18.1 (node 18 in maintenance mode)
 
@@ -188,11 +194,12 @@ grunt-contrib-nodeunit 5.0.0
 
 1.11.0: update grunt & node dependencies; now requires node >16.8
 
-1.10.5: bump version requirements for grunt peerDependency & node; copyright update
+1.10.5: bump version requirements for grunt peerDependency & node; copyright
+update
 
 1.10.2: update CI & docs, republish w/new npm credentials
 
-1.10.1: drop Travis-CI and rennovate
+1.10.1: drop Travis-CI and renovate
 
 1.10.0: drop support for node 12, as 14 becomes node LTS
 
