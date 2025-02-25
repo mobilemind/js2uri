@@ -1,4 +1,6 @@
 .codesandbox/
+.cspell/
+.cspell.jsonc
 .git/
 .github/
 .gitignore
