@@ -15,7 +15,7 @@
     const lastColonRegex = /;$/;
     let replacedUriStr = uriStr;
 
-    // swapt use apostrophe? (most browsers don't require %22 for ')
+    // swap back apostrophes? (most browsers don't require %22 for ')
     if (uriOpts.useSingleQuote) {
       replacedUriStr = replacedUriStr.replace(tickRegEx, "'");
     }
