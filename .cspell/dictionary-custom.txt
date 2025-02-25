@@ -1,0 +1,3 @@
+Codacy
+gruntjs
+npmjs
