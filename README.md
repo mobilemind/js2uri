@@ -165,6 +165,9 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
+1.15.2: no functional changes; update cspell dictionary, strictly enforce node
+& npm requirements with .npmrc, bump version, update lockfile, republish
+
 1.15.1: no functional change; integrate cspell for use with git pre-push hook,
 fix typos, update lockfile
 
