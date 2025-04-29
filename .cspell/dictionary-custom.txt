@@ -1,3 +1,4 @@
 Codacy
 gruntjs
 npmjs
+snyk
