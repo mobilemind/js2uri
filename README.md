@@ -165,8 +165,7 @@ code using `eslint` (preferred) or `jshint`.
 
 ## Release History
 
-1.15.2: no functional changes; update cspell dictionary, strictly enforce node
-& npm requirements with .npmrc, bump version, update lockfile, republish
+1.15.3: no functional changes; update ci actions for node 24.x, bump version, update lockfile, republish
 
 1.15.1: no functional change; integrate cspell for use with git pre-push hook,
 fix typos, update lockfile
@@ -177,60 +176,30 @@ node 18, bump version, update lockfile
 1.14.0: require node ≥ 18.20.0 (node 18 in maintenance mode), bump version,
 update lockfile
 
-1.13.9: require node ≥ 18.19.0 (node 18 in maintenance mode), restore repo
-for grunt-contrib-nodeunit
-
 1.13.6: require node > 18.18.1 (node 18 in maintenance mode)
 
-1.13.5: require node > 18.15.0
-
-1.13.3: adds `npm-shrinkwrap.json`, updates semver dependencies syntax
-
 1.13.0: requires node >18.12.1 & drops node 16 tests; update README & lockfile
-
-1.12.1: requires node >16.19 test w/node 20.x; update README & lockfile
 
 1.12.0: requires node >16.14; updated devDependencies with
 grunt-contrib-nodeunit 5.0.0
 
-1.11.2: requires node >16.13
-
 1.11.0: update grunt & node dependencies; now requires node >16.8
 
-1.10.5: bump version requirements for grunt peerDependency & node; copyright
-update
-
 1.10.2: update CI & docs, republish w/new npm credentials
-
-1.10.1: drop Travis-CI and renovate
 
 1.10.0: drop support for node 12, as 14 becomes node LTS
 
 1.9.0: drop support for node 10, as 12 becomes node LTS
 
-1.8.3: update to grunt-contrib-nodeunit 3.0.0, update lockfile
-
-1.8.1: update `grunt` dependencies
-
 1.8.0: drop snyk as it doubled dependencies & increased build time; rely on renovatebot
 
 1.7.0: drop node 8 support; require node 10+
-
-1.6.8: remove optional parens in `test/js2uriStringReplaces.js`; bump version
-
-1.6.7: streamline dependencies- move lint outside of package/grunt; bump version
-
-1.6.4: pin dependencies; integrate renovatebot ; bump version
 
 1.6.3: add `.npmignore` to repo to facilitate `npm publish` ; bump version
 
 1.6.2: at long last properly make `grunt` a _peerDependency_ ; bump version
 
 1.6.0: drop support for node <= 7.0; bump version
-
-1.5.2: update dependencies (clears `npm audit` warnings), bump version
-
-1.5.1: update devDependencies for grunt-contrib-nodeunit >= 2.0.0, bump version
 
 1.5.0: drop node 5 support; revise for eslint 4.0.0 reviews, bump version
 
@@ -250,7 +219,7 @@ and `forceLastSemicolon:`.
 
 ## License
 
-Copyright (c) 2012-2024 Tom King
+Copyright (c) 2012-2025 Tom King
 Licensed under the MIT license.
 
 <!-- reference URLs -->
