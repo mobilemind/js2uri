@@ -13,7 +13,7 @@
     "grunt-contrib-nodeunit": "5.0.0"
   },
   "engines": {
-    "node": ">=20.19.0",
+    "node": ">=20.19.5",
     "npm": ">=10.8.2"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
@@ -34,5 +34,5 @@
   "scripts": {
     "test": "npx grunt test"
   },
-  "version": "1.15.3"
+  "version": "1.15.4"
 }

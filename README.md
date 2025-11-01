@@ -12,6 +12,8 @@ bookmarklet or an iOS app protocol scheme link.
 
 ## Compatibility
 
+Version 1.14.4 drops support & testing for node < 20.19.5 (tests node 25.x & drops 23.x)
+
 Version 1.14.0 drops support & testing for node < 18.20.0
 
 Version 1.13.5 drops support & testing for node < 18.15.0
@@ -164,6 +166,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code using `eslint` (preferred) or `jshint`.
 
 ## Release History
+
+1.15.4: update test coverage to node 25.x, update to node >=20.19.5 & bump version, update README & regenerate package-lock.json
 
 1.15.3: no functional changes; update ci actions for node 24.x, bump version, update lockfile, republish
 
