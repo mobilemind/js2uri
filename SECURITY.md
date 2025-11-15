@@ -6,7 +6,7 @@ The following versions of js2uri are currently supported with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.15.x  | :white_check_mark: |
+| 1.16.x  | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
@@ -40,6 +40,13 @@ When reporting a vulnerability, please include:
 To ensure the integrity of published packages:
 
 - **2FA Required:** All package maintainers must enable two-factor authentication on their npm accounts
-- **Publishing:** Packages are published with npm provenance attestation for supply chain transparency
+- **Publishing:** Packages are published from GitHub Actions with npm provenance attestation for supply chain transparency
+  - Automated publishing via GitHub Releases (on: release)
+  - Uses granular access token (90-day expiry, rotated quarterly)
+  - Provenance attestation provides cryptographic proof of build origin
+  - Published packages can be verified at: `npm view js2uri@<version> --json`
 - **Signed Commits:** All commits to the main branch must be GPG signed
-- **Code Review:** All changes require review and approval before merging
+- **Code Review:** All changes require review and approval before merging (via CODEOWNERS)
+- **Branch Protection:** Main branch requires signed commits, passing CI checks, and CODEOWNERS approval
+- **Dependency Security:** Daily automated security scans via Dependabot
+- **Token Rotation:** npm publishing token rotated every 90 days
