@@ -90,7 +90,7 @@ jobs:
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        # Hybrid approach: NPM_TOKEN (90-day granular token) for auth + --provenance for attestation
+          # Hybrid approach: NPM_TOKEN (90-day granular token) for auth + --provenance for attestation
 
       - name: "Verify publication"
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
