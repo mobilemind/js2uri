@@ -28,8 +28,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true,
-    "registry": "https://registry.npmjs.org/"
+    "provenance": true
   },
   "readmeFilename": "README.md",
   "repository": {
