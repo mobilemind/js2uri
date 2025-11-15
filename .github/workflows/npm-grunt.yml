@@ -23,7 +23,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: "Build"
-      run: |
-        npm ci
-        npx grunt test
+    - name: "Install Dependencies"
+      run: npm ci
+
+    - name: "Security Audit"
+      run: npm audit --omit=dev --audit-level=moderate
+
+    - name: "Build and Test"
+      run: npx grunt test

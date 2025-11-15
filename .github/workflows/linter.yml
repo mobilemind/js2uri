@@ -23,7 +23,7 @@ jobs:
 
       # install plugins here to avoid changing package-lock.json
       - name: Install ESLint Plugins
-        run: npm install --save-dev eslint eslint-plugin-n
+        run: npm install --save-dev eslint@9.39.1 eslint-plugin-n@17.23.1
 
       # Run Linter against code base
       - name: Super-linter
