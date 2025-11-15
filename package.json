@@ -26,6 +26,11 @@
   "peerDependencies": {
     "grunt": ">=1.6.1"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
