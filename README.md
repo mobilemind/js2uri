@@ -4,13 +4,27 @@
  [![Latest version on npmjs.com][npm-image]][npm-url]
  [![Downloads from npmjs.com][npm-downloads]][npm-url]
  [![CodeQL](https://github.com/mobilemind/js2uri/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mobilemind/js2uri/actions/workflows/codeql-analysis.yml)
- [![NodeJS with Grunt](https://github.com/mobilemind/js2uri/actions/workflows/npm-grunt.yml/badge.svg)](https://github.com/mobilemind/js2uri/actions/workflows/npm-grunt.yml)
+ [![CI Tests](https://github.com/mobilemind/js2uri/actions/workflows/ci.yml/badge.svg)](https://github.com/mobilemind/js2uri/actions/workflows/ci.yml)
  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e2c182cf61e942a8bffdc038a7301be9)](https://www.codacy.com/gh/mobilemind/js2uri/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mobilemind/js2uri&amp;utm_campaign=Badge_Grade)
 
 grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
 bookmarklet or an iOS app protocol scheme link.
 
+## Zero Dependencies
+
+**js2uri has ZERO production dependencies.** This means:
+
+- **Enhanced Security:** No transitive dependency vulnerabilities
+- **Supply Chain Safety:** Minimal attack surface for supply chain attacks
+- **Faster Installs:** Nothing to download or install
+- **Zero Maintenance Burden:** No dependency updates or compatibility issues
+- **Complete Transparency:** Easy to audit and verify
+
+The only peerDependency is `grunt` (>=1.6.1), which you install separately if needed. Tests use Node.js built-in test runner - no external test frameworks required.
+
 ## Compatibility
+
+**Current Version:** Requires Node.js >=22.12.0 and npm >=10.9.0
 
 Version 1.14.4 drops support & testing for node < 20.19.5 (tests node 25.x & drops 23.x)
 
@@ -166,6 +180,12 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code.
 
 ## Release History
+
+1.17.0: drops support for node < 22.12 and begins "zero dependency" approach
+with new CI
+
+1.16.0: drops support for node < 22.12 and begins "zero dependency" approach
+with new CI
 
 1.15.4: update test coverage to node 25.x, update to node >=20.19.5 & bump version, update README & regenerate package-lock.json
 

@@ -1,32 +1,20 @@
 # See the documentation for Dependabot version updates configuration options:
 # https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates
+#
+# Note: This package has ZERO production dependencies (devDependencies: {})
+# npm checks are minimal - only to detect if dependencies are accidentally added
 ---
 version: 2
 updates:
-  # Security updates - daily checks for vulnerabilities
+  # npm dependency monitoring - monthly check (we have zero dependencies)
+  # This is a safety net in case dependencies are accidentally added
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "security"
-
-  # Version updates - weekly checks for new versions
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-    groups:
-      dev-dependencies:
-        dependency-type: "development"
-        update-types:
-          - "minor"
-          - "patch"
 
   # GitHub Actions updates - monthly
   - package-ecosystem: "github-actions"

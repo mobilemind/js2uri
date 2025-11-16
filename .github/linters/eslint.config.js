@@ -4,7 +4,7 @@ const n = require("eslint-plugin-n");
 
 module.exports = [
     {
-        files: [".github/linters/eslint.config.js", "Gruntfile.js", "tasks/*.js", "tests/*.js"],
+        files: [".github/linters/eslint.config.js", "Gruntfile.js", "tasks/*.js", "test/*.js"],
         ignores: ["*.json", "node_modules/*", "web/*.js"],
         languageOptions: {
             ecmaVersion: "latest",
