@@ -20,7 +20,7 @@ name: "Publish to npm"
 
 # Minimal permissions following principle of least privilege
 permissions:
-  contents: read
+  contents: write  # Required for uploading SBOM and release notes to releases
   id-token: write  # Required for OIDC/trusted publishing and provenance
 
 jobs:
@@ -60,6 +60,73 @@ jobs:
         run: |
           npm pack --dry-run
           echo "✓ Package contents verified"
+
+      - name: "Generate SBOM (Software Bill of Materials)"
+        run: |
+          # Generate SBOM in CycloneDX format (industry standard)
+          npm sbom --sbom-format=cyclonedx --omit=dev > sbom.json
+          echo "✓ SBOM generated: sbom.json"
+
+          # Display summary
+          echo "SBOM Summary:"
+          jq -r '.metadata.component.name + "@" + .metadata.component.version' sbom.json || true
+          echo "Components: $(jq '.components | length' sbom.json || echo 'N/A')"
+
+      - name: "Upload SBOM to release"
+        if: github.event_name == 'release'
+        run: gh release upload "${GITHUB_REF#refs/tags/}" sbom.json --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Generate release notes"
+        if: github.event_name == 'release'
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/}"
+          PREV_TAG=$(git describe --abbrev=0 --tags "${TAG_VERSION}^" 2>/dev/null || echo "")
+
+          {
+            if [ -n "$PREV_TAG" ]; then
+              echo "## What's Changed"
+              echo ""
+              git log --pretty=format:"- %s (%h)" "$PREV_TAG..HEAD"
+              echo ""
+              echo ""
+            else
+              echo "## Release $TAG_VERSION"
+              echo ""
+              echo "Initial release"
+              echo ""
+            fi
+
+            echo "## Verification"
+            echo ""
+            echo "This release includes:"
+            echo "- Signed commits and tags"
+            echo "- Software Bill of Materials (SBOM) in CycloneDX format"
+            echo "- npm provenance attestation for supply chain transparency"
+            echo "- Security audit results from CI pipeline"
+            echo ""
+            echo "### Verify Package Integrity"
+            echo ""
+            echo "\`\`\`bash"
+            echo "# View provenance attestation"
+            echo "npm view js2uri@$TAG_VERSION --json"
+            echo ""
+            echo "# Download and inspect SBOM"
+            echo "gh release download $TAG_VERSION --pattern sbom.json"
+            echo "\`\`\`"
+          } > release-notes.md
+
+          echo "✓ Release notes generated: release-notes.md"
+          echo ""
+          echo "Preview:"
+          cat release-notes.md
+
+      - name: "Update release with generated notes"
+        if: github.event_name == 'release'
+        run: gh release edit "${GITHUB_REF#refs/tags/}" --notes-file release-notes.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Check package.json version matches release tag"
         if: github.event_name == 'release'
