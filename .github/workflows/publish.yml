@@ -70,7 +70,8 @@ jobs:
       - name: "Generate SBOM (Software Bill of Materials)"
         run: |
           # Generate SBOM in CycloneDX format (industry standard)
-          npm sbom --sbom-format=cyclonedx --omit=dev > sbom.json
+          # --omit=dev --omit=peer: exclude devDeps and peerDeps (we have zero deps!)
+          npm sbom --sbom-format=cyclonedx --omit=dev --omit=peer > sbom.json
           echo "✓ SBOM generated: sbom.json"
 
           # Display summary
