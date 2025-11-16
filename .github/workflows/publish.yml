@@ -67,30 +67,14 @@ jobs:
           npm pack --dry-run
           echo "✓ Package contents verified"
 
-      - name: "Generate SBOM (Software Bill of Materials)"
+      - name: "Document Zero Dependencies"
         run: |
-          # Generate SBOM in CycloneDX format (industry standard)
-          # Note: npm sbom validates peerDeps even with --omit=peer
-          # Since we have ZERO actual dependencies, we allow this to fail gracefully
-          npm sbom --sbom-format=cyclonedx --omit=dev --omit=peer > sbom.json || {
-            echo "⚠️  SBOM generation skipped (peerDependency validation issue)"
-            echo "   This package has ZERO production dependencies - SBOM would be empty anyway"
-            echo '{"components":[]}' > sbom.json
-          }
-          echo "✓ SBOM handling complete"
-
-          # Display summary
-          if [ -s sbom.json ] && jq empty sbom.json 2>/dev/null; then
-            echo "SBOM Summary:"
-            jq -r '.metadata.component.name + "@" + .metadata.component.version' sbom.json || echo "js2uri@1.17.0"
-            echo "Components: $(jq '.components | length' sbom.json || echo '0')"
-          fi
-
-      - name: "Upload SBOM to release"
-        if: github.event_name == 'release'
-        run: gh release upload "${GITHUB_REF#refs/tags/}" sbom.json --clobber
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # With ZERO production dependencies, SBOM generation is not applicable
+          # An SBOM would only list js2uri itself with no dependency tree to track
+          # Supply chain transparency is provided via npm provenance attestation instead
+          echo "📋 Dependency Status: ZERO production dependencies"
+          echo "   No SBOM needed - nothing to track!"
+          echo "   Supply chain security: npm provenance attestation (below)"
 
       - name: "Generate release notes"
         if: github.event_name == 'release'
@@ -115,9 +99,9 @@ jobs:
             echo "## Verification"
             echo ""
             echo "This release includes:"
+            echo "- ✅ ZERO production dependencies (no supply chain to audit)"
             echo "- Signed commits and tags"
-            echo "- Software Bill of Materials (SBOM) in CycloneDX format"
-            echo "- npm provenance attestation for supply chain transparency"
+            echo "- npm provenance attestation for build transparency"
             echo "- Security audit results from CI pipeline"
             echo ""
             echo "### Verify Package Integrity"
@@ -126,8 +110,8 @@ jobs:
             echo "# View provenance attestation"
             echo "npm view js2uri@$TAG_VERSION --json"
             echo ""
-            echo "# Download and inspect SBOM"
-            echo "gh release download $TAG_VERSION --pattern sbom.json"
+            echo "# Verify zero dependencies"
+            echo "npm view js2uri@$TAG_VERSION dependencies"
             echo "\`\`\`"
           } > release-notes.md
 
