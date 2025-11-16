@@ -37,5 +37,5 @@
     "audit:fix": "npm audit fix --omit=dev",
     "test": "node --test test/js2uri*.js"
   },
-  "version": "1.17.0"
+  "version": "1.17.1"
 }
