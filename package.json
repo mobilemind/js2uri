@@ -8,13 +8,10 @@
     "url": "https://github.com/mobilemind/js2uri/issues"
   },
   "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
-  "devDependencies": {
-    "grunt": "1.6.1",
-    "grunt-contrib-nodeunit": "5.0.0"
-  },
+  "devDependencies": {},
   "engines": {
-    "node": ">=20.19.5",
-    "npm": ">=10.8.2"
+    "node": ">=22.12.0",
+    "npm": ">=10.9.0"
   },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
@@ -36,7 +33,9 @@
     "url": "git+https://github.com/mobilemind/js2uri.git"
   },
   "scripts": {
-    "test": "npx grunt test"
+    "audit": "npm audit --omit=dev --audit-level=moderate",
+    "audit:fix": "npm audit fix --omit=dev",
+    "test": "node --test test/js2uri*.js"
   },
-  "version": "1.16.2"
+  "version": "1.17.0"
 }
