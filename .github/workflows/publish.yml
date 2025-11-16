@@ -20,7 +20,7 @@ name: "Publish to npm"
 
 # Minimal permissions following principle of least privilege
 permissions:
-  contents: write  # Required for uploading SBOM and release notes to releases
+  contents: write  # Required for updating release notes
   id-token: write  # Required for OIDC/trusted publishing and provenance
 
 jobs:

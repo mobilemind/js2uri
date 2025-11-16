@@ -46,7 +46,7 @@ When reporting a vulnerability, please include:
   - Uses granular access token with 90-day expiry (rotated quarterly)
   - Provenance attestation provides cryptographic proof of build origin
   - Published packages can be verified at: `npm view js2uri@<version> --json`
-  - SBOM (Software Bill of Materials) attached to each release in CycloneDX format
+  - **Zero Dependencies:** No supply chain to audit - eliminates transitive dependency vulnerabilities
 - **Token Rotation:** npm publishing token rotated every 90 days
 
 ### Code Integrity
@@ -96,15 +96,15 @@ The following GitHub security features are enabled:
 Users and consumers can verify the integrity of published packages:
 
 ```bash
-# View provenance attestation
+# View provenance attestation and verify zero dependencies
 npm view js2uri@<version> --json
 
-# Download and inspect SBOM
-gh release download <version> --pattern sbom.json --repo mobilemind/js2uri
+# Verify zero production dependencies
+npm view js2uri@<version> dependencies
 ```
 
 Each release includes:
 - GPG-signed commits and tags
-- Software Bill of Materials (SBOM) in CycloneDX format
-- npm provenance attestation
+- npm provenance attestation for build transparency
+- **Zero production dependencies** (no supply chain to audit)
 - Security audit results from CI pipeline

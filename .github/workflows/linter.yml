@@ -8,6 +8,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Minimal permissions following principle of least privilege
+permissions:
+  contents: read
+
 jobs:
   build:
     name: "Lint Code Base"
