@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           # Fetch full history for potential version checks
           fetch-depth: 0
