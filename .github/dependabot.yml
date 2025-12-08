@@ -12,16 +12,24 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+      time: "04:04"  # Avoid peak hours
+      timezone: "UTC"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    reviewers:
+      - "mobilemind"
 
   # GitHub Actions updates - monthly
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
+      time: "05:04"  # Staggered 1 hour from npm
+      timezone: "UTC"
     open-pull-requests-limit: 5
     labels:
       - "github-actions"
       - "dependencies"
+    reviewers:
+      - "mobilemind"
