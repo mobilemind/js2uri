@@ -24,7 +24,7 @@ The only peerDependency is `grunt` (>=1.6.1), which you install separately if ne
 
 ## Compatibility
 
-**Current Version:** Requires Node.js >=22.12.0 and npm >=10.9.0
+**Current Version:** Requires Node.js >=22.12.0 and npm >=11.5.1
 
 Version 1.14.4 drops support & testing for node < 20.19.5 (tests node 25.x & drops 23.x)
 
@@ -180,6 +180,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code.
 
 ## Release History
+
+1.18.0: requires npm >=11.5.1; migrates to npm trusted publishing with OIDC (eliminates token management)
 
 1.17.0: drops support for node < 22.12 and begins "zero dependency" approach
 with new CI
