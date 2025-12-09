@@ -21,11 +21,11 @@ name: "Publish to npm"
 # Minimal permissions following principle of least privilege
 permissions:
   contents: write  # Required for updating release notes
-  id-token: write  # Required for OIDC/trusted publishing and provenance
+  id-token: write  # Required for trusted publishing via OIDC
 
 jobs:
   publish:
-    name: "Publish to npm with Provenance"
+    name: "Publish to npm via Trusted Publishing"
     runs-on: ubuntu-latest
 
     # Only run on main branch to prevent accidental publishes from forks
@@ -43,9 +43,11 @@ jobs:
         with:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
-          # Hybrid approach: token auth + OIDC provenance
-          # - NODE_AUTH_TOKEN (from NPM_TOKEN secret) handles authentication
-          # - id-token: write permission enables provenance attestation
+          # Trusted publishing: Uses OIDC authentication (requires npm >= 11.5.1)
+          # The id-token: write permission enables OIDC token generation
+
+      - name: "Ensure npm 11.5.1+ for trusted publishing"
+        run: npm install -g npm@latest
 
       - name: "Run tests"
         run: npm test
@@ -150,12 +152,10 @@ jobs:
           npm publish --dry-run --provenance --access public
           echo "✓ Dry-run successful - package would be published"
 
-      - name: "Publish to npm with provenance"
+      - name: "Publish to npm via OIDC trusted publishing"
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # Hybrid approach: NPM_TOKEN (90-day granular token) for auth + --provenance for attestation
+        # No NODE_AUTH_TOKEN needed - uses OIDC authentication automatically with npm >= 11.5.1
 
       - name: "Verify publication"
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
