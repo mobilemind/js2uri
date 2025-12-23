@@ -13,6 +13,12 @@
     "node": ">=22.12.0",
     "npm": ">=11.5.1"
   },
+  "files": [
+    "tasks/",
+    "Gruntfile.js",
+    "LICENSE-MIT",
+    "README.md"
+  ],
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
     "gruntplugin"
