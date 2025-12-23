@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.18.1
+
+- Streamline .npmignore & .npmrc
+- Whitelist files to include in published package (reduce size)
+
+## 1.18.0
+
+- Refine publishing to use OIDC
+- Require npm 11.5.1 to support OIDC
+- Discontinue use of token for publishing
+- Update GitHub Actions workflows (OIDC, checkout v6)
+
 ## 1.17.0
 
 ### BREAKING CHANGES
