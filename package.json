@@ -15,6 +15,7 @@
   },
   "files": [
     "tasks/",
+    "tests/"
     "Gruntfile.js",
     "LICENSE-MIT",
     "README.md"
