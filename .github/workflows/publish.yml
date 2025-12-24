@@ -27,6 +27,7 @@ jobs:
   publish:
     name: "Publish to npm via Trusted Publishing"
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     # Only run on main branch to prevent accidental publishes from forks
     if: github.repository == 'mobilemind/js2uri' && (github.event_name == 'release' || github.event_name == 'workflow_dispatch')
@@ -43,15 +44,12 @@ jobs:
         with:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
-          # Trusted publishing: Uses OIDC authentication (requires npm >= 11.5.1)
-          # The id-token: write permission enables OIDC token generation
 
       - name: "Ensure npm 11.5.1+ for trusted publishing"
         run: npm install -g npm@latest
 
       - name: "Run tests"
         run: npm test
-        # No install needed - we have ZERO dependencies
 
       - name: "Security audit"
         run: |
@@ -65,20 +63,26 @@ jobs:
           }
 
       - name: "Verify package contents"
-        run: |
-          npm pack --dry-run
-          echo "✓ Package contents verified"
+        run: npm pack --dry-run
 
-      - name: "Document Zero Dependencies"
+      - name: "Check package.json version matches release tag"
+        if: github.event_name == 'release'
         run: |
-          # With ZERO production dependencies, SBOM generation is not applicable
-          # An SBOM would only list js2uri itself with no dependency tree to track
-          # Supply chain transparency is provided via npm provenance attestation instead
-          echo "📋 Dependency Status: ZERO production dependencies"
-          echo "   No SBOM needed - nothing to track!"
-          echo "   Supply chain security: npm provenance attestation (below)"
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          RELEASE_TAG=${GITHUB_REF#refs/tags/}
+          echo "Package version: $PACKAGE_VERSION"
+          echo "Release tag: $RELEASE_TAG"
 
-      - name: "Generate release notes"
+          # Strip 'v' prefix if present in tag
+          RELEASE_VERSION=${RELEASE_TAG#v}
+
+          if [ "$PACKAGE_VERSION" != "$RELEASE_VERSION" ]; then
+            echo "❌ Version mismatch: package.json has $PACKAGE_VERSION but release tag is $RELEASE_TAG"
+            exit 1
+          fi
+          echo "✓ Version matches release tag"
+
+      - name: "Generate and update release notes"
         if: github.event_name == 'release'
         run: |
           TAG_VERSION="${GITHUB_REF#refs/tags/}"
@@ -117,33 +121,9 @@ jobs:
             echo "\`\`\`"
           } > release-notes.md
 
-          echo "✓ Release notes generated: release-notes.md"
-          echo ""
-          echo "Preview:"
-          cat release-notes.md
-
-      - name: "Update release with generated notes"
-        if: github.event_name == 'release'
-        run: gh release edit "${GITHUB_REF#refs/tags/}" --notes-file release-notes.md
+          gh release edit "${GITHUB_REF#refs/tags/}" --notes-file release-notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Check package.json version matches release tag"
-        if: github.event_name == 'release'
-        run: |
-          PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          RELEASE_TAG=${GITHUB_REF#refs/tags/}
-          echo "Package version: $PACKAGE_VERSION"
-          echo "Release tag: $RELEASE_TAG"
-
-          # Strip 'v' prefix if present in tag
-          RELEASE_VERSION=${RELEASE_TAG#v}
-
-          if [ "$PACKAGE_VERSION" != "$RELEASE_VERSION" ]; then
-            echo "❌ Version mismatch: package.json has $PACKAGE_VERSION but release tag is $RELEASE_TAG"
-            exit 1
-          fi
-          echo "✓ Version matches release tag"
 
       - name: "Publish to npm (dry-run)"
         if: github.event_name == 'workflow_dispatch' && inputs.dry_run == 'true'
@@ -155,9 +135,8 @@ jobs:
       - name: "Publish to npm via OIDC trusted publishing"
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
         run: npm publish --provenance --access public
-        # No NODE_AUTH_TOKEN needed - uses OIDC authentication automatically with npm >= 11.5.1
 
-      - name: "Verify publication"
+      - name: "Verify publication and provenance"
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
         run: |
           PACKAGE_VERSION="$(node -p "require('./package.json').version")"
@@ -169,16 +148,4 @@ jobs:
 
           echo '✓ Package successfully published and verified'
           echo "📦 View at: https://www.npmjs.com/package/js2uri/v/$PACKAGE_VERSION"
-
-      - name: "Check provenance attestation"
-        if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
-        run: |
-          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
-          echo 'Checking for provenance attestation...'
-          sleep 10  # Give npm time to process attestation
-
-          # Try to fetch provenance info (npm 9.5.0+)
-          npm view "js2uri@$PACKAGE_VERSION" --json | jq -r '.publishConfig.provenance // "No provenance data yet"' || true
-
           echo 'ℹ️  Provenance attestation may take a few minutes to appear on npm'
-          echo "📋 Check later at: https://www.npmjs.com/package/js2uri/v/$PACKAGE_VERSION"

@@ -14,7 +14,10 @@ updates:
       interval: "monthly"
       time: "04:04"  # Avoid peak hours
       timezone: "UTC"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 1  # Reduced from 5: zero dependencies = minimal PRs expected
+    commit-message:
+      prefix: "npm"
+      include: "scope"
     labels:
       - "dependencies"
     reviewers:
@@ -27,9 +30,19 @@ updates:
       interval: "monthly"
       time: "05:04"  # Staggered 1 hour from npm
       timezone: "UTC"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3  # Reduced from 5: group updates reduce PR count
+    commit-message:
+      prefix: "ci"
+      include: "scope"
     labels:
       - "github-actions"
       - "dependencies"
     reviewers:
       - "mobilemind"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
