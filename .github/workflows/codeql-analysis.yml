@@ -1,7 +1,7 @@
 ---
 name: "CodeQL"
 
-on:
+'on':
   push:
     branches: ['main', 'hotfix']
   pull_request:
@@ -25,16 +25,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: ['javascript']
 
     steps:
-    - name: "Checkout repository"
-      uses: actions/checkout@v6
+      - name: "Checkout repository"
+        uses: actions/checkout@v6
 
-    - name: "Initialize CodeQL"
-      uses: github/codeql-action/init@v4
-      with:
-        languages: ${{ matrix.language }}
+      - name: "Initialize CodeQL"
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
 
-    - name: "Perform CodeQL Analysis"
-      uses: github/codeql-action/analyze@v4
+      - name: "Perform CodeQL Analysis"
+        uses: github/codeql-action/analyze@v4
