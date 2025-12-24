@@ -22,23 +22,36 @@ jobs:
       fail-fast: false
 
     steps:
-    - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
-    - name: "Use Node.js ${{ matrix.node-version }}"
-      uses: actions/setup-node@v6
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: "Run Tests"
-      run: npm test
+      - name: "Security Audit"
+        run: |
+          # This package has ZERO production dependencies
+          # Any vulnerabilities are in peerDependencies (grunt's js-yaml issue)
+          # which are user's responsibility, not ours
+          npm audit --omit=dev --audit-level=moderate || {
+            echo "⚠️  Vulnerabilities in peerDependencies (grunt's js-yaml)"
+            echo "    ZERO production dependencies- not our issues"
+            exit 0
+          }
 
-    - name: "Security Audit"
-      run: |
-        # This package has ZERO production dependencies
-        # Any vulnerabilities are in peerDependencies (grunt's js-yaml issue)
-        # which are user's responsibility, not ours
-        npm audit --omit=dev --audit-level=moderate || {
-          echo "⚠️  Vulnerabilities found in peerDependencies (expected: grunt's js-yaml)"
-          echo "    This package has ZERO production dependencies- these are not our issues"
-          exit 0
-        }
+      - name: "Run Tests"
+        run: npm test
+
+  # Summary job that requires all matrix jobs to pass
+  ci-success:
+    name: "CI Tests Complete"
+    runs-on: ubuntu-latest
+    needs: build
+    if: always()
+    steps:
+      - name: Check build matrix success
+        if: needs.build.result != 'success'
+        run: exit 1
+      - name: Success
+        run: echo "All CI tests passed!"

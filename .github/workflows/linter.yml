@@ -1,7 +1,7 @@
 ---
 name: "Lint Code Base"
 
-on:
+'on':
   push:
     branches-ignore: [main]
   pull_request:
@@ -23,10 +23,25 @@ jobs:
       - name: "Checkout Code"
         uses: actions/checkout@v6
         with:
-          # Full git history needed for list of changed files w/in `super-linter`
+          # Full git history needed for `super-linter` changed files list
           fetch-depth: 0
 
-      # Install ESLint & plugin (not in package.json; targeting zero dependencies)
+      # Setup Node.js
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22.x'
+
+      # Cache node_modules for ESLint installation
+      - name: "Cache npm dependencies"
+        uses: actions/cache@v5
+        with:
+          path: node_modules
+          key: npm-${{ runner.os }}-eslint
+          restore-keys: |
+            npm-${{ runner.os }}-
+
+      # Install ESLint & plugin (not in package.json; zero dependencies)
       - name: Install ESLint Plugins
         run: npm install --no-save --engine-strict=false eslint eslint-plugin-n
 
@@ -34,6 +49,7 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter/slim@v8
         env:
+          ACTIONS_RUNNER_DEBUG: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: NOTICE
