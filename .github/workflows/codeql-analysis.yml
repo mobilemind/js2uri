@@ -8,7 +8,7 @@ name: "CodeQL"
     # branches below must be a subset of the above
     branches: ['main']
   schedule:
-    - cron: '15 4 * * 5,6,0'
+    - cron: '15 4 * * 6'
   # eslint "yml/no-empty-mapping-value": 0
   workflow_dispatch:
 
