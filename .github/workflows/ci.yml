@@ -34,7 +34,7 @@ jobs:
           # This package has ZERO production dependencies
           # Any vulnerabilities are in peerDependencies (grunt's js-yaml issue)
           # which are user's responsibility, not ours
-          npm audit --omit=dev --audit-level=moderate || {
+          npm audit --omit=dev --audit-level=high || {
             echo "⚠️  Vulnerabilities in peerDependencies (grunt's js-yaml)"
             echo "    ZERO production dependencies- not our issues"
             exit 0

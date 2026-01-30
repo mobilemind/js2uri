@@ -56,6 +56,12 @@ When reporting a vulnerability, please include:
 - **Dependency Monitoring:** Dependabot monitors for future dependency issues
 - **Lockfile Protection:** `npm ci` validates package-lock.json integrity (fails if corrupted or mismatched)
 
+### Supply Chain Hardening
+
+- **Lifecycle Scripts Disabled:** `.npmrc` configured with `ignore-scripts=true` to block malicious postinstall/preinstall scripts from dependencies
+- **Engine Enforcement:** `engine-strict=true` ensures consistent Node.js versions across environments
+- **Registry Security:** HTTPS registry enforced via `.npmrc`, no fallback to insecure HTTP
+
 ## Branch Protection Rules
 
 The main branch has the following protections enabled:
@@ -89,6 +95,12 @@ The following GitHub security features are enabled:
 - **Secret Scanning:** Detects exposed credentials and tokens
 - **Push Protection:** Blocks commits containing secrets
 - **Private Vulnerability Reporting:** Via GitHub Security Advisories
+
+### Workflow Permissions
+
+- **Least Privilege:** CI workflows use minimal permissions (`contents: read`)
+- **Scoped Publishing:** Publish workflow only grants `contents: write` and `id-token: write`
+- **Repository Restriction:** Publishing only runs from `mobilemind/js2uri`, preventing fork-based attacks
 
 ## Verification
 
