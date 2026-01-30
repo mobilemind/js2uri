@@ -1,4 +1,0 @@
-Codacy
-gruntjs
-npmjs
-snyk

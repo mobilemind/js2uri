@@ -28,7 +28,7 @@
   "main": "Gruntfile.js",
   "name": "js2uri",
   "peerDependencies": {
-    "grunt": ">=1.6.1"
+    "grunt": "1.6.1"
   },
   "publishConfig": {
     "access": "public",
@@ -44,5 +44,5 @@
     "audit:fix": "npm audit fix --omit=dev",
     "test": "node --test test/js2uri*.js"
   },
-  "version": "1.18.1"
+  "version": "1.18.2"
 }

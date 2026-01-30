@@ -46,7 +46,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: "Ensure npm 11.5.1+ for trusted publishing"
-        run: npm install -g npm@latest
+        run: npm install -g npm@latest --ignore-scripts
 
       - name: "Run tests"
         run: npm test
