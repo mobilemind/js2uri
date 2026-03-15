@@ -7,8 +7,8 @@
  [![CI Tests](https://github.com/mobilemind/js2uri/actions/workflows/ci.yml/badge.svg)](https://github.com/mobilemind/js2uri/actions/workflows/ci.yml)
  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e2c182cf61e942a8bffdc038a7301be9)](https://www.codacy.com/gh/mobilemind/js2uri/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mobilemind/js2uri&amp;utm_campaign=Badge_Grade)
 
-grunt plugin to convert a JavaScript file to a URI, such as a `javascript:`
-bookmarklet or an iOS app protocol scheme link.
+Convert JavaScript to a `javascript:` URI bookmarklet. Works as a standalone
+CLI, a Node.js API, or a grunt plugin.
 
 ## Zero Dependencies
 
@@ -20,11 +20,12 @@ bookmarklet or an iOS app protocol scheme link.
 - **Zero Maintenance Burden:** No dependency updates or compatibility issues
 - **Complete Transparency:** Easy to audit and verify
 
-The only peerDependency is `grunt` (>=1.6.1), which you install separately if needed. Tests use Node.js built-in test runner - no external test frameworks required.
+`grunt` is an _optional_ peerDependency — install it separately only if you
+use the grunt plugin. Tests use the Node.js built-in test runner.
 
 ## Compatibility
 
-**Current Version:** Requires Node.js >=22.12.0 and npm >=11.5.1
+**Current Version:** Requires Node.js >=22.22.0 and npm >=11.5.1
 
 Version 1.18.2 harden build & ci for greater resistance against supply chain attack
 
@@ -81,11 +82,56 @@ a bookmarklet.
 
 ### Install
 
-Install this grunt plugin into the project with:
-`npm install js2uri --save-dev`. The `--save-dev` option adds `js2uri` to the
-_devDependencies_ section of the project [package.json] file.
+```sh
+npm install js2uri --save-dev
+```
 
-### Edit Gruntfile.js
+### CLI Usage
+
+Convert a file and print to stdout:
+
+```sh
+npx js2uri input.min.js
+```
+
+Convert a file and write to an output file:
+
+```sh
+npx js2uri input.min.js output.uri.js
+```
+
+Options:
+
+```
+--protocol <proto>   URI protocol prefix (default: javascript:)
+--no-void            Omit void'0' suffix
+--no-single-quote    Keep %22 instead of replacing with single quotes
+--append-version     Append version from package.json
+--entity-encode      Encode HTML entities (& < >)
+--force-semicolon    Force trailing semicolon
+--no-semicolon       Remove trailing semicolon
+--version            Print js2uri version
+--help               Show help
+```
+
+### Node.js API
+
+```javascript
+const { js2uriString, js2uriStringReplaces } = require("js2uri");
+
+const uri = js2uriString('alert("hello")', "javascript:", true);
+// => 'javascript:alert(%22hello%22)'
+
+const opts = { useSingleQuote: true, appendVoid: true, noLastSemicolon: true,
+               forceLastSemicolon: false, entityEncode: false,
+               appendVersion: false, customVersion: "" };
+const bookmarklet = js2uriStringReplaces(uri, opts);
+// => "javascript:alert('hello');void'0'"
+```
+
+### Grunt Plugin
+
+#### Edit Gruntfile.js
 
 Add the following to the `grunt.initConfig` section of the project
 `Gruntfile.js` file:
@@ -184,6 +230,8 @@ style. Add unit tests for any new or changed functionality. Lint and test the
 code.
 
 ## Release History
+
+1.19.0: add standalone CLI (`bin/js2uri.js`), export helpers as `main`, mark grunt as optional peerDependency, add npm overrides for minimatch 3.1.5 to fix ReDoS vulnerabilities
 
 1.18.0: requires npm >=11.5.1; migrates to npm trusted publishing with OIDC (eliminates token management)
 

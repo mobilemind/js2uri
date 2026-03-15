@@ -7,28 +7,42 @@
   "bugs": {
     "url": "https://github.com/mobilemind/js2uri/issues"
   },
-  "description": "A grunt plugin that accepts a single line JavaScript file to be URI encoded and prepended with a protocol (eg, javascript:) for output.",
-  "devDependencies": {},
+  "description": "Convert JavaScript to a javascript: URI bookmarklet. Standalone CLI, Node.js API, and grunt plugin.",
   "engines": {
-    "node": ">=22.21.1",
+    "node": ">=22.22.0",
     "npm": ">=11.5.1"
   },
   "files": [
+    "bin/",
     "tasks/",
-    "tests/",
     "Gruntfile.js",
     "LICENSE-MIT",
     "README.md"
   ],
+  "overrides": {
+    "minimatch": "3.1.5"
+  },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
-    "gruntplugin"
+    "bookmarklet",
+    "cli",
+    "gruntplugin",
+    "javascript-uri",
+    "uri-encode"
   ],
   "license": "MIT",
-  "main": "Gruntfile.js",
+  "main": "tasks/js2uriHelpers.js",
+  "bin": {
+    "js2uri": "bin/js2uri.js"
+  },
   "name": "js2uri",
   "peerDependencies": {
     "grunt": "1.6.1"
+  },
+  "peerDependenciesMeta": {
+    "grunt": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public",
@@ -44,5 +58,5 @@
     "audit:fix": "npm audit fix --omit=dev",
     "test": "node --test test/js2uri*.js"
   },
-  "version": "1.18.2"
+  "version": "1.19.0"
 }

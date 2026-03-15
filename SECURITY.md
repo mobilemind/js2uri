@@ -6,7 +6,7 @@ The following versions of js2uri are currently supported with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.18.x  | :white_check_mark: |
+| 1.19.x  | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
