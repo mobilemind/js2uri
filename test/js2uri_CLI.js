@@ -23,7 +23,7 @@ const defaultOpts = {
 };
 
 function expectedURI(content, opts) {
-  let result = js2uriString(content, opts.protocol, opts.useNewlineEOL);
+  const result = js2uriString(content, opts.protocol, opts.useNewlineEOL);
   return js2uriStringReplaces(result, opts);
 }
 
@@ -96,7 +96,7 @@ describe("js2uri CLI", () => {
       assert.ok(result.stderr.includes("bytes"));
     } finally {
       fs.unlinkSync(tmpIn);
-      try { fs.unlinkSync(tmpOut); } catch (_e) { /* ignore */ }
+      fs.rmSync(tmpOut, { force: true });
     }
   });
 });
