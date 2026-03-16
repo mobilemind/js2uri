@@ -102,7 +102,7 @@ npx js2uri input.min.js output.uri.js
 
 Options:
 
-```
+```text
 --protocol <proto>   URI protocol prefix (default: javascript:)
 --no-void            Omit void'0' suffix
 --no-single-quote    Keep %22 instead of replacing with single quotes
