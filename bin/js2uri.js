@@ -66,7 +66,7 @@ for (let i = 0; i < args.length; i++) {
     try {
       const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "package.json"), "utf8"));
       opts.customVersion = pkg.version;
-    } catch (_e) {
+    } catch {
       // ignore
     }
   } else if (arg === "--entity-encode") {
