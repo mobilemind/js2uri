@@ -27,6 +27,8 @@ use the grunt plugin. Tests use the Node.js built-in test runner.
 
 **Current Version:** Requires Node.js >=22.22.0 and npm >=11.5.1
 
+Version 1.19.0 Add standalone CLI script, make grunt peerDependency optional
+
 Version 1.18.2 harden build & ci for greater resistance against supply chain attack
 
 Version 1.18.1 improved supply security, refined .npmrc, & reduced published package size
