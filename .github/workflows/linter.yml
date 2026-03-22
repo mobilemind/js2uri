@@ -2,8 +2,6 @@
 name: "Lint Code Base"
 
 'on':
-  push:
-    branches-ignore: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -36,7 +34,7 @@ jobs:
             npm-${{ runner.os }}-
 
       - name: "Install lint tools"
-        run: npm install --no-save --engine-strict=false eslint eslint-plugin-n markdownlint-cli2
+        run: npm install --no-save --engine-strict=false eslint @eslint/js eslint-plugin-n markdownlint-cli2
 
       - name: "Lint JavaScript (ESLint)"
         run: npx eslint .
