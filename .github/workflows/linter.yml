@@ -19,45 +19,37 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      # Checkout the code base
       - name: "Checkout Code"
         uses: actions/checkout@v6
-        with:
-          # Full git history needed for `super-linter` changed files list
-          fetch-depth: 0
 
-      # Setup Node.js
       - name: "Setup Node.js"
         uses: actions/setup-node@v6
         with:
           node-version: '22.x'
 
-      # Cache node_modules for ESLint installation
       - name: "Cache npm dependencies"
         uses: actions/cache@v5
         with:
           path: node_modules
-          key: npm-${{ runner.os }}-eslint
+          key: npm-${{ runner.os }}-lint
           restore-keys: |
             npm-${{ runner.os }}-
 
-      # Install ESLint & plugin (not in package.json; zero dependencies)
-      - name: Install ESLint Plugins
-        run: npm install --no-save --engine-strict=false eslint eslint-plugin-n
+      - name: "Install lint tools"
+        run: npm install --no-save --engine-strict=false eslint eslint-plugin-n markdownlint-cli2
 
-      # Run Linter against code base
-      - name: Super-linter
-        uses: super-linter/super-linter/slim@v8
-        env:
-          ACTIONS_RUNNER_DEBUG: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LOG_LEVEL: NOTICE
-          SUPPRESS_POSSUM: true
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_JSON: true
-          VALIDATE_JSONC: true
-          VALIDATE_MARKDOWN: true
-          VALIDATE_YAML: true
+      - name: "Lint JavaScript (ESLint)"
+        run: npx eslint .
+
+      - name: "Lint Markdown"
+        run: npx markdownlint-cli2 "**/*.md" "#node_modules"
+
+      - name: "Lint YAML"
+        run: pip install --quiet yamllint && yamllint .
+
+      - name: "Lint JSON"
+        run: |
+          find . -name '*.json' \
+            -not -path './node_modules/*' \
+            -not -path './.git/*' \
+            -print0 | xargs -0 -I{} node -e "JSON.parse(require('fs').readFileSync('{}','utf8'))"
