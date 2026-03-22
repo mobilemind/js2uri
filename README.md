@@ -29,11 +29,14 @@ use the grunt plugin. Tests use the Node.js built-in test runner.
 
 Version 1.19.0 Add standalone CLI script, make grunt peerDependency optional
 
-Version 1.18.2 harden build & ci for greater resistance against supply chain attack
+Version 1.18.2 harden build & ci for greater resistance against supply chain
+attack
 
-Version 1.18.1 improved supply security, refined .npmrc, & reduced published package size
+Version 1.18.1 improved supply security, refined .npmrc, & reduced published
+package size
 
-Version 1.14.4 drops support & testing for node < 20.19.5 (tests node 25.x & drops 23.x)
+Version 1.14.4 drops support & testing for node < 20.19.5 (tests node 25.x &
+drops 23.x)
 
 Version 1.14.0 drops support & testing for node < 18.20.0
 
@@ -233,9 +236,12 @@ code.
 
 ## Release History
 
-1.19.0: add standalone CLI (`bin/js2uri.js`), export helpers as `main`, mark grunt as optional peerDependency, add npm overrides for minimatch 3.1.5 to fix ReDoS vulnerabilities
+1.19.0: add standalone CLI (`bin/js2uri.js`), export helpers as `main`, mark
+grunt as optional peerDependency, add npm overrides for minimatch 3.1.5 to fix
+ReDoS vulnerabilities
 
-1.18.0: requires npm >=11.5.1; migrates to npm trusted publishing with OIDC (eliminates token management)
+1.18.0: requires npm >=11.5.1; migrates to npm trusted publishing with OIDC
+(eliminates token management)
 
 1.17.0: drops support for node < 22.12 and begins "zero dependency" approach
 with new CI
@@ -243,9 +249,11 @@ with new CI
 1.16.0: drops support for node < 22.12 and begins "zero dependency" approach
 with new CI
 
-1.15.4: update test coverage to node 25.x, update to node >=20.19.5 & bump version, update README & regenerate package-lock.json
+1.15.4: update test coverage to node 25.x, update to node >=20.19.5 & bump
+version, update README & regenerate package-lock.json
 
-1.15.3: no functional changes; update ci actions for node 24.x, bump version, update lockfile, republish
+1.15.3: no functional changes; update ci actions for node 24.x, bump version,
+update lockfile, republish
 
 1.15.1: no functional change; integrate cspell for use with git pre-push hook,
 fix typos, update lockfile
