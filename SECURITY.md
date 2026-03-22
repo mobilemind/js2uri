@@ -2,7 +2,8 @@
 
 ## Supported Versions
 
-The following versions of js2uri are currently supported with security updates:
+The following versions of js2uri are currently supported with security
+updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -17,9 +18,12 @@ The following versions of js2uri are currently supported with security updates:
    - Reporter receives recognition for discovery
    - Allows collaborative fix development before public announcement
 
-2. **Alternative:** If you cannot use GitHub Security Advisories, create a private issue or contact the maintainer directly (see package.json for contact info)
+2. **Alternative:** If you cannot use GitHub Security Advisories, create a
+private issue or contact the maintainer directly (see package.json for contact
+info)
 
-**Please do not report security vulnerabilities via public GitHub issues** as this may put users at risk before a fix is available.
+**Please do not report security vulnerabilities via public GitHub issues** as
+this may put users at risk before a fix is available.
 
 ### What to Include
 
@@ -40,27 +44,35 @@ When reporting a vulnerability, please include:
 
 ### Access & Publishing
 
-- **2FA Required:** All package maintainers must enable two-factor authentication on their npm accounts
-- **Automated Publishing:** Packages are published from GitHub Actions using OIDC trusted publishing
+- **2FA Required:** All package maintainers must enable two-factor
+  authentication on their npm accounts
+- **Automated Publishing:** Packages are published from GitHub Actions using
+  OIDC trusted publishing
   - Publishing triggered via GitHub Releases (on: release)
   - Uses OpenID Connect (OIDC) authentication - no long-lived tokens required
   - Provenance attestation provides cryptographic proof of build origin
   - Published packages can be verified at: `npm view js2uri@<version> --json`
-  - **Zero Dependencies:** No supply chain to audit - eliminates transitive dependency vulnerabilities
+  - **Zero Dependencies:** No supply chain to audit - eliminates transitive
+    dependency vulnerabilities
 
 ### Code Integrity
 
 - **Signed Commits:** All commits to the main branch must be GPG signed
 - **Code Review:** All changes require review and approval before merging (via CODEOWNERS)
-- **Dependencies:** Zero production dependencies eliminate dependency vulnerabilities
+- **Dependencies:** Zero production dependencies eliminate dependency
+  vulnerabilities
 - **Dependency Monitoring:** Dependabot monitors for future dependency issues
-- **Lockfile Protection:** `npm ci` validates package-lock.json integrity (fails if corrupted or mismatched)
+- **Lockfile Protection:** `npm ci` validates package-lock.json integrity
+  (fails if corrupted or mismatched)
 
 ### Supply Chain Hardening
 
-- **Lifecycle Scripts Disabled:** `.npmrc` configured with `ignore-scripts=true` to block malicious postinstall/preinstall scripts from dependencies
-- **Engine Enforcement:** `engine-strict=true` ensures consistent Node.js versions across environments
-- **Registry Security:** HTTPS registry enforced via `.npmrc`, no fallback to insecure HTTP
+- **Lifecycle Scripts Disabled:** `.npmrc` configured with `ignore-scripts=true`
+  to block malicious postinstall/preinstall scripts from dependencies
+- **Engine Enforcement:** `engine-strict=true` ensures consistent Node.js
+  versions across environments
+- **Registry Security:** HTTPS registry enforced via `.npmrc`, no fallback to
+  insecure HTTP
 
 ## Branch Protection Rules
 
@@ -82,7 +94,7 @@ The main branch has the following protections enabled:
 
 ### Branch Restrictions
 
-- **Admin Enforcement:** Branch protection rules apply equally to administrators
+- **Admin Enforcement:** Branch protection rules apply equally to admins
 - **Force Push Protection:** Force pushes disabled
 - **Deletion Protection:** Branch deletions disabled
 
@@ -91,16 +103,19 @@ The main branch has the following protections enabled:
 The following GitHub security features are enabled:
 
 - **Vulnerability Alerts:** Dependabot alerts for known vulnerabilities
-- **Automated Security Updates:** Dependabot automatically creates PRs for security fixes
+- **Automated Security Updates:** Dependabot automatically creates PRs for
+  security fixes
 - **Secret Scanning:** Detects exposed credentials and tokens
 - **Push Protection:** Blocks commits containing secrets
 - **Private Vulnerability Reporting:** Via GitHub Security Advisories
 
 ### Workflow Permissions
 
-- **Least Privilege:** CI workflows use minimal permissions (`contents: read`)
-- **Scoped Publishing:** Publish workflow only grants `contents: write` and `id-token: write`
-- **Repository Restriction:** Publishing only runs from `mobilemind/js2uri`, preventing fork-based attacks
+- **Least Privilege:** CI workflows use minimal permissions (read)
+- **Scoped Publishing:** Publish workflow only grants `contents: write` and
+  `id-token: write`
+- **Repository Restriction:** Publishing only runs from `mobilemind/js2uri`,
+  preventing fork-based attacks
 
 ## Verification
 

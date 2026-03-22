@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.19.0
 
-- Add standalone CLI (`bin/js2uri.js`) using only Node.js built-ins (`fs`, `path`)
+- Add standalone CLI (`bin/js2uri.js`) using only Node.js built-ins (`fs`,
+  `path`)
 - Export helpers as `main` entry point (`tasks/js2uriHelpers.js`)
 - Mark `grunt` peerDependency as optional via `peerDependenciesMeta`
-- Add `npm overrides` to force `minimatch@3.1.5`, fixing 2 high-severity ReDoS vulnerabilities (GHSA-3ppc-4f35-3m26, GHSA-7r86-cg39-jmmj)
-- Fix `files` field: `"tests/"` → `"bin/"` (test dir was misnamed and tests shouldn't publish)
+- Add `npm overrides` to force `minimatch@3.1.5`, fixing 2 high-severity ReDoS
+  vulnerabilities (GHSA-3ppc-4f35-3m26, GHSA-7r86-cg39-jmmj)
+- Fix `files` field: `"tests/"` → `"bin/"` (test dir was misnamed and tests
+  shouldn't publish)
 - Update description and keywords to reflect CLI/API/grunt usage
 - Require Node.js >=22.22.0
 
@@ -55,8 +58,8 @@ simplifies maintenance.
 - **Minimum npm version:** `>=10.9.0` (previously `>=10.8.2`)
 - **Dropped support for:** Node.js 20.x and 21.x
 
-
 #### Test Framework Migration
+
 - **Removed:** `grunt-contrib-nodeunit` (replaced with Node.js built-in test
   runner)
 - **New test command:** `node --test test/js2uri*.js`
