@@ -1,6 +1,6 @@
 const globals = require("globals");
 const js = require("@eslint/js");
-const n = require("eslint-plugin-n");
+const n = require("eslint-plugin-n").default;
 
 module.exports = [
     {
