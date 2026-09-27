@@ -140,11 +140,17 @@ jobs:
         if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
         run: |
           PACKAGE_VERSION="$(node -p "require('./package.json').version")"
-          echo 'Waiting 30 seconds for npm registry to update...'
-          sleep 30
-
-          echo "Verifying publication of js2uri@$PACKAGE_VERSION"
-          npm view "js2uri@$PACKAGE_VERSION" version
+          echo "Verifying publication of js2uri@$PACKAGE_VERSION (registry may lag)"
+          i=0
+          until npm view "js2uri@$PACKAGE_VERSION" version; do
+            i=$((i + 1))
+            if [ "$i" -ge 10 ]; then
+              echo "❌ js2uri@$PACKAGE_VERSION not visible on npm after $i attempts"
+              exit 1
+            fi
+            echo "Not visible yet, retrying in 15 seconds (attempt $i of 10)..."
+            sleep 15
+          done
 
           echo '✓ Package successfully published and verified'
           echo "📦 View at: https://www.npmjs.com/package/js2uri/v/$PACKAGE_VERSION"
