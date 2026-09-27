@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.19.1
+
+- Require Node.js >=22.23.0
+- Loosen `grunt` peerDependency to `>=1.6.3 <2.`
+- Remove `minimatch` npm override (no longer needed)
+- Streamline CI/CD and update GitHub Actions
+
 ## 1.19.0
 
 - Add standalone CLI (`bin/js2uri.js`) using only Node.js built-ins (`fs`,

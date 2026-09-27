@@ -239,6 +239,9 @@ code.
 
 ## Release History
 
+1.19.1: require node >=22.23.0, loosen grunt peerDependency to `>=1.6.3 <2.`,
+remove minimatch override, streamline CI/CD
+
 1.19.0: add standalone CLI (`bin/js2uri.js`), export helpers as `main`, mark
 grunt as optional peerDependency, add npm overrides for minimatch 3.1.5 to fix
 ReDoS vulnerabilities
