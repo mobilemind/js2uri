@@ -25,7 +25,10 @@ use the grunt plugin. Tests use the Node.js built-in test runner.
 
 ## Compatibility
 
-**Current Version:** Requires Node.js >=22.22.0 and npm >=11.5.1
+**Current Version:** Requires Node.js >=22.23.0 and npm >=11.5.1
+
+Version 1.19.1 Bumps node 22 & version, updates lockfile, set CI to use
+node 22/24/26
 
 Version 1.19.0 Add standalone CLI script, make grunt peerDependency optional
 
