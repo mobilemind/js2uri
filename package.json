@@ -9,7 +9,7 @@
   },
   "description": "Convert JavaScript to a javascript: URI bookmarklet. Standalone CLI, Node.js API, and grunt plugin.",
   "engines": {
-    "node": ">=22.22.0",
+    "node": ">=22.23.0",
     "npm": ">=11.5.1"
   },
   "files": [
@@ -19,9 +19,6 @@
     "LICENSE-MIT",
     "README.md"
   ],
-  "overrides": {
-    "minimatch": "3.1.5"
-  },
   "homepage": "https://github.com/mobilemind/js2uri",
   "keywords": [
     "bookmarklet",
@@ -37,7 +34,7 @@
   },
   "name": "js2uri",
   "peerDependencies": {
-    "grunt": "1.6.1"
+    "grunt": ">=1.6.3 <2."
   },
   "peerDependenciesMeta": {
     "grunt": {
@@ -58,5 +55,5 @@
     "audit:fix": "npm audit fix --omit=dev",
     "test": "node --test test/js2uri*.js"
   },
-  "version": "1.19.0"
+  "version": "1.19.1"
 }
